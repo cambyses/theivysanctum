@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ivy Sanctum</title>
+
+  <style>
+    :root {
+      --cream: #f4f0e6;
+      --crimson: #6e1423;
+      --charcoal: #25221f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8vw;
+    }
+
+    .hero-inner {
+      max-width: 900px;
+    }
+
+    h1 {
+      margin: 0 0 24px;
+      color: var(--crimson);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 500;
+      line-height: 0.95;
+    }
+
+    .lead {
+      margin: 0 0 28px;
+      font-size: clamp(1.3rem, 2.4vw, 2rem);
+      line-height: 1.45;
+      max-width: 780px;
+    }
+
+    .credentials {
+      max-width: 700px;
+      font-size: 1rem;
+      line-height: 1.7;
+      opacity: 0.75;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="hero">
+    <div class="hero-inner">
+      <h1>The Ivy Sanctum</h1>
+
+      <p class="lead">
+        Admissions strategy for selective applications.
+      </p>
+
+      <p class="credentials">
+        Four Ivy League degrees · Three Harvard · One Penn Law ·
+        Former reader on a Harvard graduate admissions committee
+      </p>
+    </div>
+  </main>
+
+</body>
+</html>
