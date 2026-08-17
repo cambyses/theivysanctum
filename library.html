@@ -1,1 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>The Library | The Ivy Sanctum</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    :root {
+      --cream: #f4f0e6;
+      --crimson: #6e1423;
+      --charcoal: #25221f;
+      --muted: #6b655e;
+      --line: rgba(37, 34, 31, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .shell {
+      width: min(1050px, calc(100% - 44px));
+      margin: 0 auto;
+    }
+
+    nav {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .wordmark {
+      color: var(--crimson);
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .home-link {
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    main {
+      padding: 100px 0 120px;
+    }
+
+    .label {
+      color: var(--crimson);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      color: var(--crimson);
+      font-size: clamp(3.2rem, 8vw, 6rem);
+      font-weight: 400;
+      line-height: 1;
+      margin: 0 0 28px;
+    }
+
+    .intro {
+      max-width: 760px;
+      font-size: 1.3rem;
+      margin-bottom: 80px;
+    }
+
+    .product {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 50px;
+      padding: 44px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .product:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .product h2 {
+      margin: 0 0 8px;
+      color: var(--crimson);
+      font-size: 1.45rem;
+      font-weight: 400;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .product p {
+      margin: 0;
+      max-width: 680px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 48px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      .product {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="shell nav-inner">
+      <a class="wordmark" href="index.html">The Ivy Sanctum</a>
+      <a class="home-link" href="index.html">Home</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="shell">
+
+      <div class="label">The Library</div>
+
+      <h1>Working Instruments</h1>
+
+      <p class="intro">
+        Frameworks, dossiers, and practical instruments developed from
+        Ivy Sanctum’s admissions methodology.
+      </p>
+
+      <div class="product">
+        <div>
+          <h2>The Activities Ledger</h2>
+          <div class="status">Forthcoming</div>
+        </div>
+
+        <p>
+          A working instrument for reconstructing extracurricular activity
+          as evidence: role, artifact, metric, hierarchy, and proof.
+        </p>
+      </div>
+
+      <div class="product">
+        <div>
+          <h2>WITNESS</h2>
+          <div class="status">Forthcoming</div>
+        </div>
+
+        <p>
+          A recommender strategy instrument built around writer selection,
+          Macro × Micro positioning, evidence mapping, and letter architecture.
+        </p>
+      </div>
+
+      <div class="product">
+        <div>
+          <h2>The Statement</h2>
+          <div class="status">Forthcoming</div>
+        </div>
+
+        <p>
+          A working system for personal-statement architecture: angle,
+          evidence, structure, reader consequence, and final movement.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+
+      <div>
+        © 2026 Ivy Sanctum LLC
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
