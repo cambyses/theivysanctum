@@ -47,6 +47,8 @@
       margin: 0 auto;
     }
 
+    /* NAVIGATION */
+
     nav {
       padding: 28px 0;
       border-bottom: 1px solid var(--line);
@@ -75,6 +77,8 @@
       text-decoration: none;
     }
 
+    /* HERO */
+
     .hero {
       padding: 110px 0 100px;
     }
@@ -95,6 +99,7 @@
       font-weight: 400;
       letter-spacing: -0.04em;
       margin: 0 0 32px;
+      max-width: 950px;
     }
 
     .hero-copy {
@@ -108,7 +113,10 @@
       max-width: 800px;
       color: var(--muted);
       font-size: 1.05rem;
+      margin: 0;
     }
+
+    /* SECTIONS */
 
     section {
       padding: 90px 0;
@@ -122,6 +130,7 @@
       line-height: 1.08;
       letter-spacing: -0.025em;
       margin: 0 0 28px;
+      max-width: 900px;
     }
 
     .intro {
@@ -130,42 +139,7 @@
       margin: 0;
     }
 
-    .offers {
-      margin-top: 55px;
-    }
-
-    .offer {
-      display: grid;
-      grid-template-columns: 235px 1fr;
-      gap: 55px;
-      padding: 48px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .offer:last-child {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .offer h3 {
-      color: var(--crimson);
-      font-size: 1.42rem;
-      font-weight: 400;
-      margin: 0 0 8px;
-    }
-
-    .price {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .offer-copy p {
-      margin: 0 0 18px;
-    }
-
-    .output {
-      color: var(--muted);
-      font-size: 0.97rem;
-    }
+    /* PATHWAYS */
 
     .path-grid {
       display: grid;
@@ -186,6 +160,60 @@
       color: var(--muted);
     }
 
+    /* OFFERS */
+
+    .offers {
+      margin-top: 20px;
+    }
+
+    .offer {
+      display: grid;
+      grid-template-columns: 235px minmax(0, 1fr);
+      gap: 55px;
+      padding: 52px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .offer:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .offer h3 {
+      color: var(--crimson);
+      font-size: 1.42rem;
+      line-height: 1.25;
+      font-weight: 400;
+      margin: 0 0 8px;
+    }
+
+    .price {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .offer-copy {
+      max-width: 720px;
+    }
+
+    .offer-copy p {
+      margin: 0 0 18px;
+    }
+
+    .offer-copy p:first-child {
+      font-size: 1.08rem;
+    }
+
+    .offer-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .output {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    /* BEGIN */
+
     .begin {
       max-width: 780px;
     }
@@ -193,6 +221,11 @@
     .begin p {
       font-size: 1.1rem;
       margin: 0 0 22px;
+    }
+
+    .email-link {
+      color: var(--crimson);
+      text-decoration: none;
     }
 
     .button {
@@ -204,6 +237,8 @@
       text-decoration: none;
       font-size: 0.94rem;
     }
+
+    /* FOOTER */
 
     footer {
       border-top: 1px solid var(--line);
@@ -229,6 +264,8 @@
       text-decoration: none;
     }
 
+    /* MOBILE */
+
     @media (max-width: 760px) {
       .shell {
         width: min(100% - 30px, 1080px);
@@ -248,7 +285,8 @@
 
       .offer {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 14px;
+        padding: 42px 0;
       }
 
       .path-grid {
@@ -260,27 +298,39 @@
 
 <body>
 
+  <!-- NAVIGATION -->
+
   <nav>
     <div class="shell nav-inner">
-      <a class="wordmark" href="index.html">The Ivy Sanctum</a>
+
+      <a class="wordmark" href="index.html">
+        The Ivy Sanctum
+      </a>
 
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="index.html#hours">Office Hours</a>
         <a href="library.html">Library</a>
       </div>
+
     </div>
   </nav>
 
 
   <main>
 
+    <!-- HERO -->
+
     <div class="hero">
       <div class="shell">
 
-        <div class="eyebrow">Advisory</div>
+        <div class="eyebrow">
+          Advisory
+        </div>
 
-        <h1>Strategy built around the file.</h1>
+        <h1>
+          Strategy built around the file.
+        </h1>
 
         <p class="hero-copy">
           Reader-grade diagnostics, essay architecture, recommender strategy,
@@ -297,12 +347,18 @@
     </div>
 
 
+    <!-- WAYS TO WORK -->
+
     <section>
       <div class="shell">
 
-        <div class="section-label">Ways to Work</div>
+        <div class="section-label">
+          Ways to Work
+        </div>
 
-        <h2>Choose the pressure point.</h2>
+        <h2>
+          Choose the pressure point.
+        </h2>
 
         <p class="intro">
           Some files need diagnosis. Some need focused work on essays,
@@ -314,6 +370,7 @@
 
           <div class="path">
             <h3>Diagnose</h3>
+
             <p>
               Establish how the file reads, where its strongest proof sits,
               and which strategic moves carry the greatest value.
@@ -322,6 +379,7 @@
 
           <div class="path">
             <h3>Develop</h3>
+
             <p>
               Work directly on the component carrying the most pressure:
               statement, supplements, activities, recommendations, or positioning.
@@ -330,6 +388,7 @@
 
           <div class="path">
             <h3>Architect</h3>
+
             <p>
               Coordinate the entire application around one governing admissions
               argument from evidence through final submission.
@@ -342,237 +401,357 @@
     </section>
 
 
+    <!-- PRIVATE WRITTEN WORK -->
+
     <section>
       <div class="shell">
 
-        <div class="section-label">Advisory Work</div>
+        <div class="section-label">
+          Private Written Work
+        </div>
 
         <div class="offers">
 
+          <!-- FILE READ -->
+
           <div class="offer">
+
             <div>
               <h3>File Read</h3>
               <div class="price">$233</div>
             </div>
 
             <div class="offer-copy">
+
               <p>
-                A reader-grade assessment of the current application. The File
-                Read establishes how the file lands across academic rigor,
-                testing context, activities, school selection, essay material,
-                and recommender posture. It identifies the strongest admissions
-                signal, the central point of pressure, and the strategic move
-                with the highest immediate value.
+                A reader-grade assessment of the current application file.
+              </p>
+
+              <p>
+                The File Read establishes the file’s first impression: academic
+                rigor, GPA and testing context, activity signal, school-list
+                alignment, essay material or early angles, and the opening layer
+                of recommender posture. It identifies the strongest admissions
+                signal, the primary pressure point, and the most intelligent next move.
               </p>
 
               <p class="output">
-                Annotated materials + written reader memo + priority direction.
+                The output is an annotated file read with a written reader memo.
+                The purpose is clarity before deeper architecture: what the file
+                is already carrying, where its authority concentrates, and which
+                move should come first.
               </p>
+
             </div>
           </div>
 
 
+          <!-- STRATEGY DIAGNOSTIC -->
+
           <div class="offer">
+
             <div>
               <h3>Strategy Diagnostic</h3>
               <div class="price">$466</div>
             </div>
 
             <div class="offer-copy">
+
               <p>
-                A full diagnostic of the application as one admissions system.
-                The work examines academic context, narrative spine, positioning,
-                activities architecture, school-list logic, recommender strategy,
-                essay direction, and institutional fit. It defines the governing
-                argument of the file, the hierarchy of proof, and the sequence
-                of work that creates the greatest strategic gain.
+                A full diagnostic of the application as a single admissions argument.
+              </p>
+
+              <p>
+                The Strategy Diagnostic reads academic context, narrative spine,
+                positioning, activities architecture, school-list logic,
+                recommender strategy, essay direction, and fit pressure as one
+                system moving through a reader’s mind. It clarifies what the
+                application is proving, which evidence carries the most authority,
+                and how each component should be sequenced for maximum force.
               </p>
 
               <p class="output">
-                Strategy memo + margin notes + proof hierarchy + 4–12 week build sequence.
+                The output is a written strategy memo with margin notes and a
+                build sequence. The memo defines the file’s governing argument,
+                proof hierarchy, priority upgrades, and 4–12 week strategic path.
               </p>
+
             </div>
           </div>
 
 
+          <!-- STATEMENT ARCHITECTURE -->
+
           <div class="offer">
+
             <div>
               <h3>Statement Architecture</h3>
               <div class="price">$727</div>
             </div>
 
             <div class="offer-copy">
+
               <p>
-                Strategic development of a personal statement already in motion.
-                The work sharpens the central idea, opening position, evidence
-                sequence, structural spine, reader consequence, rhythm, and final
-                movement. Two substantive reads carry the statement through
-                architecture and revision while preserving the candidate’s voice.
+                A strategic architecture pass on the personal statement or
+                central admissions essay.
+              </p>
+
+              <p>
+                The statement is treated as the file’s central movement: a
+                controlled piece of evidence with consequence, rhythm, and proof.
+                The work clarifies the essay’s governing claim, opening position,
+                evidence sequence, paragraph pressure, reader consequence, and
+                final movement.
               </p>
 
               <p class="output">
-                Annotated draft + architecture memo + revision strategy + final structural read.
+                The output is an annotated draft, architecture memo, and revision
+                directives calibrated to the essay’s admissions function. The
+                candidate’s voice remains intact; the structure becomes sharper,
+                more deliberate, and more compelling.
               </p>
+
             </div>
           </div>
 
 
+          <!-- STATEMENT BUILD -->
+
           <div class="offer">
+
             <div>
               <h3>Statement Build</h3>
               <div class="price">$987</div>
             </div>
 
             <div class="offer-copy">
+
               <p>
-                Personal-statement development from raw material through final
-                architecture. The process begins with ideation, evidence excavation,
-                positioning, angle selection, and application fit, then develops
-                the statement through structure, proof sequence, narrative movement,
-                revision, and final reader calibration.
+                A complete personal-statement build from raw material through
+                final admissions architecture.
+              </p>
+
+              <p>
+                The work begins with ideation, evidence excavation, intellectual
+                and personal positioning, angle selection, and fit within the
+                larger application. From there, the statement develops through
+                governing claim, opening position, structural spine, evidence
+                sequence, paragraph movement, reader consequence, revision, and
+                final calibration.
               </p>
 
               <p class="output">
-                Ideation map + evidence inventory + angle strategy + essay architecture +
-                annotated development + final submission strategy.
+                The output is an ideation map, evidence inventory, angle strategy,
+                structural architecture, annotated development, revision direction,
+                and final reader calibration. The result is a statement built
+                around a clear admissions function, strong evidence, and
+                controlled movement.
               </p>
+
             </div>
           </div>
 
 
+          <!-- SUPPLEMENTS MAP -->
+
           <div class="offer">
+
             <div>
               <h3>Supplements Map</h3>
               <div class="price">$787</div>
             </div>
 
             <div class="offer-copy">
+
               <p>
-                School-specific strategy for up to seven supplements. Each prompt
-                receives a defined role inside the larger application:
-                intellectual fit, institutional reason, contribution, academic
-                direction, community signal, or proof expansion. Claims and
-                evidence are coordinated so every response strengthens the file
-                from a distinct angle.
+                School-specific strategy for up to seven supplements.
+              </p>
+
+              <p>
+                The Supplements Map assigns each response a distinct function
+                inside the larger file: intellectual fit, institutional reason,
+                contribution logic, academic direction, community signal, or
+                proof expansion. The work clarifies prompt strategy,
+                school-specific fit, claim distribution, essay-to-activity
+                alignment, and evidence placement across the supplement set.
               </p>
 
               <p class="output">
-                Prompt map + fit logic + claim distribution + annotated drafts +
-                final readiness guidance.
+                The output is a complete supplement map with annotated drafts,
+                margin notes, and readiness guidance. Each school receives a
+                precise reason to believe the candidate belongs in its room.
               </p>
+
             </div>
           </div>
 
 
+          <!-- MICROCOPY -->
+
           <div class="offer">
+
             <div>
               <h3>Microcopy</h3>
               <div class="price">$377</div>
             </div>
 
             <div class="offer-copy">
+
               <p>
-                Precision work across Activities, Honors, and Additional
-                Information. These compressed fields shape reader inference
-                quickly. The work strengthens role, artifact, metric, hierarchy,
-                context, compression, and proof density so the smallest sections
-                of the application carry meaningful evidence.
+                A precision review of Activities, Honors, and Additional Information.
+              </p>
+
+              <p>
+                Microcopy shapes reader inference in the smallest fields of the
+                application. This work strengthens role clarity, artifact, metric,
+                hierarchy, compression, honors framing, contextual explanation,
+                and proof density across the application’s compressed sections.
               </p>
 
               <p class="output">
-                Revised microcopy + strategic framing across Activities, Honors,
-                and contextual fields.
+                The output is revised microcopy with strategic framing notes.
+                The result is cleaner signal, stronger hierarchy, sharper evidence,
+                and tighter alignment between the compressed sections and the
+                larger file.
               </p>
+
             </div>
           </div>
 
 
+          <!-- RECOMMENDER MEMO -->
+
           <div class="offer">
+
             <div>
-              <h3>Recommender Strategy</h3>
+              <h3>Recommender Memo</h3>
               <div class="price">$377</div>
             </div>
 
             <div class="offer-copy">
+
               <p>
-                A coordinated strategy for recommendation letters. The work
-                identifies the strongest recommender pairing, the role each
-                letter should play, the evidence each writer can carry with
-                authority, and the relationship between Macro narrative and
-                Micro proof.
+                A strategic memo for recommendation-letter architecture.
+              </p>
+
+              <p>
+                Recommendation letters function as third-party evidence. The
+                Recommender Memo identifies the strongest recommender pairing,
+                the role each letter should play, and the evidence each writer
+                can carry with proximity and authority.
               </p>
 
               <p class="output">
-                Recommender strategy + evidence distribution + Evidence Brief architecture.
+                The output is a Macro × Micro recommender map, evidence
+                distribution, letter calibration, and Evidence Brief guidance.
+                The goal is a recommendation structure that verifies the file’s
+                strongest claims with specificity, credibility, and force.
               </p>
+
             </div>
           </div>
 
 
+          <!-- OXFORD / UK STATEMENT -->
+
           <div class="offer">
+
             <div>
               <h3>Oxford / UK Statement</h3>
               <div class="price">$466</div>
             </div>
 
             <div class="offer-copy">
+
               <p>
-                Strategic development for UCAS, Oxford, Cambridge, and UK
-                academic statements. The work develops subject command,
-                intellectual trajectory, reading, research, preparation,
-                and course fit into a disciplined academic argument.
+                A strategic review of the UCAS, Oxford, Cambridge, or UK
+                academic statement.
+              </p>
+
+              <p>
+                UK admissions writing is evaluated through academic seriousness:
+                subject command, intellectual trajectory, preparation, course fit,
+                reading, research, and disciplined engagement. This review
+                sharpens the statement’s governing argument, strengthens academic
+                proof, calibrates course fit, and gives the statement a cleaner
+                intellectual line.
               </p>
 
               <p class="output">
-                Annotated draft + structure memo + course-fit calibration + revision strategy.
+                The output is an annotated draft, structure memo, targeted
+                revision directives, and course-fit calibration. The result is a
+                statement that reads with authority, focus, and intellectual credibility.
               </p>
+
             </div>
           </div>
 
 
+          <!-- APPLICATION SPRINT -->
+
           <div class="offer">
+
             <div>
               <h3>Application Sprint</h3>
               <div class="price">$1,597</div>
             </div>
 
             <div class="offer-copy">
+
               <p>
-                A seven-day application architecture engagement for candidates
-                approaching submission. The Sprint coordinates the personal
-                statement, up to five supplements, activities, honors, microcopy,
-                school-specific positioning, and final submission strategy into
-                one coherent file.
+                A seven-day application lock-in for candidates approaching deadline.
+              </p>
+
+              <p>
+                The Sprint brings existing application materials into one
+                coherent admissions system. It covers personal statement
+                architecture, up to five supplements, microcopy, activities
+                alignment, claim distribution, school-specific fit, and final
+                submission readiness.
               </p>
 
               <p class="output">
-                Statement architecture + supplement strategy + microcopy refinement +
-                activity alignment + written strategy memos + submission-readiness audit.
+                The output is a set of written strategy memos, annotated documents,
+                margin notes, refined application components, and a final
+                readiness audit. The result is a file with clearer hierarchy,
+                stronger proof, and disciplined coherence under deadline pressure.
               </p>
+
             </div>
           </div>
 
 
+          <!-- FULL FILE ARCHITECTURE -->
+
           <div class="offer">
+
             <div>
               <h3>Full File Architecture</h3>
               <div class="price">$2,397</div>
             </div>
 
             <div class="offer-copy">
+
               <p>
-                A complete strategic build of the application as a reader will
-                encounter it. Academic record, activities, essays, recommendations,
-                school choices, and institutional fit are aligned around one
-                admissions argument. Identity pillars, statement spine, activity
-                architecture, recommender matrix, Evidence Briefs, supplements,
-                and final positioning develop as one system.
+                A full strategic build of the application file as a reader will
+                encounter it.
+              </p>
+
+              <p>
+                Full File Architecture aligns the candidate’s academic record,
+                activities, essays, recommendations, school list, and fit logic
+                into one admissions argument. The work establishes identity
+                pillars, personal statement spine, activities architecture,
+                recommender matrix, Evidence Briefs, supplement strategy,
+                school-specific fit map, and final readiness architecture.
               </p>
 
               <p class="output">
-                Written strategy letters + annotated materials + structured decisions
-                across the full application.
+                The output is a sequence of written strategy letters, margin
+                notes, and structured file decisions across the build. The result
+                is a file that reads with coherence, proof, restraint, and force.
               </p>
+
             </div>
           </div>
 
@@ -582,34 +761,51 @@
     </section>
 
 
+    <!-- BEGIN -->
+
     <section>
-      <div class="shell begin">
+      <div class="shell">
 
-        <div class="section-label">Begin</div>
+        <div class="begin">
 
-        <h2>Start with the question in front of you.</h2>
+          <div class="section-label">
+            Begin
+          </div>
 
-        <p>
-          Office Hours offers a simple starting point when the appropriate
-          engagement is still taking shape. Send one question about your file,
-          essays, activities, recommendations, school strategy, or another
-          admissions decision.
-        </p>
+          <h2>
+            Start with the question in front of you.
+          </h2>
 
-        <p>
-          For direct advisory inquiries and application materials:
-          <strong>hello@theivysanctum.com</strong>
-        </p>
+          <p>
+            Office Hours offers a simple starting point when the appropriate
+            engagement is still taking shape. Send one question about your file,
+            essays, activities, recommendations, school strategy, or another
+            admissions decision.
+          </p>
 
-        <a class="button" href="index.html#hours">
-          Office Hours
-        </a>
+          <p>
+            For direct advisory inquiries and application materials:
+            <a
+              class="email-link"
+              href="mailto:hello@theivysanctum.com"
+            >
+              hello@theivysanctum.com
+            </a>
+          </p>
+
+          <a class="button" href="index.html#hours">
+            Office Hours
+          </a>
+
+        </div>
 
       </div>
     </section>
 
   </main>
 
+
+  <!-- FOOTER -->
 
   <footer>
     <div class="shell footer-inner">
