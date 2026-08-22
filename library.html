@@ -449,6 +449,7 @@
     .footer-links {
       display: flex;
       gap: 17px;
+      flex-wrap: wrap;
     }
 
     .footer-links a {
@@ -635,8 +636,8 @@
           >
             <img
               class="cover"
-              src="recommendation-letter-memo.png"
-              alt="The Carry Sentence — provisional cover"
+              src="the-carry-sentence-cover.png"
+              alt="The Carry Sentence"
             >
           </button>
 
@@ -684,8 +685,8 @@
           >
             <img
               class="cover"
-              src="recommendation-letter-memo.png"
-              alt="The Activities Ledger — provisional cover"
+              src="the-activities-ledger-cover.png"
+              alt="The Activities Ledger"
             >
           </button>
 
@@ -729,11 +730,19 @@
 
   <!-- MODAL: BOOK 01 -->
 
-  <div class="modal" id="book1" onclick="closeFromBackdrop(event, 'book1')">
+  <div
+    class="modal"
+    id="book1"
+    onclick="closeFromBackdrop(event, 'book1')"
+  >
 
     <div class="modal-panel">
 
-      <button class="modal-close" onclick="closeBook('book1')" aria-label="Close">
+      <button
+        class="modal-close"
+        onclick="closeBook('book1')"
+        aria-label="Close"
+      >
         ×
       </button>
 
@@ -798,7 +807,10 @@
             First Edition · 2026 · Digital PDF · 108 pages
           </div>
 
-          <button class="modal-acquire" onclick="showAcquireNotice()">
+          <button
+            class="modal-acquire"
+            onclick="showAcquireNotice()"
+          >
             Acquire the Digital Edition — $47
           </button>
 
@@ -812,11 +824,19 @@
 
   <!-- MODAL: BOOK 02 -->
 
-  <div class="modal" id="book2" onclick="closeFromBackdrop(event, 'book2')">
+  <div
+    class="modal"
+    id="book2"
+    onclick="closeFromBackdrop(event, 'book2')"
+  >
 
     <div class="modal-panel">
 
-      <button class="modal-close" onclick="closeBook('book2')" aria-label="Close">
+      <button
+        class="modal-close"
+        onclick="closeBook('book2')"
+        aria-label="Close"
+      >
         ×
       </button>
 
@@ -825,8 +845,8 @@
         <div>
           <img
             class="modal-cover"
-            src="recommendation-letter-memo.png"
-            alt="The Carry Sentence — provisional cover"
+            src="the-carry-sentence-cover.png"
+            alt="The Carry Sentence"
           >
         </div>
 
@@ -880,7 +900,10 @@
             First Edition · 2026 · Digital PDF
           </div>
 
-          <button class="modal-acquire" onclick="showAcquireNotice()">
+          <button
+            class="modal-acquire"
+            onclick="showAcquireNotice()"
+          >
             Acquire the Digital Edition — $47
           </button>
 
@@ -894,11 +917,19 @@
 
   <!-- MODAL: BOOK 03 -->
 
-  <div class="modal" id="book3" onclick="closeFromBackdrop(event, 'book3')">
+  <div
+    class="modal"
+    id="book3"
+    onclick="closeFromBackdrop(event, 'book3')"
+  >
 
     <div class="modal-panel">
 
-      <button class="modal-close" onclick="closeBook('book3')" aria-label="Close">
+      <button
+        class="modal-close"
+        onclick="closeBook('book3')"
+        aria-label="Close"
+      >
         ×
       </button>
 
@@ -907,8 +938,8 @@
         <div>
           <img
             class="modal-cover"
-            src="recommendation-letter-memo.png"
-            alt="The Activities Ledger — provisional cover"
+            src="the-activities-ledger-cover.png"
+            alt="The Activities Ledger"
           >
         </div>
 
@@ -961,7 +992,10 @@
             First Edition · 2026 · Digital PDF
           </div>
 
-          <button class="modal-acquire" onclick="showAcquireNotice()">
+          <button
+            class="modal-acquire"
+            onclick="showAcquireNotice()"
+          >
             Acquire the Digital Edition — $47
           </button>
 
@@ -1066,5 +1100,4 @@
   </script>
 
 </body>
-</html>
 </html>
