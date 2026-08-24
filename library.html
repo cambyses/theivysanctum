@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>The Ivy Sanctum | Admissions Strategy</title>
+  <title>The Ivy Sanctum Library</title>
 
   <meta
     name="description"
-    content="Admissions strategy for selective applications. Reader-grade diagnostics, essay architecture, application strategy, and admissions instruments from The Ivy Sanctum."
+    content="The Ivy Sanctum Library — admissions instruments and private editions devoted to the architecture of selective admissions."
   >
 
   <link rel="icon" type="image/png" href="favicon.png">
@@ -17,10 +17,10 @@
     :root {
       --cream: #f4f0e6;
       --cream-soft: #f8f5ed;
-      --crimson: #6e1423;
-      --charcoal: #25221f;
-      --muted: #6b655e;
-      --line: rgba(37, 34, 31, 0.16);
+      --oxblood: #6e1423;
+      --charcoal: #24211f;
+      --muted: #736c64;
+      --line: rgba(36, 33, 31, 0.16);
     }
 
     * {
@@ -36,983 +36,159 @@
       background: var(--cream);
       color: var(--charcoal);
       font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.68;
+      line-height: 1.6;
     }
 
     a {
       color: inherit;
     }
 
-    button,
-    input,
-    textarea {
+    button {
       font: inherit;
     }
 
     .shell {
-      width: min(1120px, calc(100% - 48px));
+      width: min(1220px, calc(100% - 56px));
       margin: 0 auto;
     }
 
     /* --------------------------------
-       NAVIGATION
+       IMPRINT HEADER
     -------------------------------- */
 
-    nav {
-      padding: 28px 0;
-      border-bottom: 1px solid var(--line);
+    .library-header {
+      padding: 28px 0 36px;
     }
 
-    .nav-inner {
+    .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 28px;
+      gap: 30px;
     }
 
-    .wordmark {
-      color: var(--crimson);
-      font-size: 1.24rem;
+    .house-mark {
+      color: var(--oxblood);
+      font-size: 0.79rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
       text-decoration: none;
     }
 
-    .nav-links {
+    .quiet-nav {
       display: flex;
       gap: 24px;
-      font-size: 0.88rem;
+      font-size: 0.82rem;
     }
 
-    .nav-links a {
+    .quiet-nav a {
       text-decoration: none;
-    }
-
-    /* --------------------------------
-       HERO
-    -------------------------------- */
-
-    .hero {
-      padding: 110px 0 105px;
-    }
-
-    .eyebrow,
-    .section-label {
-      color: var(--crimson);
-      font-size: 0.76rem;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    h1 {
-      color: var(--crimson);
-      font-size: clamp(4rem, 9vw, 7.4rem);
-      line-height: 0.96;
-      font-weight: 400;
-      letter-spacing: -0.045em;
-      margin: 0 0 32px;
-    }
-
-    .hero-copy {
-      max-width: 870px;
-      font-size: clamp(1.4rem, 2.8vw, 2rem);
-      line-height: 1.45;
-      margin: 0 0 27px;
-    }
-
-    .hero-detail {
-      max-width: 850px;
       color: var(--muted);
-      font-size: 1.04rem;
-      margin: 0 0 34px;
     }
 
-    .hero-actions {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-      align-items: center;
+    .imprint {
+      text-align: center;
+      padding: 46px 0 25px;
     }
 
-    .primary-link,
-    .secondary-link {
-      text-decoration: none;
+    .imprint-house {
+      font-size: 0.72rem;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .imprint h1 {
+      margin: 0;
+      color: var(--oxblood);
+      font-size: clamp(3rem, 5.5vw, 5.5rem);
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: -0.035em;
+    }
+
+    .imprint-rule {
+      width: 150px;
+      height: 1px;
+      background: var(--oxblood);
+      margin: 24px auto 17px;
+    }
+
+    .imprint-subtitle {
+      margin: 0;
+      font-style: italic;
+      color: var(--muted);
       font-size: 0.95rem;
     }
 
-    .primary-link {
-      color: var(--crimson);
-      border-bottom: 1px solid var(--crimson);
-      padding-bottom: 4px;
-    }
-
-    .secondary-link {
-      border-bottom: 1px solid var(--charcoal);
-      padding-bottom: 4px;
-    }
-
     /* --------------------------------
-       GENERAL SECTIONS
+       CATALOGUE
     -------------------------------- */
 
-    section {
-      padding: 92px 0;
+    .catalogue {
       border-top: 1px solid var(--line);
+      padding: 36px 0 52px;
     }
 
-    h2 {
-      color: var(--crimson);
-      font-size: clamp(2.5rem, 5.5vw, 4.5rem);
-      font-weight: 400;
-      line-height: 1.07;
-      letter-spacing: -0.03em;
-      margin: 0 0 30px;
-      max-width: 950px;
-    }
-
-    .section-copy {
-      max-width: 860px;
-      font-size: 1.12rem;
-      margin: 0;
-    }
-
-    /* --------------------------------
-       APPROACH
-    -------------------------------- */
-
-    .signal-list {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 28px;
-      margin-top: 55px;
-    }
-
-    .signal h3 {
-      color: var(--crimson);
-      font-size: 1.06rem;
-      font-weight: 400;
-      margin: 0 0 9px;
-    }
-
-    .signal p {
+    .catalogue-intro {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 38px;
       color: var(--muted);
-      font-size: 0.93rem;
-      margin: 0;
+      font-size: 0.96rem;
     }
 
-    .method-line {
-      margin-top: 48px;
-      color: var(--crimson);
-      letter-spacing: 0.12em;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-    }
-
-    /* --------------------------------
-       OFFICE / ADVISORY
-    -------------------------------- */
-
-    .office-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-      gap: 70px;
-      align-items: end;
-    }
-
-    .office-detail {
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .office-detail p {
-      margin: 0 0 20px;
-    }
-
-    .starting-price {
-      color: var(--crimson);
-      font-size: 1.12rem;
-    }
-
-    /* --------------------------------
-       OFFICE HOURS FORM
-    -------------------------------- */
-
-    .hours-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 75px;
-      align-items: start;
-    }
-
-    .hours-copy p {
-      margin: 0 0 22px;
-      font-size: 1.05rem;
-    }
-
-    .complimentary {
-      color: var(--crimson);
-      font-size: 0.94rem;
-      margin-top: 28px;
-    }
-
-    form {
-      display: grid;
-      gap: 20px;
-    }
-
-    .field {
-      display: grid;
-      gap: 8px;
-    }
-
-    label {
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      border: 0;
-      border-bottom: 1px solid var(--line);
-      background: transparent;
-      color: var(--charcoal);
-      padding: 11px 2px;
-      border-radius: 0;
-      outline: none;
-    }
-
-    input:focus,
-    textarea:focus {
-      border-bottom-color: var(--crimson);
-    }
-
-    textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    .submit-button {
-      justify-self: start;
-      border: 1px solid var(--crimson);
-      background: transparent;
-      color: var(--crimson);
-      padding: 13px 20px;
-      cursor: pointer;
-      margin-top: 6px;
-    }
-
-    /* --------------------------------
-       LIBRARY PREVIEW
-    -------------------------------- */
-
-    .library-preview {
-      background: var(--cream-soft);
-    }
-
-    .library-heading {
-      max-width: 880px;
-      margin-bottom: 48px;
-    }
-
-    .library-heading p {
-      max-width: 780px;
-      font-size: 1.07rem;
-      margin: 0;
-    }
-
-    .mini-shelf {
+    .shelf {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 48px;
+      gap: 42px;
       align-items: start;
-      margin-bottom: 42px;
     }
 
-    .mini-book {
+    .book {
       text-align: center;
     }
 
-    .mini-cover-link {
-      display: inline-block;
-      text-decoration: none;
+    .cover-button {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
     }
 
-    .mini-cover {
+    .cover {
       display: block;
-      height: 210px;
       width: auto;
+      height: min(39vh, 355px);
       max-width: 100%;
-      margin: 0 auto;
       aspect-ratio: 2 / 3;
       object-fit: cover;
-      box-shadow: 0 7px 22px rgba(37, 34, 31, 0.08);
+
+      box-shadow:
+        0 10px 26px rgba(36, 33, 31, 0.11),
+        0 2px 7px rgba(36, 33, 31, 0.06);
+
       transition:
         transform 180ms ease,
         box-shadow 180ms ease;
     }
 
-    .mini-cover-link:hover .mini-cover {
+    .cover-button:hover .cover {
       transform: translateY(-3px);
-      box-shadow: 0 11px 28px rgba(37, 34, 31, 0.12);
+
+      box-shadow:
+        0 15px 34px rgba(36, 33, 31, 0.14),
+        0 3px 9px rgba(36, 33, 31, 0.07);
     }
 
-    .mini-meta {
-      max-width: 270px;
-      margin: 18px auto 0;
+    .book-meta {
+      max-width: 330px;
+      margin: 20px auto 0;
     }
 
-    .mini-number {
-      color: var(--crimson);
-      font-size: 0.64rem;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .mini-book h3 {
-      margin: 0;
-      font-size: 1.08rem;
-      font-weight: 400;
-      line-height: 1.25;
-    }
-
-    .library-entry {
-      display: inline-block;
-      color: var(--crimson);
-      text-decoration: none;
-      border-bottom: 1px solid var(--crimson);
-      padding-bottom: 4px;
-      font-size: 0.95rem;
-    }
-
-    /* --------------------------------
-       ORIGIN
-    -------------------------------- */
-
-    .origin-copy {
-      max-width: 850px;
-      font-size: 1.08rem;
-    }
-
-    .origin-copy p {
-      margin: 0 0 22px;
-    }
-
-    .origin-final {
-      color: var(--crimson);
-      font-size: 1.22rem;
-      margin-top: 35px;
-    }
-
-    /* --------------------------------
-       CONTACT
-    -------------------------------- */
-
-    .contact-block {
-      max-width: 740px;
-    }
-
-    .contact-block p {
-      font-size: 1.05rem;
-      margin: 0 0 18px;
-    }
-
-    .email-link {
-      color: var(--crimson);
-      text-decoration: none;
-      font-size: 1.12rem;
-    }
-
-    /* --------------------------------
-       FOOTER
-    -------------------------------- */
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 34px 0 48px;
-      color: var(--muted);
-      font-size: 0.84rem;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      text-decoration: none;
-    }
-
-    /* --------------------------------
-       MOBILE
-    -------------------------------- */
-
-    @media (max-width: 860px) {
-      .signal-list {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .office-grid,
-      .hours-grid {
-        grid-template-columns: 1fr;
-        gap: 42px;
-      }
-
-      .mini-shelf {
-        gap: 28px;
-      }
-
-      .mini-cover {
-        height: 180px;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .shell {
-        width: min(100% - 30px, 1120px);
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding: 82px 0;
-      }
-
-      section {
-        padding: 72px 0;
-      }
-
-      .signal-list {
-        grid-template-columns: 1fr;
-      }
-
-      .mini-shelf {
-        grid-template-columns: 1fr;
-        gap: 55px;
-      }
-
-      .mini-cover {
-        height: auto;
-        width: min(52vw, 240px);
-      }
-
-      .library-heading {
-        margin-bottom: 42px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- NAVIGATION -->
-
-  <nav>
-    <div class="shell nav-inner">
-
-      <a class="wordmark" href="index.html">
-        The Ivy Sanctum
-      </a>
-
-      <div class="nav-links">
-        <a href="#approach">Approach</a>
-        <a href="advisory.html">Advisory</a>
-        <a href="#hours">Office Hours</a>
-        <a href="library.html">Library</a>
-      </div>
-
-    </div>
-  </nav>
-
-
-  <main>
-
-    <!-- HERO -->
-
-    <div class="hero">
-      <div class="shell">
-
-        <div class="eyebrow">
-          Admissions Strategy
-        </div>
-
-        <h1>
-          The Ivy Sanctum
-        </h1>
-
-        <p class="hero-copy">
-          Admissions strategy for selective applications.
-        </p>
-
-        <p class="hero-detail">
-          Reader-grade diagnostics, essay architecture, application strategy,
-          and working instruments developed around how selective admissions
-          files are actually read.
-          <br><br>
-          Backed by more than 30 years combined experience inside Harvard's
-          schools, including firsthand experience reading files on a Harvard
-          graduate admissions committee.
-        </p>
-
-        <div class="hero-actions">
-
-          <a class="primary-link" href="#hours">
-            Ask a question →
-          </a>
-
-          <a class="secondary-link" href="advisory.html">
-            Explore Advisory →
-          </a>
-
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- APPROACH -->
-
-    <section id="approach">
-      <div class="shell">
-
-        <div class="section-label">
-          The Approach
-        </div>
-
-        <h2>
-          The application is read as one argument.
-        </h2>
-
-        <p class="section-copy">
-          Academics establish range. Activities create evidence. Essays give
-          that evidence meaning. Recommendations provide witness. School-specific
-          writing establishes placement.
-          <br><br>
-          Ivy Sanctum reads these signals together and builds strategy around
-          the file as a whole: what carries authority, where the strongest proof
-          sits, how the narrative should move, and which parts of the application
-          should do the heaviest work.
-        </p>
-
-        <div class="signal-list">
-
-          <div class="signal">
-            <h3>Academics</h3>
-            <p>
-              Range, rigor, trajectory, and intellectual context.
-            </p>
-          </div>
-
-          <div class="signal">
-            <h3>Activities</h3>
-            <p>
-              Evidence, hierarchy, initiative, artifact, and consequence.
-            </p>
-          </div>
-
-          <div class="signal">
-            <h3>Essays</h3>
-            <p>
-              Meaning, structure, positioning, and reader consequence.
-            </p>
-          </div>
-
-          <div class="signal">
-            <h3>Recommendations</h3>
-            <p>
-              Third-party witness, proximity, credibility, and proof.
-            </p>
-          </div>
-
-          <div class="signal">
-            <h3>Placement</h3>
-            <p>
-              Institutional fit, school-specific logic, and contribution.
-            </p>
-          </div>
-
-        </div>
-
-        <div class="method-line">
-          Read → Architect → Position
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- THE OFFICE -->
-
-    <section id="office">
-      <div class="shell">
-
-        <div class="office-grid">
-
-          <div>
-
-            <div class="section-label">
-              The Office
-            </div>
-
-            <h2>
-              Personal strategy for the application in front of you.
-            </h2>
-
-            <p class="section-copy">
-              Students arrive with a specific pressure point: an essay in
-              development, activities that need hierarchy, recommenders who
-              need direction, a school list requiring calibration, or a file
-              ready for a stronger governing strategy.
-            </p>
-
-          </div>
-
-          <div class="office-detail">
-
-            <p>
-              The Office works directly on those problems through written
-              diagnostics, essay and supplement architecture, activity framing,
-              recommender strategy, and full-file planning.
-            </p>
-
-            <p class="starting-price">
-              Engagements begin at $233.
-            </p>
-
-            <a class="primary-link" href="advisory.html">
-              View Advisory →
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- OFFICE HOURS -->
-
-    <section id="hours">
-      <div class="shell">
-
-        <div class="hours-grid">
-
-          <div class="hours-copy">
-
-            <div class="section-label">
-              Office Hours
-            </div>
-
-            <h2>
-              Have a question about your application?
-            </h2>
-
-            <p>
-              Send one question about your file, essays, activities,
-              recommendations, school strategy, transfer plans, or another
-              admissions decision you're working through.
-            </p>
-
-            <p>
-              Each question is read personally. A concise response is sent by
-              email, with a clear direction for the next move when deeper
-              analysis would add value.
-            </p>
-
-            <div class="complimentary">
-              Office Hours is complimentary.
-            </div>
-
-          </div>
-
-
-          <form
-            action="https://formspree.io/f/xljrooez"
-            method="POST"
-          >
-
-            <div class="field">
-              <label for="name">Name</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                required
-              >
-            </div>
-
-            <div class="field">
-              <label for="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-              >
-            </div>
-
-            <div class="field">
-              <label for="grade_year">Grade / year</label>
-              <input
-                id="grade_year"
-                name="grade_year"
-                type="text"
-                required
-              >
-            </div>
-
-            <div class="field">
-              <label for="target_schools">
-                Target schools — optional
-              </label>
-              <input
-                id="target_schools"
-                name="target_schools"
-                type="text"
-              >
-            </div>
-
-            <div class="field">
-              <label for="question">Your question</label>
-              <textarea
-                id="question"
-                name="question"
-                required
-              ></textarea>
-            </div>
-
-            <button class="submit-button" type="submit">
-              Send your question
-            </button>
-
-          </form>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- LIBRARY PREVIEW -->
-
-    <section class="library-preview" id="library">
-      <div class="shell">
-
-        <div class="library-heading">
-
-          <div class="section-label">
-            The Library
-          </div>
-
-          <h2>
-            Admissions instruments and private editions.
-          </h2>
-
-          <p>
-            A growing collection of focused editions drawn from Ivy Sanctum's
-            admissions methodology, each devoted to one consequential part of
-            the selective application.
-          </p>
-
-        </div>
-
-
-        <div class="mini-shelf">
-
-          <!-- LIBRARY NO. 01 -->
-
-          <article class="mini-book">
-
-            <a class="mini-cover-link" href="library.html">
-              <img
-                class="mini-cover"
-                src="recommendation-letter-memo.png"
-                alt="The Recommendation Letter Memo"
-              >
-            </a>
-
-            <div class="mini-meta">
-
-              <div class="mini-number">
-                Library No. 01
-              </div>
-
-              <h3>
-                The Recommendation Letter Memo
-              </h3>
-
-            </div>
-
-          </article>
-
-
-          <!-- LIBRARY NO. 02 -->
-
-          <article class="mini-book">
-
-            <a class="mini-cover-link" href="library.html">
-              <img
-                class="mini-cover"
-                src="the-carry-sentence-cover.png"
-                alt="The Carry Sentence"
-              >
-            </a>
-
-            <div class="mini-meta">
-
-              <div class="mini-number">
-                Library No. 02
-              </div>
-
-              <h3>
-                The Carry Sentence
-              </h3>
-
-            </div>
-
-          </article>
-
-
-          <!-- LIBRARY NO. 03 -->
-
-          <article class="mini-book">
-
-            <a class="mini-cover-link" href="library.html">
-              <img
-                class="mini-cover"
-                src="the-activities-ledger-cover.png"
-                alt="The Activities Ledger"
-              >
-            </a>
-
-            <div class="mini-meta">
-
-              <div class="mini-number">
-                Library No. 03
-              </div>
-
-              <h3>
-                The Activities Ledger
-              </h3>
-
-            </div>
-
-          </article>
-
-        </div>
-
-
-        <a class="library-entry" href="library.html">
-          Enter the Library →
-        </a>
-
-      </div>
-    </section>
-
-
-    <!-- ORIGIN -->
-
-    <section id="origin">
-      <div class="shell">
-
-        <div class="section-label">
-          The Origin
-        </div>
-
-        <h2>
-          The work begins with the read.
-        </h2>
-
-        <div class="origin-copy">
-
-          <p>
-            The Ivy Sanctum is an independent admissions research and advisory
-            practice. Our methodology draws on more than 30 years combined
-            experience inside Harvard's schools, including firsthand experience
-            reading files on a Harvard graduate admissions committee.
-          </p>
-
-          <p>
-            We work with a focused number of students each cycle, while the same
-            methodology continues to develop into frameworks, instruments, and
-            publications through The Ivy Sanctum Library.
-          </p>
-
-          <p class="origin-final">
-            Admissions is where the work begins.
-          </p>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section id="contact">
-      <div class="shell">
-
-        <div class="contact-block">
-
-          <div class="section-label">
-            Contact
-          </div>
-
-          <h2>
-            Correspondence.
-          </h2>
-
-          <p>
-            For advisory inquiries, application materials, or general
-            correspondence:
-          </p>
-
-          <a
-            class="email-link"
-            href="mailto:hello@theivysanctum.com"
-          >
-            hello@theivysanctum.com
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-    <div class="shell footer-inner">
-
-      <div>
-        © 2026 Ivy Sanctum LLC
-      </div>
-
-      <div class="footer-links">
-        <a href="advisory.html">Advisory</a>
-        <a href="library.html">Library</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="mailto:hello@theivysanctum.com">Contact</a>
-      </div>
-
-    </div>
-  </footer>
-
-</body>
-</html>
+    .library-number {
+      color: var(--oxblood
