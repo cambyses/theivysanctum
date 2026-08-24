@@ -54,9 +54,7 @@
       margin: 0 auto;
     }
 
-    /* --------------------------------
-       NAVIGATION
-    -------------------------------- */
+    /* NAVIGATION */
 
     nav {
       padding: 28px 0;
@@ -86,9 +84,7 @@
       text-decoration: none;
     }
 
-    /* --------------------------------
-       HERO
-    -------------------------------- */
+    /* HERO */
 
     .hero {
       padding: 110px 0 105px;
@@ -150,9 +146,7 @@
       padding-bottom: 4px;
     }
 
-    /* --------------------------------
-       GENERAL SECTIONS
-    -------------------------------- */
+    /* GENERAL SECTIONS */
 
     section {
       padding: 92px 0;
@@ -175,66 +169,7 @@
       margin: 0;
     }
 
-    /* --------------------------------
-       APPROACH
-    -------------------------------- */
-
-    .signal-list {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 28px;
-      margin-top: 55px;
-    }
-
-    .signal h3 {
-      color: var(--crimson);
-      font-size: 1.06rem;
-      font-weight: 400;
-      margin: 0 0 9px;
-    }
-
-    .signal p {
-      color: var(--muted);
-      font-size: 0.93rem;
-      margin: 0;
-    }
-
-    .method-line {
-      margin-top: 48px;
-      color: var(--crimson);
-      letter-spacing: 0.12em;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-    }
-
-    /* --------------------------------
-       OFFICE / ADVISORY
-    -------------------------------- */
-
-    .office-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-      gap: 70px;
-      align-items: end;
-    }
-
-    .office-detail {
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .office-detail p {
-      margin: 0 0 20px;
-    }
-
-    .starting-price {
-      color: var(--crimson);
-      font-size: 1.12rem;
-    }
-
-    /* --------------------------------
-       OFFICE HOURS FORM
-    -------------------------------- */
+    /* OFFICE HOURS */
 
     .hours-grid {
       display: grid;
@@ -301,9 +236,7 @@
       margin-top: 6px;
     }
 
-    /* --------------------------------
-       LIBRARY PREVIEW
-    -------------------------------- */
+    /* LIBRARY PREVIEW */
 
     .library-preview {
       background: var(--cream-soft);
@@ -332,9 +265,8 @@
       text-align: center;
     }
 
-    .mini-cover-link {
+    .mini-cover-wrap {
       display: inline-block;
-      text-decoration: none;
     }
 
     .mini-cover {
@@ -355,7 +287,7 @@
         box-shadow 180ms ease;
     }
 
-    .mini-cover-link:hover .mini-cover {
+    .mini-cover-wrap:hover .mini-cover {
       transform: translateY(-3px);
 
       box-shadow:
@@ -392,9 +324,55 @@
       font-size: 0.95rem;
     }
 
-    /* --------------------------------
-       ORIGIN
-    -------------------------------- */
+    /* THE OFFICE */
+
+    .office-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 70px;
+      align-items: end;
+    }
+
+    .office-detail {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .office-detail p {
+      margin: 0 0 24px;
+    }
+
+    /* APPROACH */
+
+    .signal-list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 28px;
+      margin-top: 55px;
+    }
+
+    .signal h3 {
+      color: var(--crimson);
+      font-size: 1.06rem;
+      font-weight: 400;
+      margin: 0 0 9px;
+    }
+
+    .signal p {
+      color: var(--muted);
+      font-size: 0.93rem;
+      margin: 0;
+    }
+
+    .method-line {
+      margin-top: 48px;
+      color: var(--crimson);
+      letter-spacing: 0.12em;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+    }
+
+    /* ORIGIN */
 
     .origin-copy {
       max-width: 850px;
@@ -411,9 +389,7 @@
       margin-top: 35px;
     }
 
-    /* --------------------------------
-       CONTACT
-    -------------------------------- */
+    /* CONTACT */
 
     .contact-block {
       max-width: 740px;
@@ -430,9 +406,7 @@
       font-size: 1.12rem;
     }
 
-    /* --------------------------------
-       FOOTER
-    -------------------------------- */
+    /* FOOTER */
 
     footer {
       border-top: 1px solid var(--line);
@@ -458,9 +432,7 @@
       text-decoration: none;
     }
 
-    /* --------------------------------
-       MOBILE
-    -------------------------------- */
+    /* MOBILE */
 
     @media (max-width: 860px) {
       .signal-list {
@@ -532,10 +504,10 @@
       </a>
 
       <div class="nav-links">
-        <a href="#approach">Approach</a>
-        <a href="advisory.html">Advisory</a>
         <a href="#hours">Office Hours</a>
         <a href="library.html">Library</a>
+        <a href="advisory.html">Advisory</a>
+        <a href="#approach">Approach</a>
       </div>
 
     </div>
@@ -566,7 +538,7 @@
           and working instruments developed around how selective admissions
           files are actually read.
           <br><br>
-          Backed by more than 30 years combined experience inside Harvard's
+          Drawing on more than 30 years of combined experience across Harvard’s
           schools, including firsthand experience reading files on a Harvard
           graduate admissions committee.
         </p>
@@ -585,127 +557,6 @@
 
       </div>
     </div>
-
-
-    <!-- APPROACH -->
-
-    <section id="approach">
-      <div class="shell">
-
-        <div class="section-label">
-          The Approach
-        </div>
-
-        <h2>
-          The application is read as one argument.
-        </h2>
-
-        <p class="section-copy">
-          Academics establish range. Activities create evidence. Essays give
-          that evidence meaning. Recommendations provide witness. School-specific
-          writing establishes placement.
-          <br><br>
-          Ivy Sanctum reads these signals together and builds strategy around
-          the file as a whole: what carries authority, where the strongest proof
-          sits, how the narrative should move, and which parts of the application
-          should do the heaviest work.
-        </p>
-
-        <div class="signal-list">
-
-          <div class="signal">
-            <h3>Academics</h3>
-            <p>
-              Range, rigor, trajectory, and intellectual context.
-            </p>
-          </div>
-
-          <div class="signal">
-            <h3>Activities</h3>
-            <p>
-              Evidence, hierarchy, initiative, artifact, and consequence.
-            </p>
-          </div>
-
-          <div class="signal">
-            <h3>Essays</h3>
-            <p>
-              Meaning, structure, positioning, and reader consequence.
-            </p>
-          </div>
-
-          <div class="signal">
-            <h3>Recommendations</h3>
-            <p>
-              Third-party witness, proximity, credibility, and proof.
-            </p>
-          </div>
-
-          <div class="signal">
-            <h3>Placement</h3>
-            <p>
-              Institutional fit, school-specific logic, and contribution.
-            </p>
-          </div>
-
-        </div>
-
-        <div class="method-line">
-          Read → Architect → Position
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- THE OFFICE -->
-
-    <section id="office">
-      <div class="shell">
-
-        <div class="office-grid">
-
-          <div>
-
-            <div class="section-label">
-              The Office
-            </div>
-
-            <h2>
-              Personal strategy for the application in front of you.
-            </h2>
-
-            <p class="section-copy">
-              Students arrive with a specific pressure point: an essay in
-              development, activities that need hierarchy, recommenders who
-              need direction, a school list requiring calibration, or a file
-              ready for a stronger governing strategy.
-            </p>
-
-          </div>
-
-          <div class="office-detail">
-
-            <p>
-              The Office works directly on those problems through written
-              diagnostics, essay and supplement architecture, activity framing,
-              recommender strategy, and full-file planning.
-            </p>
-
-            <p class="starting-price">
-              Engagements begin at $233.
-            </p>
-
-            <a class="primary-link" href="advisory.html">
-              View Advisory →
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
 
 
     <!-- OFFICE HOURS -->
@@ -728,12 +579,12 @@
             <p>
               Send one question about your file, essays, activities,
               recommendations, school strategy, transfer plans, or another
-              admissions decision you're working through.
+              admissions decision you’re working through.
             </p>
 
             <p>
-              Each question is read personally. A concise response is sent by
-              email, with a clear direction for the next move when deeper
+              Each question is reviewed directly. A concise response is sent
+              by email, with clear direction for the next move when deeper
               analysis would add value.
             </p>
 
@@ -827,7 +678,7 @@
           </h2>
 
           <p>
-            A growing collection of focused editions drawn from Ivy Sanctum's
+            A growing collection of focused editions drawn from Ivy Sanctum’s
             admissions methodology, each devoted to one consequential part of
             the selective application.
           </p>
@@ -841,13 +692,13 @@
 
           <article class="mini-book">
 
-            <a class="mini-cover-link" href="library.html">
+            <div class="mini-cover-wrap">
               <img
                 class="mini-cover"
                 src="recommendation-letter-memo.png"
                 alt="The Recommendation Letter Memo"
               >
-            </a>
+            </div>
 
             <div class="mini-meta">
 
@@ -868,13 +719,13 @@
 
           <article class="mini-book">
 
-            <a class="mini-cover-link" href="library.html">
+            <div class="mini-cover-wrap">
               <img
                 class="mini-cover"
                 src="the-carry-sentence-cover.png"
                 alt="The Carry Sentence"
               >
-            </a>
+            </div>
 
             <div class="mini-meta">
 
@@ -895,13 +746,13 @@
 
           <article class="mini-book">
 
-            <a class="mini-cover-link" href="library.html">
+            <div class="mini-cover-wrap">
               <img
                 class="mini-cover"
                 src="the-activities-ledger-cover.png"
                 alt="The Activities Ledger"
               >
-            </a>
+            </div>
 
             <div class="mini-meta">
 
@@ -928,6 +779,123 @@
     </section>
 
 
+    <!-- THE OFFICE -->
+
+    <section id="office">
+      <div class="shell">
+
+        <div class="office-grid">
+
+          <div>
+
+            <div class="section-label">
+              The Office
+            </div>
+
+            <h2>
+              Applied strategy for the application in front of you.
+            </h2>
+
+            <p class="section-copy">
+              Students usually arrive with a specific pressure point: an essay
+              in development, activities requiring stronger hierarchy,
+              recommenders requiring direction, a school list ready for
+              calibration, or a file ready for a clearer governing strategy.
+            </p>
+
+          </div>
+
+          <div class="office-detail">
+
+            <p>
+              The Office applies Ivy Sanctum’s methodology through written
+              diagnostics, essay and supplement architecture, activity framing,
+              recommender strategy, and full-file planning.
+            </p>
+
+            <a class="primary-link" href="advisory.html">
+              View Advisory →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- APPROACH -->
+
+    <section id="approach">
+      <div class="shell">
+
+        <div class="section-label">
+          The Approach
+        </div>
+
+        <h2>
+          The application is read as one argument.
+        </h2>
+
+        <p class="section-copy">
+          Academics establish range. Activities create evidence. Essays give
+          that evidence meaning. Recommendations provide witness.
+          School-specific writing establishes placement.
+          <br><br>
+          Ivy Sanctum reads these signals together and builds strategy around
+          the file as a whole: what carries authority, where the strongest proof
+          sits, how the narrative should move, and which parts of the application
+          should do the heaviest work.
+        </p>
+
+        <div class="signal-list">
+
+          <div class="signal">
+            <h3>Academics</h3>
+            <p>
+              Range, rigor, trajectory, and intellectual context.
+            </p>
+          </div>
+
+          <div class="signal">
+            <h3>Activities</h3>
+            <p>
+              Evidence, hierarchy, initiative, artifact, and consequence.
+            </p>
+          </div>
+
+          <div class="signal">
+            <h3>Essays</h3>
+            <p>
+              Meaning, structure, positioning, and reader consequence.
+            </p>
+          </div>
+
+          <div class="signal">
+            <h3>Recommendations</h3>
+            <p>
+              Third-party witness, proximity, credibility, and proof.
+            </p>
+          </div>
+
+          <div class="signal">
+            <h3>Placement</h3>
+            <p>
+              Institutional fit, school-specific logic, and contribution.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="method-line">
+          Read → Architect → Position
+        </div>
+
+      </div>
+    </section>
+
+
     <!-- ORIGIN -->
 
     <section id="origin">
@@ -938,22 +906,22 @@
         </div>
 
         <h2>
-          The work begins with the read.
+          Research, advisory, and a growing body of work.
         </h2>
 
         <div class="origin-copy">
 
           <p>
             The Ivy Sanctum is an independent admissions research and advisory
-            practice. Our methodology draws on more than 30 years combined
-            experience inside Harvard's schools, including firsthand experience
+            practice. Our methodology draws on more than 30 years of combined
+            experience across Harvard’s schools, including firsthand experience
             reading files on a Harvard graduate admissions committee.
           </p>
 
           <p>
-            We work with a focused number of students each cycle, while the same
-            methodology continues to develop into frameworks, instruments, and
-            publications through The Ivy Sanctum Library.
+            We apply this work through direct advisory engagements each cycle,
+            while developing the methodology into frameworks, instruments,
+            and publications.
           </p>
 
           <p class="origin-final">
