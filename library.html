@@ -52,9 +52,7 @@
       margin: 0 auto;
     }
 
-    /* --------------------------------
-       IMPRINT HEADER
-    -------------------------------- */
+    /* HEADER */
 
     .library-header {
       padding: 28px 0 36px;
@@ -122,19 +120,17 @@
       font-size: 0.95rem;
     }
 
-    /* --------------------------------
-       CATALOGUE
-    -------------------------------- */
+    /* CATALOGUE */
 
     .catalogue {
       border-top: 1px solid var(--line);
-      padding: 36px 0 52px;
+      padding: 36px 0 60px;
     }
 
     .catalogue-intro {
       text-align: center;
       max-width: 720px;
-      margin: 0 auto 38px;
+      margin: 0 auto 42px;
       color: var(--muted);
       font-size: 0.96rem;
     }
@@ -142,7 +138,7 @@
     .shelf {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 42px;
+      gap: 68px 42px;
       align-items: start;
     }
 
@@ -186,7 +182,7 @@
     }
 
     .book-meta {
-      max-width: 330px;
+      max-width: 340px;
       margin: 20px auto 0;
     }
 
@@ -247,9 +243,7 @@
       color: var(--oxblood);
     }
 
-    /* --------------------------------
-       BOOK MODALS
-    -------------------------------- */
+    /* MODALS */
 
     .modal {
       position: fixed;
@@ -384,9 +378,7 @@
       cursor: pointer;
     }
 
-    /* --------------------------------
-       ACQUISITION NOTICE
-    -------------------------------- */
+    /* NOTICE */
 
     .notice {
       position: fixed;
@@ -435,15 +427,13 @@
       font-size: 1.3rem;
     }
 
-    /* --------------------------------
-       FOOTER
-    -------------------------------- */
+    /* FOOTER */
 
     footer {
       border-top: 1px solid var(--line);
-      padding: 24px 0 34px;
+      padding: 34px 0 48px;
       color: var(--muted);
-      font-size: 0.76rem;
+      font-size: 0.84rem;
     }
 
     .footer-inner {
@@ -455,7 +445,7 @@
 
     .footer-links {
       display: flex;
-      gap: 17px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
@@ -463,9 +453,7 @@
       text-decoration: none;
     }
 
-    /* --------------------------------
-       MOBILE
-    -------------------------------- */
+    /* MOBILE */
 
     @media (max-width: 820px) {
       .shell {
@@ -478,10 +466,6 @@
 
       .quiet-nav {
         gap: 14px;
-      }
-
-      .imprint {
-        padding-top: 38px;
       }
 
       .shelf {
@@ -520,19 +504,13 @@
       .imprint h1 {
         font-size: 3.7rem;
       }
-
-      .catalogue-intro {
-        font-size: 0.9rem;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ======================================
-       LIBRARY HEADER
-  ======================================= -->
+  <!-- HEADER -->
 
   <header class="library-header">
     <div class="shell">
@@ -556,9 +534,7 @@
           The Ivy Sanctum
         </div>
 
-        <h1>
-          Library
-        </h1>
+        <h1>Library</h1>
 
         <div class="imprint-rule"></div>
 
@@ -572,9 +548,7 @@
   </header>
 
 
-  <!-- ======================================
-       CATALOGUE
-  ======================================= -->
+  <!-- CATALOGUE -->
 
   <main class="catalogue">
     <div class="shell">
@@ -588,37 +562,23 @@
 
       <div class="shelf">
 
-        <!-- ==================================
-             BOOK 01
-        =================================== -->
+        <!-- BOOK 01 -->
 
         <article class="book">
 
-          <button
-            class="cover-button"
-            type="button"
-            onclick="openBook('book1')"
-            aria-label="Open The Recommendation Letter Memo"
-          >
-
+          <button class="cover-button" type="button" onclick="openBook('book1')">
             <img
               class="cover"
               src="recommendation-letter-memo.png"
               alt="The Recommendation Letter Memo"
             >
-
           </button>
-
 
           <div class="book-meta">
 
-            <div class="library-number">
-              Library No. 01
-            </div>
+            <div class="library-number">Library No. 01</div>
 
-            <h2>
-              The Recommendation Letter Memo
-            </h2>
+            <h2>The Recommendation Letter Memo</h2>
 
             <p class="subtitle">
               How to Select the Right Witnesses for Your Application
@@ -629,23 +589,13 @@
             </div>
 
             <div class="book-actions">
-
-              <button
-                class="text-action"
-                type="button"
-                onclick="openBook('book1')"
-              >
+              <button class="text-action" type="button" onclick="openBook('book1')">
                 Open the volume →
               </button>
 
-              <button
-                class="acquire-action"
-                type="button"
-                onclick="showAcquireNotice()"
-              >
+              <button class="acquire-action" type="button" onclick="showAcquireNotice()">
                 Acquire the Edition
               </button>
-
             </div>
 
           </div>
@@ -653,37 +603,23 @@
         </article>
 
 
-        <!-- ==================================
-             BOOK 02
-        =================================== -->
+        <!-- BOOK 02 -->
 
         <article class="book">
 
-          <button
-            class="cover-button"
-            type="button"
-            onclick="openBook('book2')"
-            aria-label="Open The Carry Sentence"
-          >
-
+          <button class="cover-button" type="button" onclick="openBook('book2')">
             <img
               class="cover"
               src="the-carry-sentence-cover.png"
               alt="The Carry Sentence"
             >
-
           </button>
-
 
           <div class="book-meta">
 
-            <div class="library-number">
-              Library No. 02
-            </div>
+            <div class="library-number">Library No. 02</div>
 
-            <h2>
-              The Carry Sentence
-            </h2>
+            <h2>The Carry Sentence</h2>
 
             <p class="subtitle">
               How Admissions Committees Remember, Repeat, and Defend a File
@@ -694,23 +630,13 @@
             </div>
 
             <div class="book-actions">
-
-              <button
-                class="text-action"
-                type="button"
-                onclick="openBook('book2')"
-              >
+              <button class="text-action" type="button" onclick="openBook('book2')">
                 Open the volume →
               </button>
 
-              <button
-                class="acquire-action"
-                type="button"
-                onclick="showAcquireNotice()"
-              >
+              <button class="acquire-action" type="button" onclick="showAcquireNotice()">
                 Acquire the Edition
               </button>
-
             </div>
 
           </div>
@@ -718,37 +644,23 @@
         </article>
 
 
-        <!-- ==================================
-             BOOK 03
-        =================================== -->
+        <!-- BOOK 03 -->
 
         <article class="book">
 
-          <button
-            class="cover-button"
-            type="button"
-            onclick="openBook('book3')"
-            aria-label="Open The Activities Ledger"
-          >
-
+          <button class="cover-button" type="button" onclick="openBook('book3')">
             <img
               class="cover"
               src="the-activities-ledger-cover.png"
               alt="The Activities Ledger"
             >
-
           </button>
-
 
           <div class="book-meta">
 
-            <div class="library-number">
-              Library No. 03
-            </div>
+            <div class="library-number">Library No. 03</div>
 
-            <h2>
-              The Activities Ledger
-            </h2>
+            <h2>The Activities Ledger</h2>
 
             <p class="subtitle">
               How Extracurricular Work Becomes Proof in Elite Admissions
@@ -759,23 +671,136 @@
             </div>
 
             <div class="book-actions">
-
-              <button
-                class="text-action"
-                type="button"
-                onclick="openBook('book3')"
-              >
+              <button class="text-action" type="button" onclick="openBook('book3')">
                 Open the volume →
               </button>
 
-              <button
-                class="acquire-action"
-                type="button"
-                onclick="showAcquireNotice()"
-              >
+              <button class="acquire-action" type="button" onclick="showAcquireNotice()">
                 Acquire the Edition
               </button>
+            </div>
 
+          </div>
+
+        </article>
+
+
+        <!-- BOOK 04 -->
+
+        <article class="book">
+
+          <button class="cover-button" type="button" onclick="openBook('book4')">
+            <img
+              class="cover"
+              src="harvard-college-admissions-blueprint-cover.png"
+              alt="Harvard College Admissions Blueprint"
+            >
+          </button>
+
+          <div class="book-meta">
+
+            <div class="library-number">Library No. 04</div>
+
+            <h2>Harvard College Admissions Blueprint</h2>
+
+            <p class="subtitle">
+              A Methodical Application Strategy for Harvard College
+            </p>
+
+            <div class="edition">
+              Digital Edition · $47
+            </div>
+
+            <div class="book-actions">
+              <button class="text-action" type="button" onclick="openBook('book4')">
+                Open the volume →
+              </button>
+
+              <button class="acquire-action" type="button" onclick="showAcquireNotice()">
+                Acquire the Edition
+              </button>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- BOOK 05 -->
+
+        <article class="book">
+
+          <button class="cover-button" type="button" onclick="openBook('book5')">
+            <img
+              class="cover"
+              src="the-personal-statement-signature-cover.png"
+              alt="The Personal Statement Signature"
+            >
+          </button>
+
+          <div class="book-meta">
+
+            <div class="library-number">Library No. 05</div>
+
+            <h2>The Personal Statement Signature</h2>
+
+            <p class="subtitle">
+              How to Build the Sentence Every Admissions Reader Remembers
+            </p>
+
+            <div class="edition">
+              Digital Edition · $47
+            </div>
+
+            <div class="book-actions">
+              <button class="text-action" type="button" onclick="openBook('book5')">
+                Open the volume →
+              </button>
+
+              <button class="acquire-action" type="button" onclick="showAcquireNotice()">
+                Acquire the Edition
+              </button>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- BOOK 06 -->
+
+        <article class="book">
+
+          <button class="cover-button" type="button" onclick="openBook('book6')">
+            <img
+              class="cover"
+              src="the-extracurricular-activities-overhaul-cover.png"
+              alt="The Extracurricular Activities Overhaul"
+            >
+          </button>
+
+          <div class="book-meta">
+
+            <div class="library-number">Library No. 06</div>
+
+            <h2>The Extracurricular Activities Overhaul</h2>
+
+            <p class="subtitle">
+              How to Turn Common App Activities Into Proof Admissions Readers Believe
+            </p>
+
+            <div class="edition">
+              Digital Edition · $47
+            </div>
+
+            <div class="book-actions">
+              <button class="text-action" type="button" onclick="openBook('book6')">
+                Open the volume →
+              </button>
+
+              <button class="acquire-action" type="button" onclick="showAcquireNotice()">
+                Acquire the Edition
+              </button>
             </div>
 
           </div>
@@ -788,39 +813,25 @@
   </main>
 
 
-  <!-- ======================================
-       BOOK 01 MODAL
-  ======================================= -->
+  <!-- BOOK 01 MODAL -->
 
-  <div
-    class="modal"
-    id="book1"
-    onclick="closeFromBackdrop(event, 'book1')"
-  >
+  <div class="modal" id="book1" onclick="closeFromBackdrop(event, 'book1')">
 
     <div class="modal-panel">
 
-      <button
-        class="modal-close"
-        type="button"
-        onclick="closeBook('book1')"
-        aria-label="Close"
-      >
+      <button class="modal-close" type="button" onclick="closeBook('book1')">
         ×
       </button>
 
       <div class="modal-grid">
 
         <div>
-
           <img
             class="modal-cover"
             src="recommendation-letter-memo.png"
             alt="The Recommendation Letter Memo"
           >
-
         </div>
-
 
         <div>
 
@@ -835,7 +846,6 @@
           <p class="modal-subtitle">
             How to Select the Right Witnesses for Your Application
           </p>
-
 
           <div class="modal-copy">
 
@@ -855,9 +865,7 @@
 
           </div>
 
-
           <div class="modal-rule"></div>
-
 
           <div class="contents-label">
             Inside the Edition
@@ -872,17 +880,11 @@
             <li>Repairing gaps in third-party evidence</li>
           </ul>
 
-
           <div class="edition-data">
             First Edition · 2026 · Digital PDF · 108 pages
           </div>
 
-
-          <button
-            class="modal-acquire"
-            type="button"
-            onclick="showAcquireNotice()"
-          >
+          <button class="modal-acquire" type="button" onclick="showAcquireNotice()">
             Acquire the Digital Edition — $47
           </button>
 
@@ -895,40 +897,25 @@
   </div>
 
 
-  <!-- ======================================
-       BOOK 02 MODAL
-  ======================================= -->
+  <!-- BOOK 02 MODAL -->
 
-  <div
-    class="modal"
-    id="book2"
-    onclick="closeFromBackdrop(event, 'book2')"
-  >
+  <div class="modal" id="book2" onclick="closeFromBackdrop(event, 'book2')">
 
     <div class="modal-panel">
 
-      <button
-        class="modal-close"
-        type="button"
-        onclick="closeBook('book2')"
-        aria-label="Close"
-      >
+      <button class="modal-close" type="button" onclick="closeBook('book2')">
         ×
       </button>
-
 
       <div class="modal-grid">
 
         <div>
-
           <img
             class="modal-cover"
             src="the-carry-sentence-cover.png"
             alt="The Carry Sentence"
           >
-
         </div>
-
 
         <div>
 
@@ -943,7 +930,6 @@
           <p class="modal-subtitle">
             How Admissions Committees Remember, Repeat, and Defend a File
           </p>
-
 
           <div class="modal-copy">
 
@@ -962,9 +948,7 @@
 
           </div>
 
-
           <div class="modal-rule"></div>
-
 
           <div class="contents-label">
             Inside the Edition
@@ -979,17 +963,11 @@
             <li>Making the governing sentence survive committee</li>
           </ul>
 
-
           <div class="edition-data">
             First Edition · 2026 · Digital PDF
           </div>
 
-
-          <button
-            class="modal-acquire"
-            type="button"
-            onclick="showAcquireNotice()"
-          >
+          <button class="modal-acquire" type="button" onclick="showAcquireNotice()">
             Acquire the Digital Edition — $47
           </button>
 
@@ -1002,40 +980,25 @@
   </div>
 
 
-  <!-- ======================================
-       BOOK 03 MODAL
-  ======================================= -->
+  <!-- BOOK 03 MODAL -->
 
-  <div
-    class="modal"
-    id="book3"
-    onclick="closeFromBackdrop(event, 'book3')"
-  >
+  <div class="modal" id="book3" onclick="closeFromBackdrop(event, 'book3')">
 
     <div class="modal-panel">
 
-      <button
-        class="modal-close"
-        type="button"
-        onclick="closeBook('book3')"
-        aria-label="Close"
-      >
+      <button class="modal-close" type="button" onclick="closeBook('book3')">
         ×
       </button>
-
 
       <div class="modal-grid">
 
         <div>
-
           <img
             class="modal-cover"
             src="the-activities-ledger-cover.png"
             alt="The Activities Ledger"
           >
-
         </div>
-
 
         <div>
 
@@ -1050,7 +1013,6 @@
           <p class="modal-subtitle">
             How Extracurricular Work Becomes Proof in Elite Admissions
           </p>
-
 
           <div class="modal-copy">
 
@@ -1068,9 +1030,7 @@
 
           </div>
 
-
           <div class="modal-rule"></div>
-
 
           <div class="contents-label">
             Inside the Edition
@@ -1085,17 +1045,11 @@
             <li>Coordination with the larger application</li>
           </ul>
 
-
           <div class="edition-data">
             First Edition · 2026 · Digital PDF
           </div>
 
-
-          <button
-            class="modal-acquire"
-            type="button"
-            onclick="showAcquireNotice()"
-          >
+          <button class="modal-acquire" type="button" onclick="showAcquireNotice()">
             Acquire the Digital Edition — $47
           </button>
 
@@ -1108,9 +1062,256 @@
   </div>
 
 
-  <!-- ======================================
-       ACQUISITION NOTICE
-  ======================================= -->
+  <!-- BOOK 04 MODAL -->
+
+  <div class="modal" id="book4" onclick="closeFromBackdrop(event, 'book4')">
+
+    <div class="modal-panel">
+
+      <button class="modal-close" type="button" onclick="closeBook('book4')">
+        ×
+      </button>
+
+      <div class="modal-grid">
+
+        <div>
+          <img
+            class="modal-cover"
+            src="harvard-college-admissions-blueprint-cover.png"
+            alt="Harvard College Admissions Blueprint"
+          >
+        </div>
+
+        <div>
+
+          <div class="modal-number">
+            The Ivy Sanctum Library · No. 04
+          </div>
+
+          <h2 class="modal-title">
+            Harvard College Admissions Blueprint
+          </h2>
+
+          <p class="modal-subtitle">
+            A Methodical Application Strategy for Harvard College
+          </p>
+
+          <div class="modal-copy">
+
+            <p>
+              Harvard College asks the application to carry academic range,
+              intellectual direction, personal character, contribution, and
+              institutional placement through a tightly compressed file.
+            </p>
+
+            <p>
+              This independent strategy edition organizes that challenge into
+              a methodical architecture: the central argument of the file, the
+              evidence supporting it, the role of each application component,
+              and the sequence through which the final application gains force.
+            </p>
+
+          </div>
+
+          <div class="modal-rule"></div>
+
+          <div class="contents-label">
+            Inside the Edition
+          </div>
+
+          <ul class="themes">
+            <li>The governing argument of a Harvard College file</li>
+            <li>Academic positioning and intellectual direction</li>
+            <li>Activities as evidence of contribution</li>
+            <li>Personal statement architecture</li>
+            <li>Supplement strategy and institutional placement</li>
+            <li>Recommendation evidence and final-file coherence</li>
+          </ul>
+
+          <div class="edition-data">
+            First Edition · 2026 · Digital PDF
+          </div>
+
+          <button class="modal-acquire" type="button" onclick="showAcquireNotice()">
+            Acquire the Digital Edition — $47
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- BOOK 05 MODAL -->
+
+  <div class="modal" id="book5" onclick="closeFromBackdrop(event, 'book5')">
+
+    <div class="modal-panel">
+
+      <button class="modal-close" type="button" onclick="closeBook('book5')">
+        ×
+      </button>
+
+      <div class="modal-grid">
+
+        <div>
+          <img
+            class="modal-cover"
+            src="the-personal-statement-signature-cover.png"
+            alt="The Personal Statement Signature"
+          >
+        </div>
+
+        <div>
+
+          <div class="modal-number">
+            The Ivy Sanctum Library · No. 05
+          </div>
+
+          <h2 class="modal-title">
+            The Personal Statement Signature
+          </h2>
+
+          <p class="modal-subtitle">
+            How to Build the Sentence Every Admissions Reader Remembers
+          </p>
+
+          <div class="modal-copy">
+
+            <p>
+              A strong personal statement leaves the reader with a sentence:
+              a compact expression of character, direction, tension, and
+              intellectual identity that survives after the essay itself fades.
+            </p>
+
+            <p>
+              This edition develops the architecture behind that signature,
+              from evidence selection and governing claim to paragraph movement,
+              narrative pressure, language, and the final impression carried
+              into the larger application.
+            </p>
+
+          </div>
+
+          <div class="modal-rule"></div>
+
+          <div class="contents-label">
+            Inside the Edition
+          </div>
+
+          <ul class="themes">
+            <li>The governing claim of the personal statement</li>
+            <li>Evidence selection and narrative pressure</li>
+            <li>Opening position and paragraph movement</li>
+            <li>Voice, specificity, and memorable language</li>
+            <li>The signature sentence</li>
+            <li>Integration with the larger application</li>
+          </ul>
+
+          <div class="edition-data">
+            First Edition · 2026 · Digital PDF
+          </div>
+
+          <button class="modal-acquire" type="button" onclick="showAcquireNotice()">
+            Acquire the Digital Edition — $47
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- BOOK 06 MODAL -->
+
+  <div class="modal" id="book6" onclick="closeFromBackdrop(event, 'book6')">
+
+    <div class="modal-panel">
+
+      <button class="modal-close" type="button" onclick="closeBook('book6')">
+        ×
+      </button>
+
+      <div class="modal-grid">
+
+        <div>
+          <img
+            class="modal-cover"
+            src="the-extracurricular-activities-overhaul-cover.png"
+            alt="The Extracurricular Activities Overhaul"
+          >
+        </div>
+
+        <div>
+
+          <div class="modal-number">
+            The Ivy Sanctum Library · No. 06
+          </div>
+
+          <h2 class="modal-title">
+            The Extracurricular Activities Overhaul
+          </h2>
+
+          <p class="modal-subtitle">
+            How to Turn Common App Activities Into Proof Admissions Readers Believe
+          </p>
+
+          <div class="modal-copy">
+
+            <p>
+              The Common App activities section compresses years of work into
+              a small number of characters. Every word therefore carries a
+              burden: role, scale, artifact, initiative, progression, and consequence.
+            </p>
+
+            <p>
+              This edition develops a complete method for reconstructing the
+              activities list around proof. It focuses on hierarchy, evidence
+              density, description architecture, and the relationship between
+              extracurricular work and the larger admissions argument.
+            </p>
+
+          </div>
+
+          <div class="modal-rule"></div>
+
+          <div class="contents-label">
+            Inside the Edition
+          </div>
+
+          <ul class="themes">
+            <li>Activities as proof</li>
+            <li>Role, action, artifact, and consequence</li>
+            <li>Character-level compression</li>
+            <li>Metrics and evidence density</li>
+            <li>Ordering and hierarchy</li>
+            <li>Alignment with essays and application positioning</li>
+          </ul>
+
+          <div class="edition-data">
+            First Edition · 2026 · Digital PDF
+          </div>
+
+          <button class="modal-acquire" type="button" onclick="showAcquireNotice()">
+            Acquire the Digital Edition — $47
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ACQUISITION NOTICE -->
 
   <div
     class="notice"
@@ -1124,7 +1325,6 @@
         class="notice-close"
         type="button"
         onclick="hideAcquireNotice()"
-        aria-label="Close"
       >
         ×
       </button>
@@ -1134,7 +1334,7 @@
       </h3>
 
       <p>
-        The Ivy Sanctum Library is preparing its first digital editions for release.
+        The Ivy Sanctum Library is preparing its digital editions for release.
       </p>
 
     </div>
@@ -1142,12 +1342,9 @@
   </div>
 
 
-  <!-- ======================================
-       FOOTER
-  ======================================= -->
+  <!-- FOOTER -->
 
   <footer>
-
     <div class="shell footer-inner">
 
       <div>
@@ -1155,20 +1352,16 @@
       </div>
 
       <div class="footer-links">
-        <a href="/">The Sanctum</a>
         <a href="/advisory.html">Advisory</a>
+        <a href="/library.html">Library</a>
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
+        <a href="mailto:hello@theivysanctum.com">Contact</a>
       </div>
 
     </div>
-
   </footer>
 
-
-  <!-- ======================================
-       JAVASCRIPT
-  ======================================= -->
 
   <script>
 
