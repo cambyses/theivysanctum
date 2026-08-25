@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>The Ivy Sanctum | Admissions Strategy</title>
+  <title>The Ivy Sanctum Library</title>
 
   <meta
     name="description"
-    content="Admissions strategy for selective applications. Reader-grade diagnostics, essay architecture, application strategy, and admissions instruments from The Ivy Sanctum."
+    content="The Ivy Sanctum Library — admissions instruments and private editions devoted to the architecture of selective admissions."
   >
 
   <link rel="icon" type="image/png" href="favicon.png">
@@ -17,11 +17,10 @@
     :root {
       --cream: #f4f0e6;
       --cream-soft: #f8f5ed;
-      --crimson: #6e1423;
-      --charcoal: #25221f;
-      --muted: #6b655e;
-      --line: rgba(37, 34, 31, 0.16);
-      --line-strong: rgba(37, 34, 31, 0.24);
+      --oxblood: #6e1423;
+      --charcoal: #24211f;
+      --muted: #736c64;
+      --line: rgba(36, 33, 31, 0.16);
     }
 
     * {
@@ -37,391 +36,408 @@
       background: var(--cream);
       color: var(--charcoal);
       font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.68;
+      line-height: 1.6;
     }
 
     a {
       color: inherit;
     }
 
-    button,
-    input,
-    textarea {
+    button {
       font: inherit;
     }
 
     .shell {
-      width: min(1120px, calc(100% - 48px));
+      width: min(1220px, calc(100% - 56px));
       margin: 0 auto;
     }
 
-    /* NAVIGATION */
+    /* --------------------------------
+       HEADER
+    -------------------------------- */
 
-    nav {
-      padding: 28px 0;
-      border-bottom: 1px solid var(--line);
+    .library-header {
+      padding: 28px 0 36px;
     }
 
-    .nav-inner {
+    .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 28px;
+      gap: 30px;
     }
 
-    .wordmark {
-      color: var(--crimson);
-      font-size: 1.24rem;
+    .house-mark {
+      color: var(--oxblood);
+      font-size: 0.79rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
       text-decoration: none;
     }
 
-    .nav-links {
+    .quiet-nav {
       display: flex;
       gap: 24px;
-      font-size: 0.88rem;
+      font-size: 0.82rem;
     }
 
-    .nav-links a {
+    .quiet-nav a {
       text-decoration: none;
-    }
-
-    /* HERO */
-
-    .hero {
-      padding: 110px 0 105px;
-    }
-
-    .eyebrow,
-    .section-label {
-      color: var(--crimson);
-      font-size: 0.76rem;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    h1 {
-      color: var(--crimson);
-      font-size: clamp(4rem, 9vw, 7.4rem);
-      line-height: 0.96;
-      font-weight: 400;
-      letter-spacing: -0.045em;
-      margin: 0 0 32px;
-    }
-
-    .hero-copy {
-      max-width: 870px;
-      font-size: clamp(1.4rem, 2.8vw, 2rem);
-      line-height: 1.45;
-      margin: 0 0 27px;
-    }
-
-    .hero-detail {
-      max-width: 850px;
       color: var(--muted);
-      font-size: 1.04rem;
-      margin: 0 0 34px;
     }
 
-    .hero-actions {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-      align-items: center;
+    .imprint {
+      text-align: center;
+      padding: 46px 0 25px;
     }
 
-    .primary-link,
-    .secondary-link {
-      text-decoration: none;
+    .imprint-house {
+      font-size: 0.72rem;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .imprint h1 {
+      margin: 0;
+      color: var(--oxblood);
+      font-size: clamp(3rem, 5.5vw, 5.5rem);
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: -0.035em;
+    }
+
+    .imprint-rule {
+      width: 150px;
+      height: 1px;
+      background: var(--oxblood);
+      margin: 24px auto 17px;
+    }
+
+    .imprint-subtitle {
+      margin: 0;
+      font-style: italic;
+      color: var(--muted);
       font-size: 0.95rem;
     }
 
-    .primary-link {
-      color: var(--crimson);
-      border-bottom: 1px solid var(--crimson);
-      padding-bottom: 4px;
-    }
+    /* --------------------------------
+       CATALOGUE
+    -------------------------------- */
 
-    .secondary-link {
-      border-bottom: 1px solid var(--charcoal);
-      padding-bottom: 4px;
-    }
-
-    /* GENERAL */
-
-    section {
-      padding: 92px 0;
+    .catalogue {
       border-top: 1px solid var(--line);
+      padding: 36px 0 60px;
     }
 
-    h2 {
-      color: var(--crimson);
-      font-size: clamp(2.5rem, 5.5vw, 4.5rem);
-      font-weight: 400;
-      line-height: 1.07;
-      letter-spacing: -0.03em;
-      margin: 0 0 30px;
-      max-width: 950px;
-    }
-
-    .section-copy {
-      max-width: 860px;
-      font-size: 1.12rem;
-      margin: 0;
-    }
-
-    /* OFFICE HOURS */
-
-    .hours-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 75px;
-      align-items: start;
-    }
-
-    .hours-copy p {
-      margin: 0 0 22px;
-      font-size: 1.05rem;
-    }
-
-    .complimentary {
-      color: var(--crimson);
-      font-size: 0.94rem;
-      margin-top: 28px;
-    }
-
-    form {
-      display: grid;
-      gap: 20px;
-      border: 1px solid rgba(37, 34, 31, 0.11);
-      padding: 30px;
-
-      box-shadow:
-        inset 0 1px 2px rgba(37, 34, 31, 0.025),
-        0 8px 24px rgba(37, 34, 31, 0.035);
-    }
-
-    .field {
-      display: grid;
-      gap: 8px;
-    }
-
-    label {
-      font-size: 0.88rem;
+    .catalogue-intro {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 42px;
       color: var(--muted);
+      font-size: 0.96rem;
     }
 
-    input,
-    textarea {
-      width: 100%;
-      border: 0;
-      border-bottom: 1px solid var(--line-strong);
-      background: transparent;
-      color: var(--charcoal);
-      padding: 11px 2px;
-      border-radius: 0;
-      outline: none;
-    }
-
-    input:focus,
-    textarea:focus {
-      border-bottom-color: var(--crimson);
-    }
-
-    textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    .submit-button {
-      justify-self: start;
-      border: 1px solid var(--crimson);
-      background: transparent;
-      color: var(--crimson);
-      padding: 13px 20px;
-      cursor: pointer;
-      margin-top: 6px;
-    }
-
-    /* LIBRARY PREVIEW */
-
-    .library-preview {
-      background: var(--cream-soft);
-    }
-
-    .library-heading {
-      max-width: 880px;
-      margin-bottom: 48px;
-    }
-
-    .library-heading p {
-      max-width: 780px;
-      font-size: 1.07rem;
-      margin: 0;
-    }
-
-    .mini-shelf {
+    .shelf {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 58px 48px;
+      gap: 68px 42px;
       align-items: start;
-      margin-bottom: 48px;
     }
 
-    .mini-book {
+    .book {
       text-align: center;
     }
 
-    .mini-cover-wrap {
-      display: inline-block;
+    .cover-button {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
     }
 
-    .mini-cover {
+    .cover {
       display: block;
-      height: 210px;
       width: auto;
+      height: min(39vh, 355px);
       max-width: 100%;
-      margin: 0 auto;
       aspect-ratio: 2 / 3;
       object-fit: cover;
 
       box-shadow:
-        0 10px 24px rgba(37, 34, 31, 0.10),
-        0 2px 6px rgba(37, 34, 31, 0.06);
+        0 10px 26px rgba(36, 33, 31, 0.11),
+        0 2px 7px rgba(36, 33, 31, 0.06);
 
       transition:
         transform 180ms ease,
         box-shadow 180ms ease;
     }
 
-    .mini-cover-wrap:hover .mini-cover {
+    .cover-button:hover .cover {
       transform: translateY(-3px);
 
       box-shadow:
-        0 14px 30px rgba(37, 34, 31, 0.13),
-        0 3px 8px rgba(37, 34, 31, 0.07);
+        0 15px 34px rgba(36, 33, 31, 0.14),
+        0 3px 9px rgba(36, 33, 31, 0.07);
     }
 
-    .mini-meta {
-      max-width: 290px;
-      margin: 18px auto 0;
+    .book-meta {
+      max-width: 340px;
+      margin: 20px auto 0;
     }
 
-    .mini-number {
-      color: var(--crimson);
-      font-size: 0.64rem;
-      letter-spacing: 0.17em;
+    .library-number {
+      color: var(--oxblood);
+      font-size: 0.67rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
     }
 
-    .mini-book h3 {
+    .book h2 {
       margin: 0 0 7px;
-      font-size: 1.08rem;
+      font-size: 1.34rem;
       font-weight: 400;
-      line-height: 1.25;
+      line-height: 1.18;
+      color: var(--charcoal);
     }
 
-    .mini-subtitle {
-      margin: 0;
+    .subtitle {
+      margin: 0 auto 11px;
       color: var(--muted);
       font-style: italic;
-      font-size: 0.84rem;
+      font-size: 0.87rem;
       line-height: 1.45;
     }
 
-    .library-entry {
-      display: inline-block;
-      color: var(--crimson);
-      text-decoration: none;
-      border-bottom: 1px solid var(--crimson);
-      padding-bottom: 4px;
-      font-size: 0.95rem;
+    .edition {
+      color: var(--oxblood);
+      font-size: 0.82rem;
+      margin-bottom: 13px;
     }
 
-    /* OFFICE */
-
-    .office-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-      gap: 70px;
-      align-items: end;
+    .book-actions {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
     }
 
-    .office-detail {
+    .text-action,
+    .acquire-action {
+      border: 0;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .text-action {
+      color: var(--charcoal);
+    }
+
+    .acquire-action {
+      color: var(--oxblood);
+    }
+
+    /* --------------------------------
+       MODALS
+    -------------------------------- */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 34px;
+      background: rgba(24, 21, 19, 0.74);
+      z-index: 1000;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-panel {
+      position: relative;
+      width: min(1080px, 96vw);
+      max-height: 92vh;
+      overflow-y: auto;
+      background: var(--cream-soft);
+      border: 1px solid rgba(110, 20, 35, 0.18);
+      padding: 52px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      border: 0;
+      background: transparent;
       color: var(--muted);
+      font-size: 1.8rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: minmax(250px, 0.82fr) minmax(0, 1.18fr);
+      gap: 65px;
+      align-items: start;
+    }
+
+    .modal-cover {
+      display: block;
+      width: 100%;
+      max-width: 390px;
+      margin: 0 auto;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+
+      box-shadow:
+        0 12px 32px rgba(36, 33, 31, 0.13),
+        0 3px 8px rgba(36, 33, 31, 0.06);
+    }
+
+    .modal-number {
+      color: var(--oxblood);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .modal-title {
+      margin: 0 0 12px;
+      color: var(--oxblood);
+      font-size: clamp(2.4rem, 4vw, 4.3rem);
+      line-height: 0.98;
+      font-weight: 400;
+      letter-spacing: -0.035em;
+    }
+
+    .modal-subtitle {
+      margin: 0 0 27px;
+      font-size: 1.08rem;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .modal-copy {
       font-size: 1rem;
     }
 
-    .office-detail p {
-      margin: 0 0 24px;
-    }
-
-    /* APPROACH */
-
-    .signal-list {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 28px;
-      margin-top: 55px;
-    }
-
-    .signal h3 {
-      color: var(--crimson);
-      font-size: 1.06rem;
-      font-weight: 400;
-      margin: 0 0 9px;
-    }
-
-    .signal p {
-      color: var(--muted);
-      font-size: 0.93rem;
-      margin: 0;
-    }
-
-    .method-line {
-      margin-top: 48px;
-      color: var(--crimson);
-      letter-spacing: 0.12em;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-    }
-
-    /* ORIGIN */
-
-    .origin-copy {
-      max-width: 850px;
-      font-size: 1.08rem;
-    }
-
-    .origin-copy p {
-      margin: 0 0 22px;
-    }
-
-    .origin-final {
-      color: var(--crimson);
-      font-size: 1.22rem;
-      margin-top: 35px;
-    }
-
-    /* CONTACT */
-
-    .contact-block {
-      max-width: 740px;
-    }
-
-    .contact-block p {
-      font-size: 1.05rem;
+    .modal-copy p {
       margin: 0 0 18px;
     }
 
-    .email-link {
-      color: var(--crimson);
-      text-decoration: none;
-      font-size: 1.12rem;
+    .modal-rule {
+      height: 1px;
+      background: var(--line);
+      margin: 28px 0;
     }
 
-    /* FOOTER */
+    .contents-label {
+      color: var(--oxblood);
+      font-size: 0.68rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .themes {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .themes li {
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(36, 33, 31, 0.08);
+    }
+
+    .edition-data {
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-top: 24px;
+    }
+
+    .modal-acquire {
+      display: inline-block;
+      margin-top: 27px;
+      border: 1px solid var(--oxblood);
+      background: transparent;
+      color: var(--oxblood);
+      padding: 13px 19px;
+      cursor: pointer;
+    }
+
+    /* --------------------------------
+       ACQUISITION NOTICE
+    -------------------------------- */
+
+    .notice {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(24, 21, 19, 0.64);
+      z-index: 2000;
+    }
+
+    .notice.active {
+      display: flex;
+    }
+
+    .notice-box {
+      position: relative;
+      width: min(470px, 94vw);
+      background: var(--cream);
+      text-align: center;
+      padding: 48px 38px;
+      border-top: 2px solid var(--oxblood);
+    }
+
+    .notice-box h3 {
+      color: var(--oxblood);
+      font-size: 1.7rem;
+      font-weight: 400;
+      margin: 0 0 13px;
+    }
+
+    .notice-box p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .notice-close {
+      position: absolute;
+      top: 13px;
+      right: 17px;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 1.3rem;
+    }
+
+    /* --------------------------------
+       FOOTER
+    -------------------------------- */
 
     footer {
       border-top: 1px solid var(--line);
@@ -447,61 +463,58 @@
       text-decoration: none;
     }
 
-    /* MOBILE */
+    /* --------------------------------
+       MOBILE
+    -------------------------------- */
 
-    @media (max-width: 860px) {
-      .signal-list {
-        grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 820px) {
+      .shell {
+        width: min(100% - 30px, 1220px);
       }
 
-      .office-grid,
-      .hours-grid {
+      .topbar {
+        align-items: flex-start;
+      }
+
+      .quiet-nav {
+        gap: 14px;
+      }
+
+      .shelf {
         grid-template-columns: 1fr;
-        gap: 42px;
+        gap: 60px;
       }
 
-      .mini-shelf {
-        gap: 48px 28px;
+      .cover {
+        height: auto;
+        width: min(75vw, 340px);
       }
 
-      .mini-cover {
-        height: 180px;
+      .modal {
+        padding: 15px;
+      }
+
+      .modal-panel {
+        padding: 48px 25px 30px;
+      }
+
+      .modal-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .modal-cover {
+        max-width: 300px;
       }
     }
 
-    @media (max-width: 680px) {
-      .shell {
-        width: min(100% - 30px, 1120px);
-      }
-
-      .nav-links {
+    @media (max-width: 520px) {
+      .quiet-nav {
         display: none;
       }
 
-      .hero {
-        padding: 82px 0;
-      }
-
-      section {
-        padding: 72px 0;
-      }
-
-      form {
-        padding: 24px 20px;
-      }
-
-      .signal-list {
-        grid-template-columns: 1fr;
-      }
-
-      .mini-shelf {
-        grid-template-columns: 1fr;
-        gap: 55px;
-      }
-
-      .mini-cover {
-        height: auto;
-        width: min(52vw, 240px);
+      .imprint h1 {
+        font-size: 3.7rem;
       }
     }
   </style>
@@ -509,490 +522,1077 @@
 
 <body>
 
-  <nav>
-    <div class="shell nav-inner">
+  <!-- ======================================
+       HEADER
+  ======================================= -->
 
-      <a class="wordmark" href="/">
-        The Ivy Sanctum
-      </a>
+  <header class="library-header">
+    <div class="shell">
 
-      <div class="nav-links">
-        <a href="#hours">Office Hours</a>
-        <a href="/library.html">Library</a>
-        <a href="/advisory.html">Advisory</a>
-        <a href="#approach">Approach</a>
-      </div>
+      <div class="topbar">
 
-    </div>
-  </nav>
-
-
-  <main>
-
-    <!-- HERO -->
-
-    <div class="hero">
-      <div class="shell">
-
-        <div class="eyebrow">
-          Admissions Strategy
-        </div>
-
-        <h1>
+        <a class="house-mark" href="/">
           The Ivy Sanctum
-        </h1>
-
-        <p class="hero-copy">
-          Admissions strategy for selective applications.
-        </p>
-
-        <p class="hero-detail">
-          Reader-grade diagnostics, essay architecture, application strategy,
-          and working instruments developed around how selective admissions
-          files are actually read.
-          <br><br>
-          Drawing on more than 30 years of combined experience across Harvard’s
-          schools, including firsthand experience reading files on a Harvard
-          graduate admissions committee.
-        </p>
-
-        <div class="hero-actions">
-
-          <a class="primary-link" href="#hours">
-            Ask a question →
-          </a>
-
-          <a class="secondary-link" href="/advisory.html">
-            Explore Advisory →
-          </a>
-
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- OFFICE HOURS -->
-
-    <section id="hours">
-      <div class="shell">
-
-        <div class="hours-grid">
-
-          <div class="hours-copy">
-
-            <div class="section-label">
-              Office Hours
-            </div>
-
-            <h2>
-              Have a question about your application?
-            </h2>
-
-            <p>
-              Send one question about your file, essays, activities,
-              recommendations, school strategy, transfer plans, or another
-              admissions decision you’re working through.
-            </p>
-
-            <p>
-              Each question is reviewed directly. A concise response is sent
-              by email, with clear direction for the next move when deeper
-              analysis would add value.
-            </p>
-
-            <div class="complimentary">
-              Office Hours is complimentary.
-            </div>
-
-          </div>
-
-
-          <form
-            action="https://formspree.io/f/xljrooez"
-            method="POST"
-          >
-
-            <div class="field">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" required>
-            </div>
-
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" required>
-            </div>
-
-            <div class="field">
-              <label for="grade_year">Grade / year</label>
-              <input id="grade_year" name="grade_year" type="text" required>
-            </div>
-
-            <div class="field">
-              <label for="target_schools">
-                Target schools — optional
-              </label>
-              <input id="target_schools" name="target_schools" type="text">
-            </div>
-
-            <div class="field">
-              <label for="question">Your question</label>
-              <textarea id="question" name="question" required></textarea>
-            </div>
-
-            <button class="submit-button" type="submit">
-              Send your question
-            </button>
-
-          </form>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- LIBRARY -->
-
-    <section class="library-preview" id="library">
-      <div class="shell">
-
-        <div class="library-heading">
-
-          <div class="section-label">
-            The Library
-          </div>
-
-          <h2>
-            Admissions instruments and private editions.
-          </h2>
-
-          <p>
-            A growing collection of focused editions drawn from Ivy Sanctum’s
-            admissions methodology, each devoted to one consequential part of
-            the selective application.
-          </p>
-
-        </div>
-
-
-        <div class="mini-shelf">
-
-          <article class="mini-book">
-            <div class="mini-cover-wrap">
-              <img
-                class="mini-cover"
-                src="recommendation-letter-memo.png"
-                alt="The Recommendation Letter Memo"
-              >
-            </div>
-
-            <div class="mini-meta">
-              <div class="mini-number">Library No. 01</div>
-
-              <h3>The Recommendation Letter Memo</h3>
-
-              <p class="mini-subtitle">
-                How to Select the Right Witnesses for Your Application
-              </p>
-            </div>
-          </article>
-
-
-          <article class="mini-book">
-            <div class="mini-cover-wrap">
-              <img
-                class="mini-cover"
-                src="the-carry-sentence-cover.png"
-                alt="The Carry Sentence"
-              >
-            </div>
-
-            <div class="mini-meta">
-              <div class="mini-number">Library No. 02</div>
-
-              <h3>The Carry Sentence</h3>
-
-              <p class="mini-subtitle">
-                How Admissions Committees Remember, Repeat, and Defend a File
-              </p>
-            </div>
-          </article>
-
-
-          <article class="mini-book">
-            <div class="mini-cover-wrap">
-              <img
-                class="mini-cover"
-                src="the-activities-ledger-cover.png"
-                alt="The Activities Ledger"
-              >
-            </div>
-
-            <div class="mini-meta">
-              <div class="mini-number">Library No. 03</div>
-
-              <h3>The Activities Ledger</h3>
-
-              <p class="mini-subtitle">
-                How Extracurricular Work Becomes Proof in Elite Admissions
-              </p>
-            </div>
-          </article>
-
-
-          <article class="mini-book">
-            <div class="mini-cover-wrap">
-              <img
-                class="mini-cover"
-                src="harvard-college-admissions-blueprint-cover.png"
-                alt="Harvard College Admissions Blueprint"
-              >
-            </div>
-
-            <div class="mini-meta">
-              <div class="mini-number">Library No. 04</div>
-
-              <h3>Harvard College Admissions Blueprint</h3>
-
-              <p class="mini-subtitle">
-                A Methodical Application Strategy for Harvard College
-              </p>
-            </div>
-          </article>
-
-
-          <article class="mini-book">
-            <div class="mini-cover-wrap">
-              <img
-                class="mini-cover"
-                src="the-personal-statement-signature-cover.png"
-                alt="The Personal Statement Signature"
-              >
-            </div>
-
-            <div class="mini-meta">
-              <div class="mini-number">Library No. 05</div>
-
-              <h3>The Personal Statement Signature</h3>
-
-              <p class="mini-subtitle">
-                How to Build the Sentence Every Admissions Reader Remembers
-              </p>
-            </div>
-          </article>
-
-
-          <article class="mini-book">
-            <div class="mini-cover-wrap">
-              <img
-                class="mini-cover"
-                src="the-extracurricular-activities-overhaul-cover.png"
-                alt="The Extracurricular Activities Overhaul"
-              >
-            </div>
-
-            <div class="mini-meta">
-              <div class="mini-number">Library No. 06</div>
-
-              <h3>The Extracurricular Activities Overhaul</h3>
-
-              <p class="mini-subtitle">
-                How to Turn Common App Activities Into Proof Admissions Readers Believe
-              </p>
-            </div>
-          </article>
-
-        </div>
-
-
-        <a class="library-entry" href="/library.html">
-          Enter the Library →
         </a>
 
+        <nav class="quiet-nav">
+          <a href="/">The Sanctum</a>
+          <a href="/advisory.html">Advisory</a>
+        </nav>
+
       </div>
-    </section>
+
+      <div class="imprint">
+
+        <div class="imprint-house">
+          The Ivy Sanctum
+        </div>
+
+        <h1>Library</h1>
+
+        <div class="imprint-rule"></div>
+
+        <p class="imprint-subtitle">
+          Admissions Instruments and Private Editions
+        </p>
+
+      </div>
+
+    </div>
+  </header>
 
 
-    <!-- OFFICE -->
+  <!-- ======================================
+       CATALOGUE
+  ======================================= -->
 
-    <section id="office">
-      <div class="shell">
+  <main class="catalogue">
+    <div class="shell">
 
-        <div class="office-grid">
+      <p class="catalogue-intro">
+        A growing collection devoted to the architecture of selective admissions.
+        Each edition isolates one burden of the file and develops its governing
+        logic, evidence, and standard of proof.
+      </p>
 
-          <div>
 
-            <div class="section-label">
-              The Office
+      <div class="shelf">
+
+        <!-- ==================================
+             BOOK 01 — LIVE
+        =================================== -->
+
+        <article class="book">
+
+          <button
+            class="cover-button"
+            type="button"
+            onclick="openBook('book1')"
+            aria-label="Open The Recommendation Letter Memo"
+          >
+            <img
+              class="cover"
+              src="recommendation-letter-memo.png"
+              alt="The Recommendation Letter Memo"
+            >
+          </button>
+
+          <div class="book-meta">
+
+            <div class="library-number">
+              Library No. 01
             </div>
 
             <h2>
-              Applied strategy for the application in front of you.
+              The Recommendation Letter Memo
             </h2>
 
-            <p class="section-copy">
-              Students usually arrive with a specific pressure point: an essay
-              in development, activities requiring stronger hierarchy,
-              recommenders requiring direction, a school list ready for
-              calibration, or a file ready for a clearer governing strategy.
+            <p class="subtitle">
+              How to Select the Right Witnesses for Your Application
             </p>
 
+            <div class="edition">
+              Digital Edition · $37
+            </div>
+
+            <div class="book-actions">
+
+              <button
+                class="text-action"
+                type="button"
+                onclick="openBook('book1')"
+              >
+                Open the volume →
+              </button>
+
+              <button
+                class="acquire-action"
+                type="button"
+                onclick="window.location.href='https://buy.stripe.com/14AeVe2tL8K46gJ3LUdnW00'"
+              >
+                Acquire the Edition
+              </button>
+
+            </div>
+
           </div>
 
-          <div class="office-detail">
-
-            <p>
-              The Office applies Ivy Sanctum’s methodology through written
-              diagnostics, essay and supplement architecture, activity framing,
-              recommender strategy, and full-file planning.
-            </p>
-
-            <a class="primary-link" href="/advisory.html">
-              View Advisory →
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
+        </article>
 
 
-    <!-- APPROACH -->
+        <!-- ==================================
+             BOOK 02
+        =================================== -->
 
-    <section id="approach">
-      <div class="shell">
+        <article class="book">
 
-        <div class="section-label">
-          The Approach
-        </div>
-
-        <h2>
-          The application is read as one argument.
-        </h2>
-
-        <p class="section-copy">
-          Academics establish range. Activities create evidence. Essays give
-          that evidence meaning. Recommendations provide witness.
-          School-specific writing establishes placement.
-          <br><br>
-          Ivy Sanctum reads these signals together and builds strategy around
-          the file as a whole: what carries authority, where the strongest proof
-          sits, how the narrative should move, and which parts of the application
-          should do the heaviest work.
-        </p>
-
-        <div class="signal-list">
-
-          <div class="signal">
-            <h3>Academics</h3>
-            <p>Range, rigor, trajectory, and intellectual context.</p>
-          </div>
-
-          <div class="signal">
-            <h3>Activities</h3>
-            <p>Evidence, hierarchy, initiative, artifact, and consequence.</p>
-          </div>
-
-          <div class="signal">
-            <h3>Essays</h3>
-            <p>Meaning, structure, positioning, and reader consequence.</p>
-          </div>
-
-          <div class="signal">
-            <h3>Recommendations</h3>
-            <p>Third-party witness, proximity, credibility, and proof.</p>
-          </div>
-
-          <div class="signal">
-            <h3>Placement</h3>
-            <p>Institutional fit, school-specific logic, and contribution.</p>
-          </div>
-
-        </div>
-
-        <div class="method-line">
-          Read → Architect → Position
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ORIGIN -->
-
-    <section id="origin">
-      <div class="shell">
-
-        <div class="section-label">
-          The Origin
-        </div>
-
-        <h2>
-          Research, advisory, and a growing body of work.
-        </h2>
-
-        <div class="origin-copy">
-
-          <p>
-            The Ivy Sanctum is an independent admissions research and advisory
-            practice. Our methodology draws on more than 30 years of combined
-            experience across Harvard’s schools, including firsthand experience
-            reading files on a Harvard graduate admissions committee.
-          </p>
-
-          <p>
-            We apply this work through direct advisory engagements each cycle,
-            while developing the methodology into frameworks, instruments,
-            and publications.
-          </p>
-
-          <p class="origin-final">
-            Admissions is where the work begins.
-          </p>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section id="contact">
-      <div class="shell">
-
-        <div class="contact-block">
-
-          <div class="section-label">
-            Contact
-          </div>
-
-          <h2>
-            Correspondence.
-          </h2>
-
-          <p>
-            For advisory inquiries, application materials, or general
-            correspondence:
-          </p>
-
-          <a
-            class="email-link"
-            href="mailto:hello@theivysanctum.com"
+          <button
+            class="cover-button"
+            type="button"
+            onclick="openBook('book2')"
+            aria-label="Open The Carry Sentence"
           >
-            hello@theivysanctum.com
-          </a>
+            <img
+              class="cover"
+              src="the-carry-sentence-cover.png"
+              alt="The Carry Sentence"
+            >
+          </button>
 
-        </div>
+          <div class="book-meta">
+
+            <div class="library-number">
+              Library No. 02
+            </div>
+
+            <h2>
+              The Carry Sentence
+            </h2>
+
+            <p class="subtitle">
+              How Admissions Committees Remember, Repeat, and Defend a File
+            </p>
+
+            <div class="edition">
+              Digital Edition · Forthcoming
+            </div>
+
+            <div class="book-actions">
+
+              <button
+                class="text-action"
+                type="button"
+                onclick="openBook('book2')"
+              >
+                Open the volume →
+              </button>
+
+              <button
+                class="acquire-action"
+                type="button"
+                onclick="showAcquireNotice()"
+              >
+                Acquire the Edition
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ==================================
+             BOOK 03
+        =================================== -->
+
+        <article class="book">
+
+          <button
+            class="cover-button"
+            type="button"
+            onclick="openBook('book3')"
+            aria-label="Open The Activities Ledger"
+          >
+            <img
+              class="cover"
+              src="the-activities-ledger-cover.png"
+              alt="The Activities Ledger"
+            >
+          </button>
+
+          <div class="book-meta">
+
+            <div class="library-number">
+              Library No. 03
+            </div>
+
+            <h2>
+              The Activities Ledger
+            </h2>
+
+            <p class="subtitle">
+              How Extracurricular Work Becomes Proof in Elite Admissions
+            </p>
+
+            <div class="edition">
+              Digital Edition · Forthcoming
+            </div>
+
+            <div class="book-actions">
+
+              <button
+                class="text-action"
+                type="button"
+                onclick="openBook('book3')"
+              >
+                Open the volume →
+              </button>
+
+              <button
+                class="acquire-action"
+                type="button"
+                onclick="showAcquireNotice()"
+              >
+                Acquire the Edition
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ==================================
+             BOOK 04
+        =================================== -->
+
+        <article class="book">
+
+          <button
+            class="cover-button"
+            type="button"
+            onclick="openBook('book4')"
+            aria-label="Open Harvard College Admissions Blueprint"
+          >
+            <img
+              class="cover"
+              src="harvard-college-admissions-blueprint-cover.png"
+              alt="Harvard College Admissions Blueprint"
+            >
+          </button>
+
+          <div class="book-meta">
+
+            <div class="library-number">
+              Library No. 04
+            </div>
+
+            <h2>
+              Harvard College Admissions Blueprint
+            </h2>
+
+            <p class="subtitle">
+              A Methodical Application Strategy for Harvard College
+            </p>
+
+            <div class="edition">
+              Digital Edition · Forthcoming
+            </div>
+
+            <div class="book-actions">
+
+              <button
+                class="text-action"
+                type="button"
+                onclick="openBook('book4')"
+              >
+                Open the volume →
+              </button>
+
+              <button
+                class="acquire-action"
+                type="button"
+                onclick="showAcquireNotice()"
+              >
+                Acquire the Edition
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ==================================
+             BOOK 05
+        =================================== -->
+
+        <article class="book">
+
+          <button
+            class="cover-button"
+            type="button"
+            onclick="openBook('book5')"
+            aria-label="Open The Personal Statement Signature"
+          >
+            <img
+              class="cover"
+              src="the-personal-statement-signature-cover.png"
+              alt="The Personal Statement Signature"
+            >
+          </button>
+
+          <div class="book-meta">
+
+            <div class="library-number">
+              Library No. 05
+            </div>
+
+            <h2>
+              The Personal Statement Signature
+            </h2>
+
+            <p class="subtitle">
+              How to Build the Sentence Every Admissions Reader Remembers
+            </p>
+
+            <div class="edition">
+              Digital Edition · Forthcoming
+            </div>
+
+            <div class="book-actions">
+
+              <button
+                class="text-action"
+                type="button"
+                onclick="openBook('book5')"
+              >
+                Open the volume →
+              </button>
+
+              <button
+                class="acquire-action"
+                type="button"
+                onclick="showAcquireNotice()"
+              >
+                Acquire the Edition
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ==================================
+             BOOK 06
+        =================================== -->
+
+        <article class="book">
+
+          <button
+            class="cover-button"
+            type="button"
+            onclick="openBook('book6')"
+            aria-label="Open The Extracurricular Activities Overhaul"
+          >
+            <img
+              class="cover"
+              src="the-extracurricular-activities-overhaul-cover.png"
+              alt="The Extracurricular Activities Overhaul"
+            >
+          </button>
+
+          <div class="book-meta">
+
+            <div class="library-number">
+              Library No. 06
+            </div>
+
+            <h2>
+              The Extracurricular Activities Overhaul
+            </h2>
+
+            <p class="subtitle">
+              How to Turn Common App Activities Into Proof Admissions Readers Believe
+            </p>
+
+            <div class="edition">
+              Digital Edition · Forthcoming
+            </div>
+
+            <div class="book-actions">
+
+              <button
+                class="text-action"
+                type="button"
+                onclick="openBook('book6')"
+              >
+                Open the volume →
+              </button>
+
+              <button
+                class="acquire-action"
+                type="button"
+                onclick="showAcquireNotice()"
+              >
+                Acquire the Edition
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
 
       </div>
-    </section>
 
+    </div>
   </main>
 
+
+  <!-- ======================================
+       BOOK 01 MODAL — LIVE
+  ======================================= -->
+
+  <div
+    class="modal"
+    id="book1"
+    onclick="closeFromBackdrop(event, 'book1')"
+  >
+
+    <div class="modal-panel">
+
+      <button
+        class="modal-close"
+        type="button"
+        onclick="closeBook('book1')"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <div class="modal-grid">
+
+        <div>
+
+          <img
+            class="modal-cover"
+            src="recommendation-letter-memo.png"
+            alt="The Recommendation Letter Memo"
+          >
+
+        </div>
+
+        <div>
+
+          <div class="modal-number">
+            The Ivy Sanctum Library · No. 01
+          </div>
+
+          <h2 class="modal-title">
+            The Recommendation Letter Memo
+          </h2>
+
+          <p class="modal-subtitle">
+            How to Select the Right Witnesses for Your Application
+          </p>
+
+          <div class="modal-copy">
+
+            <p>
+              Recommendation letters are third-party evidence. Their authority
+              comes from proximity: who has observed the applicant closely,
+              which claims that person can verify, and what evidence they can
+              carry into the file with credibility.
+            </p>
+
+            <p>
+              This edition develops a method for selecting recommenders,
+              distributing evidence across letters, identifying the claims that
+              require witness, and giving each recommendation a distinct role
+              inside the larger admissions argument.
+            </p>
+
+          </div>
+
+          <div class="modal-rule"></div>
+
+          <div class="contents-label">
+            Inside the Edition
+          </div>
+
+          <ul class="themes">
+            <li>Witness selection and proximity</li>
+            <li>Prestige, credibility, and direct observation</li>
+            <li>Macro narrative and Micro proof</li>
+            <li>Evidence distribution across recommenders</li>
+            <li>Recommendation timing and coordination</li>
+            <li>Repairing gaps in third-party evidence</li>
+          </ul>
+
+          <div class="edition-data">
+            First Edition · 2026 · Digital PDF · 108 pages
+          </div>
+
+          <button
+            class="modal-acquire"
+            type="button"
+            onclick="window.location.href='https://buy.stripe.com/14AeVe2tL8K46gJ3LUdnW00'"
+          >
+            Acquire the Digital Edition — $37
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================
+       BOOK 02 MODAL
+  ======================================= -->
+
+  <div
+    class="modal"
+    id="book2"
+    onclick="closeFromBackdrop(event, 'book2')"
+  >
+
+    <div class="modal-panel">
+
+      <button
+        class="modal-close"
+        type="button"
+        onclick="closeBook('book2')"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <div class="modal-grid">
+
+        <div>
+
+          <img
+            class="modal-cover"
+            src="the-carry-sentence-cover.png"
+            alt="The Carry Sentence"
+          >
+
+        </div>
+
+        <div>
+
+          <div class="modal-number">
+            The Ivy Sanctum Library · No. 02
+          </div>
+
+          <h2 class="modal-title">
+            The Carry Sentence
+          </h2>
+
+          <p class="modal-subtitle">
+            How Admissions Committees Remember, Repeat, and Defend a File
+          </p>
+
+          <div class="modal-copy">
+
+            <p>
+              Selective admissions depends partly on compression. A complex
+              application eventually becomes something another reader can
+              remember, repeat, and defend.
+            </p>
+
+            <p>
+              The Carry Sentence develops the logic behind that compression:
+              how an application earns a governing sentence, how the sentence
+              accumulates evidence across the file, and how memorable positioning
+              survives the movement from individual reading into committee.
+            </p>
+
+          </div>
+
+          <div class="modal-rule"></div>
+
+          <div class="contents-label">
+            Inside the Edition
+          </div>
+
+          <ul class="themes">
+            <li>The file as a carried argument</li>
+            <li>Memory, compression, and reader language</li>
+            <li>The elements of a durable carry sentence</li>
+            <li>Coordination across essays and activities</li>
+            <li>Recommendation support and external proof</li>
+            <li>Making the governing sentence survive committee</li>
+          </ul>
+
+          <div class="edition-data">
+            First Edition · 2026 · Digital PDF
+          </div>
+
+          <button
+            class="modal-acquire"
+            type="button"
+            onclick="showAcquireNotice()"
+          >
+            Edition Forthcoming
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================
+       BOOK 03 MODAL
+  ======================================= -->
+
+  <div
+    class="modal"
+    id="book3"
+    onclick="closeFromBackdrop(event, 'book3')"
+  >
+
+    <div class="modal-panel">
+
+      <button
+        class="modal-close"
+        type="button"
+        onclick="closeBook('book3')"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <div class="modal-grid">
+
+        <div>
+
+          <img
+            class="modal-cover"
+            src="the-activities-ledger-cover.png"
+            alt="The Activities Ledger"
+          >
+
+        </div>
+
+        <div>
+
+          <div class="modal-number">
+            The Ivy Sanctum Library · No. 03
+          </div>
+
+          <h2 class="modal-title">
+            The Activities Ledger
+          </h2>
+
+          <p class="modal-subtitle">
+            How Extracurricular Work Becomes Proof in Elite Admissions
+          </p>
+
+          <div class="modal-copy">
+
+            <p>
+              The activity list is a record of what the applicant chose to
+              build, lead, produce, change, study, or sustain outside the classroom.
+            </p>
+
+            <p>
+              The Activities Ledger develops a method for converting that work
+              into readable evidence through role, artifact, metric, progression,
+              hierarchy, and consequence. The result is an extracurricular record
+              with clearer signal and stronger proof.
+            </p>
+
+          </div>
+
+          <div class="modal-rule"></div>
+
+          <div class="contents-label">
+            Inside the Edition
+          </div>
+
+          <ul class="themes">
+            <li>Activity as evidence</li>
+            <li>Role, artifact, and consequence</li>
+            <li>Metrics and proof density</li>
+            <li>Hierarchy across the activities list</li>
+            <li>Progression and sustained commitment</li>
+            <li>Coordination with the larger application</li>
+          </ul>
+
+          <div class="edition-data">
+            First Edition · 2026 · Digital PDF
+          </div>
+
+          <button
+            class="modal-acquire"
+            type="button"
+            onclick="showAcquireNotice()"
+          >
+            Edition Forthcoming
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================
+       BOOK 04 MODAL
+  ======================================= -->
+
+  <div
+    class="modal"
+    id="book4"
+    onclick="closeFromBackdrop(event, 'book4')"
+  >
+
+    <div class="modal-panel">
+
+      <button
+        class="modal-close"
+        type="button"
+        onclick="closeBook('book4')"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <div class="modal-grid">
+
+        <div>
+
+          <img
+            class="modal-cover"
+            src="harvard-college-admissions-blueprint-cover.png"
+            alt="Harvard College Admissions Blueprint"
+          >
+
+        </div>
+
+        <div>
+
+          <div class="modal-number">
+            The Ivy Sanctum Library · No. 04
+          </div>
+
+          <h2 class="modal-title">
+            Harvard College Admissions Blueprint
+          </h2>
+
+          <p class="modal-subtitle">
+            A Methodical Application Strategy for Harvard College
+          </p>
+
+          <div class="modal-copy">
+
+            <p>
+              Harvard College asks the application to carry academic range,
+              intellectual direction, personal character, contribution, and
+              institutional placement through a tightly compressed file.
+            </p>
+
+            <p>
+              This independent strategy edition organizes that challenge into
+              a methodical architecture: the central argument of the file, the
+              evidence supporting it, the role of each application component,
+              and the sequence through which the final application gains force.
+            </p>
+
+          </div>
+
+          <div class="modal-rule"></div>
+
+          <div class="contents-label">
+            Inside the Edition
+          </div>
+
+          <ul class="themes">
+            <li>The governing argument of a Harvard College file</li>
+            <li>Academic positioning and intellectual direction</li>
+            <li>Activities as evidence of contribution</li>
+            <li>Personal statement architecture</li>
+            <li>Supplement strategy and institutional placement</li>
+            <li>Recommendation evidence and final-file coherence</li>
+          </ul>
+
+          <div class="edition-data">
+            First Edition · 2026 · Digital PDF
+          </div>
+
+          <button
+            class="modal-acquire"
+            type="button"
+            onclick="showAcquireNotice()"
+          >
+            Edition Forthcoming
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================
+       BOOK 05 MODAL
+  ======================================= -->
+
+  <div
+    class="modal"
+    id="book5"
+    onclick="closeFromBackdrop(event, 'book5')"
+  >
+
+    <div class="modal-panel">
+
+      <button
+        class="modal-close"
+        type="button"
+        onclick="closeBook('book5')"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <div class="modal-grid">
+
+        <div>
+
+          <img
+            class="modal-cover"
+            src="the-personal-statement-signature-cover.png"
+            alt="The Personal Statement Signature"
+          >
+
+        </div>
+
+        <div>
+
+          <div class="modal-number">
+            The Ivy Sanctum Library · No. 05
+          </div>
+
+          <h2 class="modal-title">
+            The Personal Statement Signature
+          </h2>
+
+          <p class="modal-subtitle">
+            How to Build the Sentence Every Admissions Reader Remembers
+          </p>
+
+          <div class="modal-copy">
+
+            <p>
+              A strong personal statement leaves the reader with a sentence:
+              a compact expression of character, direction, tension, and
+              intellectual identity that survives after the essay itself fades.
+            </p>
+
+            <p>
+              This edition develops the architecture behind that signature,
+              from evidence selection and governing claim to paragraph movement,
+              narrative pressure, language, and the final impression carried
+              into the larger application.
+            </p>
+
+          </div>
+
+          <div class="modal-rule"></div>
+
+          <div class="contents-label">
+            Inside the Edition
+          </div>
+
+          <ul class="themes">
+            <li>The governing claim of the personal statement</li>
+            <li>Evidence selection and narrative pressure</li>
+            <li>Opening position and paragraph movement</li>
+            <li>Voice, specificity, and memorable language</li>
+            <li>The signature sentence</li>
+            <li>Integration with the larger application</li>
+          </ul>
+
+          <div class="edition-data">
+            First Edition · 2026 · Digital PDF
+          </div>
+
+          <button
+            class="modal-acquire"
+            type="button"
+            onclick="showAcquireNotice()"
+          >
+            Edition Forthcoming
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================
+       BOOK 06 MODAL
+  ======================================= -->
+
+  <div
+    class="modal"
+    id="book6"
+    onclick="closeFromBackdrop(event, 'book6')"
+  >
+
+    <div class="modal-panel">
+
+      <button
+        class="modal-close"
+        type="button"
+        onclick="closeBook('book6')"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <div class="modal-grid">
+
+        <div>
+
+          <img
+            class="modal-cover"
+            src="the-extracurricular-activities-overhaul-cover.png"
+            alt="The Extracurricular Activities Overhaul"
+          >
+
+        </div>
+
+        <div>
+
+          <div class="modal-number">
+            The Ivy Sanctum Library · No. 06
+          </div>
+
+          <h2 class="modal-title">
+            The Extracurricular Activities Overhaul
+          </h2>
+
+          <p class="modal-subtitle">
+            How to Turn Common App Activities Into Proof Admissions Readers Believe
+          </p>
+
+          <div class="modal-copy">
+
+            <p>
+              The Common App activities section compresses years of work into
+              a small number of characters. Every word therefore carries a
+              burden: role, scale, artifact, initiative, progression, and consequence.
+            </p>
+
+            <p>
+              This edition develops a complete method for reconstructing the
+              activities list around proof. It focuses on hierarchy, evidence
+              density, description architecture, and the relationship between
+              extracurricular work and the larger admissions argument.
+            </p>
+
+          </div>
+
+          <div class="modal-rule"></div>
+
+          <div class="contents-label">
+            Inside the Edition
+          </div>
+
+          <ul class="themes">
+            <li>Activities as proof</li>
+            <li>Role, action, artifact, and consequence</li>
+            <li>Character-level compression</li>
+            <li>Metrics and evidence density</li>
+            <li>Ordering and hierarchy</li>
+            <li>Alignment with essays and application positioning</li>
+          </ul>
+
+          <div class="edition-data">
+            First Edition · 2026 · Digital PDF
+          </div>
+
+          <button
+            class="modal-acquire"
+            type="button"
+            onclick="showAcquireNotice()"
+          >
+            Edition Forthcoming
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================
+       FORTHCOMING NOTICE
+  ======================================= -->
+
+  <div
+    class="notice"
+    id="acquireNotice"
+    onclick="closeNoticeFromBackdrop(event)"
+  >
+
+    <div class="notice-box">
+
+      <button
+        class="notice-close"
+        type="button"
+        onclick="hideAcquireNotice()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <h3>
+        Edition access opens shortly.
+      </h3>
+
+      <p>
+        This volume is currently being prepared for release through
+        The Ivy Sanctum Library.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================
+       FOOTER
+  ======================================= -->
 
   <footer>
     <div class="shell footer-inner">
@@ -1011,6 +1611,68 @@
 
     </div>
   </footer>
+
+
+  <!-- ======================================
+       JAVASCRIPT
+  ======================================= -->
+
+  <script>
+
+    function openBook(id) {
+      document.getElementById(id).classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeBook(id) {
+      document.getElementById(id).classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    function closeFromBackdrop(event, id) {
+      if (event.target.id === id) {
+        closeBook(id);
+      }
+    }
+
+    function showAcquireNotice() {
+      document
+        .getElementById("acquireNotice")
+        .classList.add("active");
+    }
+
+    function hideAcquireNotice() {
+      document
+        .getElementById("acquireNotice")
+        .classList.remove("active");
+    }
+
+    function closeNoticeFromBackdrop(event) {
+      if (event.target.id === "acquireNotice") {
+        hideAcquireNotice();
+      }
+    }
+
+    document.addEventListener("keydown", function(event) {
+
+      if (event.key === "Escape") {
+
+        document
+          .querySelectorAll(".modal.active")
+          .forEach(function(modal) {
+            modal.classList.remove("active");
+          });
+
+        document
+          .getElementById("acquireNotice")
+          .classList.remove("active");
+
+        document.body.style.overflow = "";
+      }
+
+    });
+
+  </script>
 
 </body>
 </html>
