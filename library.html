@@ -52,7 +52,9 @@
       margin: 0 auto;
     }
 
-    /* HEADER */
+    /* --------------------------------
+       HEADER
+    -------------------------------- */
 
     .library-header {
       padding: 28px 0 36px;
@@ -120,7 +122,9 @@
       font-size: 0.95rem;
     }
 
-    /* CATALOGUE */
+    /* --------------------------------
+       CATALOGUE
+    -------------------------------- */
 
     .catalogue {
       border-top: 1px solid var(--line);
@@ -243,7 +247,9 @@
       color: var(--oxblood);
     }
 
-    /* MODALS */
+    /* --------------------------------
+       MODALS
+    -------------------------------- */
 
     .modal {
       position: fixed;
@@ -378,7 +384,9 @@
       cursor: pointer;
     }
 
-    /* NOTICE */
+    /* --------------------------------
+       ACQUISITION NOTICE
+    -------------------------------- */
 
     .notice {
       position: fixed;
@@ -427,7 +435,9 @@
       font-size: 1.3rem;
     }
 
-    /* FOOTER */
+    /* --------------------------------
+       FOOTER
+    -------------------------------- */
 
     footer {
       border-top: 1px solid var(--line);
@@ -453,7 +463,9 @@
       text-decoration: none;
     }
 
-    /* MOBILE */
+    /* --------------------------------
+       MOBILE
+    -------------------------------- */
 
     @media (max-width: 820px) {
       .shell {
@@ -510,7 +522,9 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- ======================================
+       HEADER
+  ======================================= -->
 
   <header class="library-header">
     <div class="shell">
@@ -548,7 +562,9 @@
   </header>
 
 
-  <!-- CATALOGUE -->
+  <!-- ======================================
+       CATALOGUE
+  ======================================= -->
 
   <main class="catalogue">
     <div class="shell">
@@ -562,11 +578,18 @@
 
       <div class="shelf">
 
-        <!-- BOOK 01 -->
+        <!-- ==================================
+             BOOK 01 — LIVE
+        =================================== -->
 
         <article class="book">
 
-          <button class="cover-button" type="button" onclick="openBook('book1')">
+          <button
+            class="cover-button"
+            type="button"
+            onclick="openBook('book1')"
+            aria-label="Open The Recommendation Letter Memo"
+          >
             <img
               class="cover"
               src="recommendation-letter-memo.png"
@@ -576,26 +599,40 @@
 
           <div class="book-meta">
 
-            <div class="library-number">Library No. 01</div>
+            <div class="library-number">
+              Library No. 01
+            </div>
 
-            <h2>The Recommendation Letter Memo</h2>
+            <h2>
+              The Recommendation Letter Memo
+            </h2>
 
             <p class="subtitle">
               How to Select the Right Witnesses for Your Application
             </p>
 
             <div class="edition">
-              Digital Edition · $47
+              Digital Edition · $37
             </div>
 
             <div class="book-actions">
-              <button class="text-action" type="button" onclick="openBook('book1')">
+
+              <button
+                class="text-action"
+                type="button"
+                onclick="openBook('book1')"
+              >
                 Open the volume →
               </button>
 
-              <button class="acquire-action" type="button" onclick="showAcquireNotice()">
+              <button
+                class="acquire-action"
+                type="button"
+                onclick="window.location.href='https://buy.stripe.com/14AeVe2tL8K46gJ3LUdnW00'"
+              >
                 Acquire the Edition
               </button>
+
             </div>
 
           </div>
@@ -603,11 +640,18 @@
         </article>
 
 
-        <!-- BOOK 02 -->
+        <!-- ==================================
+             BOOK 02
+        =================================== -->
 
         <article class="book">
 
-          <button class="cover-button" type="button" onclick="openBook('book2')">
+          <button
+            class="cover-button"
+            type="button"
+            onclick="openBook('book2')"
+            aria-label="Open The Carry Sentence"
+          >
             <img
               class="cover"
               src="the-carry-sentence-cover.png"
@@ -617,26 +661,40 @@
 
           <div class="book-meta">
 
-            <div class="library-number">Library No. 02</div>
+            <div class="library-number">
+              Library No. 02
+            </div>
 
-            <h2>The Carry Sentence</h2>
+            <h2>
+              The Carry Sentence
+            </h2>
 
             <p class="subtitle">
               How Admissions Committees Remember, Repeat, and Defend a File
             </p>
 
             <div class="edition">
-              Digital Edition · $47
+              Digital Edition · Forthcoming
             </div>
 
             <div class="book-actions">
-              <button class="text-action" type="button" onclick="openBook('book2')">
+
+              <button
+                class="text-action"
+                type="button"
+                onclick="openBook('book2')"
+              >
                 Open the volume →
               </button>
 
-              <button class="acquire-action" type="button" onclick="showAcquireNotice()">
+              <button
+                class="acquire-action"
+                type="button"
+                onclick="showAcquireNotice()"
+              >
                 Acquire the Edition
               </button>
+
             </div>
 
           </div>
@@ -644,11 +702,18 @@
         </article>
 
 
-        <!-- BOOK 03 -->
+        <!-- ==================================
+             BOOK 03
+        =================================== -->
 
         <article class="book">
 
-          <button class="cover-button" type="button" onclick="openBook('book3')">
+          <button
+            class="cover-button"
+            type="button"
+            onclick="openBook('book3')"
+            aria-label="Open The Activities Ledger"
+          >
             <img
               class="cover"
               src="the-activities-ledger-cover.png"
@@ -658,26 +723,40 @@
 
           <div class="book-meta">
 
-            <div class="library-number">Library No. 03</div>
+            <div class="library-number">
+              Library No. 03
+            </div>
 
-            <h2>The Activities Ledger</h2>
+            <h2>
+              The Activities Ledger
+            </h2>
 
             <p class="subtitle">
               How Extracurricular Work Becomes Proof in Elite Admissions
             </p>
 
             <div class="edition">
-              Digital Edition · $47
+              Digital Edition · Forthcoming
             </div>
 
             <div class="book-actions">
-              <button class="text-action" type="button" onclick="openBook('book3')">
+
+              <button
+                class="text-action"
+                type="button"
+                onclick="openBook('book3')"
+              >
                 Open the volume →
               </button>
 
-              <button class="acquire-action" type="button" onclick="showAcquireNotice()">
+              <button
+                class="acquire-action"
+                type="button"
+                onclick="showAcquireNotice()"
+              >
                 Acquire the Edition
               </button>
+
             </div>
 
           </div>
@@ -685,11 +764,18 @@
         </article>
 
 
-        <!-- BOOK 04 -->
+        <!-- ==================================
+             BOOK 04
+        =================================== -->
 
         <article class="book">
 
-          <button class="cover-button" type="button" onclick="openBook('book4')">
+          <button
+            class="cover-button"
+            type="button"
+            onclick="openBook('book4')"
+            aria-label="Open Harvard College Admissions Blueprint"
+          >
             <img
               class="cover"
               src="harvard-college-admissions-blueprint-cover.png"
@@ -699,26 +785,40 @@
 
           <div class="book-meta">
 
-            <div class="library-number">Library No. 04</div>
+            <div class="library-number">
+              Library No. 04
+            </div>
 
-            <h2>Harvard College Admissions Blueprint</h2>
+            <h2>
+              Harvard College Admissions Blueprint
+            </h2>
 
             <p class="subtitle">
               A Methodical Application Strategy for Harvard College
             </p>
 
             <div class="edition">
-              Digital Edition · $47
+              Digital Edition · Forthcoming
             </div>
 
             <div class="book-actions">
-              <button class="text-action" type="button" onclick="openBook('book4')">
+
+              <button
+                class="text-action"
+                type="button"
+                onclick="openBook('book4')"
+              >
                 Open the volume →
               </button>
 
-              <button class="acquire-action" type="button" onclick="showAcquireNotice()">
+              <button
+                class="acquire-action"
+                type="button"
+                onclick="showAcquireNotice()"
+              >
                 Acquire the Edition
               </button>
+
             </div>
 
           </div>
@@ -726,11 +826,18 @@
         </article>
 
 
-        <!-- BOOK 05 -->
+        <!-- ==================================
+             BOOK 05
+        =================================== -->
 
         <article class="book">
 
-          <button class="cover-button" type="button" onclick="openBook('book5')">
+          <button
+            class="cover-button"
+            type="button"
+            onclick="openBook('book5')"
+            aria-label="Open The Personal Statement Signature"
+          >
             <img
               class="cover"
               src="the-personal-statement-signature-cover.png"
@@ -740,26 +847,40 @@
 
           <div class="book-meta">
 
-            <div class="library-number">Library No. 05</div>
+            <div class="library-number">
+              Library No. 05
+            </div>
 
-            <h2>The Personal Statement Signature</h2>
+            <h2>
+              The Personal Statement Signature
+            </h2>
 
             <p class="subtitle">
               How to Build the Sentence Every Admissions Reader Remembers
             </p>
 
             <div class="edition">
-              Digital Edition · $47
+              Digital Edition · Forthcoming
             </div>
 
             <div class="book-actions">
-              <button class="text-action" type="button" onclick="openBook('book5')">
+
+              <button
+                class="text-action"
+                type="button"
+                onclick="openBook('book5')"
+              >
                 Open the volume →
               </button>
 
-              <button class="acquire-action" type="button" onclick="showAcquireNotice()">
+              <button
+                class="acquire-action"
+                type="button"
+                onclick="showAcquireNotice()"
+              >
                 Acquire the Edition
               </button>
+
             </div>
 
           </div>
@@ -767,11 +888,18 @@
         </article>
 
 
-        <!-- BOOK 06 -->
+        <!-- ==================================
+             BOOK 06
+        =================================== -->
 
         <article class="book">
 
-          <button class="cover-button" type="button" onclick="openBook('book6')">
+          <button
+            class="cover-button"
+            type="button"
+            onclick="openBook('book6')"
+            aria-label="Open The Extracurricular Activities Overhaul"
+          >
             <img
               class="cover"
               src="the-extracurricular-activities-overhaul-cover.png"
@@ -781,26 +909,40 @@
 
           <div class="book-meta">
 
-            <div class="library-number">Library No. 06</div>
+            <div class="library-number">
+              Library No. 06
+            </div>
 
-            <h2>The Extracurricular Activities Overhaul</h2>
+            <h2>
+              The Extracurricular Activities Overhaul
+            </h2>
 
             <p class="subtitle">
               How to Turn Common App Activities Into Proof Admissions Readers Believe
             </p>
 
             <div class="edition">
-              Digital Edition · $47
+              Digital Edition · Forthcoming
             </div>
 
             <div class="book-actions">
-              <button class="text-action" type="button" onclick="openBook('book6')">
+
+              <button
+                class="text-action"
+                type="button"
+                onclick="openBook('book6')"
+              >
                 Open the volume →
               </button>
 
-              <button class="acquire-action" type="button" onclick="showAcquireNotice()">
+              <button
+                class="acquire-action"
+                type="button"
+                onclick="showAcquireNotice()"
+              >
                 Acquire the Edition
               </button>
+
             </div>
 
           </div>
@@ -813,24 +955,37 @@
   </main>
 
 
-  <!-- BOOK 01 MODAL -->
+  <!-- ======================================
+       BOOK 01 MODAL — LIVE
+  ======================================= -->
 
-  <div class="modal" id="book1" onclick="closeFromBackdrop(event, 'book1')">
+  <div
+    class="modal"
+    id="book1"
+    onclick="closeFromBackdrop(event, 'book1')"
+  >
 
     <div class="modal-panel">
 
-      <button class="modal-close" type="button" onclick="closeBook('book1')">
+      <button
+        class="modal-close"
+        type="button"
+        onclick="closeBook('book1')"
+        aria-label="Close"
+      >
         ×
       </button>
 
       <div class="modal-grid">
 
         <div>
+
           <img
             class="modal-cover"
             src="recommendation-letter-memo.png"
             alt="The Recommendation Letter Memo"
           >
+
         </div>
 
         <div>
@@ -884,8 +1039,12 @@
             First Edition · 2026 · Digital PDF · 108 pages
           </div>
 
-          <button class="modal-acquire" type="button" onclick="showAcquireNotice()">
-            Acquire the Digital Edition — $47
+          <button
+            class="modal-acquire"
+            type="button"
+            onclick="window.location.href='https://buy.stripe.com/14AeVe2tL8K46gJ3LUdnW00'"
+          >
+            Acquire the Digital Edition — $37
           </button>
 
         </div>
@@ -897,24 +1056,37 @@
   </div>
 
 
-  <!-- BOOK 02 MODAL -->
+  <!-- ======================================
+       BOOK 02 MODAL
+  ======================================= -->
 
-  <div class="modal" id="book2" onclick="closeFromBackdrop(event, 'book2')">
+  <div
+    class="modal"
+    id="book2"
+    onclick="closeFromBackdrop(event, 'book2')"
+  >
 
     <div class="modal-panel">
 
-      <button class="modal-close" type="button" onclick="closeBook('book2')">
+      <button
+        class="modal-close"
+        type="button"
+        onclick="closeBook('book2')"
+        aria-label="Close"
+      >
         ×
       </button>
 
       <div class="modal-grid">
 
         <div>
+
           <img
             class="modal-cover"
             src="the-carry-sentence-cover.png"
             alt="The Carry Sentence"
           >
+
         </div>
 
         <div>
@@ -967,8 +1139,12 @@
             First Edition · 2026 · Digital PDF
           </div>
 
-          <button class="modal-acquire" type="button" onclick="showAcquireNotice()">
-            Acquire the Digital Edition — $47
+          <button
+            class="modal-acquire"
+            type="button"
+            onclick="showAcquireNotice()"
+          >
+            Edition Forthcoming
           </button>
 
         </div>
@@ -980,24 +1156,37 @@
   </div>
 
 
-  <!-- BOOK 03 MODAL -->
+  <!-- ======================================
+       BOOK 03 MODAL
+  ======================================= -->
 
-  <div class="modal" id="book3" onclick="closeFromBackdrop(event, 'book3')">
+  <div
+    class="modal"
+    id="book3"
+    onclick="closeFromBackdrop(event, 'book3')"
+  >
 
     <div class="modal-panel">
 
-      <button class="modal-close" type="button" onclick="closeBook('book3')">
+      <button
+        class="modal-close"
+        type="button"
+        onclick="closeBook('book3')"
+        aria-label="Close"
+      >
         ×
       </button>
 
       <div class="modal-grid">
 
         <div>
+
           <img
             class="modal-cover"
             src="the-activities-ledger-cover.png"
             alt="The Activities Ledger"
           >
+
         </div>
 
         <div>
@@ -1049,8 +1238,12 @@
             First Edition · 2026 · Digital PDF
           </div>
 
-          <button class="modal-acquire" type="button" onclick="showAcquireNotice()">
-            Acquire the Digital Edition — $47
+          <button
+            class="modal-acquire"
+            type="button"
+            onclick="showAcquireNotice()"
+          >
+            Edition Forthcoming
           </button>
 
         </div>
@@ -1062,24 +1255,37 @@
   </div>
 
 
-  <!-- BOOK 04 MODAL -->
+  <!-- ======================================
+       BOOK 04 MODAL
+  ======================================= -->
 
-  <div class="modal" id="book4" onclick="closeFromBackdrop(event, 'book4')">
+  <div
+    class="modal"
+    id="book4"
+    onclick="closeFromBackdrop(event, 'book4')"
+  >
 
     <div class="modal-panel">
 
-      <button class="modal-close" type="button" onclick="closeBook('book4')">
+      <button
+        class="modal-close"
+        type="button"
+        onclick="closeBook('book4')"
+        aria-label="Close"
+      >
         ×
       </button>
 
       <div class="modal-grid">
 
         <div>
+
           <img
             class="modal-cover"
             src="harvard-college-admissions-blueprint-cover.png"
             alt="Harvard College Admissions Blueprint"
           >
+
         </div>
 
         <div>
@@ -1132,8 +1338,12 @@
             First Edition · 2026 · Digital PDF
           </div>
 
-          <button class="modal-acquire" type="button" onclick="showAcquireNotice()">
-            Acquire the Digital Edition — $47
+          <button
+            class="modal-acquire"
+            type="button"
+            onclick="showAcquireNotice()"
+          >
+            Edition Forthcoming
           </button>
 
         </div>
@@ -1145,24 +1355,37 @@
   </div>
 
 
-  <!-- BOOK 05 MODAL -->
+  <!-- ======================================
+       BOOK 05 MODAL
+  ======================================= -->
 
-  <div class="modal" id="book5" onclick="closeFromBackdrop(event, 'book5')">
+  <div
+    class="modal"
+    id="book5"
+    onclick="closeFromBackdrop(event, 'book5')"
+  >
 
     <div class="modal-panel">
 
-      <button class="modal-close" type="button" onclick="closeBook('book5')">
+      <button
+        class="modal-close"
+        type="button"
+        onclick="closeBook('book5')"
+        aria-label="Close"
+      >
         ×
       </button>
 
       <div class="modal-grid">
 
         <div>
+
           <img
             class="modal-cover"
             src="the-personal-statement-signature-cover.png"
             alt="The Personal Statement Signature"
           >
+
         </div>
 
         <div>
@@ -1215,8 +1438,12 @@
             First Edition · 2026 · Digital PDF
           </div>
 
-          <button class="modal-acquire" type="button" onclick="showAcquireNotice()">
-            Acquire the Digital Edition — $47
+          <button
+            class="modal-acquire"
+            type="button"
+            onclick="showAcquireNotice()"
+          >
+            Edition Forthcoming
           </button>
 
         </div>
@@ -1228,24 +1455,37 @@
   </div>
 
 
-  <!-- BOOK 06 MODAL -->
+  <!-- ======================================
+       BOOK 06 MODAL
+  ======================================= -->
 
-  <div class="modal" id="book6" onclick="closeFromBackdrop(event, 'book6')">
+  <div
+    class="modal"
+    id="book6"
+    onclick="closeFromBackdrop(event, 'book6')"
+  >
 
     <div class="modal-panel">
 
-      <button class="modal-close" type="button" onclick="closeBook('book6')">
+      <button
+        class="modal-close"
+        type="button"
+        onclick="closeBook('book6')"
+        aria-label="Close"
+      >
         ×
       </button>
 
       <div class="modal-grid">
 
         <div>
+
           <img
             class="modal-cover"
             src="the-extracurricular-activities-overhaul-cover.png"
             alt="The Extracurricular Activities Overhaul"
           >
+
         </div>
 
         <div>
@@ -1298,8 +1538,12 @@
             First Edition · 2026 · Digital PDF
           </div>
 
-          <button class="modal-acquire" type="button" onclick="showAcquireNotice()">
-            Acquire the Digital Edition — $47
+          <button
+            class="modal-acquire"
+            type="button"
+            onclick="showAcquireNotice()"
+          >
+            Edition Forthcoming
           </button>
 
         </div>
@@ -1311,7 +1555,9 @@
   </div>
 
 
-  <!-- ACQUISITION NOTICE -->
+  <!-- ======================================
+       FORTHCOMING NOTICE
+  ======================================= -->
 
   <div
     class="notice"
@@ -1325,6 +1571,7 @@
         class="notice-close"
         type="button"
         onclick="hideAcquireNotice()"
+        aria-label="Close"
       >
         ×
       </button>
@@ -1334,7 +1581,8 @@
       </h3>
 
       <p>
-        The Ivy Sanctum Library is preparing its digital editions for release.
+        This volume is currently being prepared for release through
+        The Ivy Sanctum Library.
       </p>
 
     </div>
@@ -1342,7 +1590,9 @@
   </div>
 
 
-  <!-- FOOTER -->
+  <!-- ======================================
+       FOOTER
+  ======================================= -->
 
   <footer>
     <div class="shell footer-inner">
@@ -1362,6 +1612,10 @@
     </div>
   </footer>
 
+
+  <!-- ======================================
+       JAVASCRIPT
+  ======================================= -->
 
   <script>
 
