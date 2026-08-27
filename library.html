@@ -333,6 +333,14 @@
       line-height: 1.5;
     }
 
+    .private-edition-label {
+      color: var(--oxblood);
+      font-size: 0.72rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      margin: 0 0 20px;
+    }
+
     .modal-copy {
       font-size: 1rem;
     }
@@ -385,7 +393,7 @@
     }
 
     /* --------------------------------
-       ACQUISITION NOTICE
+       FORTHCOMING NOTICE
     -------------------------------- */
 
     .notice {
@@ -641,7 +649,7 @@
 
 
         <!-- ==================================
-             BOOK 02
+             BOOK 02 — FORTHCOMING
         =================================== -->
 
         <article class="book">
@@ -703,7 +711,7 @@
 
 
         <!-- ==================================
-             BOOK 03
+             BOOK 03 — FORTHCOMING
         =================================== -->
 
         <article class="book">
@@ -765,7 +773,7 @@
 
 
         <!-- ==================================
-             BOOK 04
+             BOOK 04 — LIVE
         =================================== -->
 
         <article class="book">
@@ -798,7 +806,7 @@
             </p>
 
             <div class="edition">
-              Digital Edition · Forthcoming
+              Private Edition · $47
             </div>
 
             <div class="book-actions">
@@ -814,7 +822,7 @@
               <button
                 class="acquire-action"
                 type="button"
-                onclick="showAcquireNotice()"
+                onclick="window.location.href='https://buy.stripe.com/9B6aEY3xP1hCbB34PYdnW01'"
               >
                 Acquire the Edition
               </button>
@@ -827,7 +835,7 @@
 
 
         <!-- ==================================
-             BOOK 05
+             BOOK 05 — FORTHCOMING
         =================================== -->
 
         <article class="book">
@@ -889,7 +897,7 @@
 
 
         <!-- ==================================
-             BOOK 06
+             BOOK 06 — FORTHCOMING
         =================================== -->
 
         <article class="book">
@@ -1256,7 +1264,7 @@
 
 
   <!-- ======================================
-       BOOK 04 MODAL
+       BOOK 04 MODAL — LIVE
   ======================================= -->
 
   <div
@@ -1302,19 +1310,25 @@
             A Methodical Application Strategy for Harvard College
           </p>
 
+          <div class="private-edition-label">
+            Private Edition
+          </div>
+
           <div class="modal-copy">
 
             <p>
-              Harvard College asks the application to carry academic range,
-              intellectual direction, personal character, contribution, and
-              institutional placement through a tightly compressed file.
+              <em>Harvard College Admissions Blueprint</em> is a private edition
+              published by The Ivy Sanctum, available exclusively through the
+              Sanctum as part of a curated body of admissions literature for
+              readers seeking a more exacting view of the Harvard application.
             </p>
 
             <p>
-              This independent strategy edition organizes that challenge into
-              a methodical architecture: the central argument of the file, the
-              evidence supporting it, the role of each application component,
-              and the sequence through which the final application gains force.
+              This is a strategic working document built around the same
+              architecture the Sanctum applies to a serious file: sequence,
+              evidence, judgment, and constraint. It is meant to be studied,
+              marked, returned to, and used across the full arc of constructing
+              the application.
             </p>
 
           </div>
@@ -1335,15 +1349,15 @@
           </ul>
 
           <div class="edition-data">
-            First Edition · 2026 · Digital PDF
+            First Edition · 2026 · Private Digital Edition · 160 pages
           </div>
 
           <button
             class="modal-acquire"
             type="button"
-            onclick="showAcquireNotice()"
+            onclick="window.location.href='https://buy.stripe.com/9B6aEY3xP1hCbB34PYdnW01'"
           >
-            Edition Forthcoming
+            Acquire the Private Edition — $47
           </button>
 
         </div>
