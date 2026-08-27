@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSSDCC0K1L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DSSDCC0K1L');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -125,13 +135,14 @@
 
     .hero-actions {
       display: flex;
-      gap: 25px;
+      gap: 28px;
       flex-wrap: wrap;
       align-items: center;
     }
 
     .primary-link,
-    .secondary-link {
+    .secondary-link,
+    .tertiary-link {
       text-decoration: none;
       font-size: 0.95rem;
     }
@@ -147,7 +158,12 @@
       padding-bottom: 4px;
     }
 
-    /* GENERAL */
+    .tertiary-link {
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+
+    /* GENERAL SECTIONS */
 
     section {
       padding: 92px 0;
@@ -193,6 +209,7 @@
     form {
       display: grid;
       gap: 20px;
+
       border: 1px solid rgba(37, 34, 31, 0.11);
       padding: 30px;
 
@@ -518,7 +535,14 @@
 
       <div class="nav-links">
         <a href="#hours">Office Hours</a>
-        <a href="/library.html">Library</a>
+
+        <a
+          href="/library.html"
+          onclick="trackLibraryEntry('navigation')"
+        >
+          Library
+        </a>
+
         <a href="/advisory.html">Advisory</a>
         <a href="#approach">Approach</a>
       </div>
@@ -566,6 +590,14 @@
             Explore Advisory →
           </a>
 
+          <a
+            class="tertiary-link"
+            href="/library.html"
+            onclick="trackLibraryEntry('hero')"
+          >
+            Enter the Library →
+          </a>
+
         </div>
 
       </div>
@@ -611,33 +643,57 @@
           <form
             action="https://formspree.io/f/xljrooez"
             method="POST"
+            onsubmit="trackOfficeHoursSubmit()"
           >
 
             <div class="field">
               <label for="name">Name</label>
-              <input id="name" name="name" type="text" required>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+              >
             </div>
 
             <div class="field">
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" required>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+              >
             </div>
 
             <div class="field">
               <label for="grade_year">Grade / year</label>
-              <input id="grade_year" name="grade_year" type="text" required>
+              <input
+                id="grade_year"
+                name="grade_year"
+                type="text"
+                required
+              >
             </div>
 
             <div class="field">
               <label for="target_schools">
                 Target schools — optional
               </label>
-              <input id="target_schools" name="target_schools" type="text">
+              <input
+                id="target_schools"
+                name="target_schools"
+                type="text"
+              >
             </div>
 
             <div class="field">
               <label for="question">Your question</label>
-              <textarea id="question" name="question" required></textarea>
+              <textarea
+                id="question"
+                name="question"
+                required
+              ></textarea>
             </div>
 
             <button class="submit-button" type="submit">
@@ -652,7 +708,7 @@
     </section>
 
 
-    <!-- LIBRARY -->
+    <!-- LIBRARY PREVIEW -->
 
     <section class="library-preview" id="library">
       <div class="shell">
@@ -679,6 +735,7 @@
         <div class="mini-shelf">
 
           <article class="mini-book">
+
             <div class="mini-cover-wrap">
               <img
                 class="mini-cover"
@@ -688,18 +745,26 @@
             </div>
 
             <div class="mini-meta">
-              <div class="mini-number">Library No. 01</div>
 
-              <h3>The Recommendation Letter Memo</h3>
+              <div class="mini-number">
+                Library No. 01
+              </div>
+
+              <h3>
+                The Recommendation Letter Memo
+              </h3>
 
               <p class="mini-subtitle">
                 How to Select the Right Witnesses for Your Application
               </p>
+
             </div>
+
           </article>
 
 
           <article class="mini-book">
+
             <div class="mini-cover-wrap">
               <img
                 class="mini-cover"
@@ -709,18 +774,26 @@
             </div>
 
             <div class="mini-meta">
-              <div class="mini-number">Library No. 02</div>
 
-              <h3>The Carry Sentence</h3>
+              <div class="mini-number">
+                Library No. 02
+              </div>
+
+              <h3>
+                The Carry Sentence
+              </h3>
 
               <p class="mini-subtitle">
                 How Admissions Committees Remember, Repeat, and Defend a File
               </p>
+
             </div>
+
           </article>
 
 
           <article class="mini-book">
+
             <div class="mini-cover-wrap">
               <img
                 class="mini-cover"
@@ -730,18 +803,26 @@
             </div>
 
             <div class="mini-meta">
-              <div class="mini-number">Library No. 03</div>
 
-              <h3>The Activities Ledger</h3>
+              <div class="mini-number">
+                Library No. 03
+              </div>
+
+              <h3>
+                The Activities Ledger
+              </h3>
 
               <p class="mini-subtitle">
                 How Extracurricular Work Becomes Proof in Elite Admissions
               </p>
+
             </div>
+
           </article>
 
 
           <article class="mini-book">
+
             <div class="mini-cover-wrap">
               <img
                 class="mini-cover"
@@ -751,18 +832,26 @@
             </div>
 
             <div class="mini-meta">
-              <div class="mini-number">Library No. 04</div>
 
-              <h3>Harvard College Admissions Blueprint</h3>
+              <div class="mini-number">
+                Library No. 04
+              </div>
+
+              <h3>
+                Harvard College Admissions Blueprint
+              </h3>
 
               <p class="mini-subtitle">
                 A Methodical Application Strategy for Harvard College
               </p>
+
             </div>
+
           </article>
 
 
           <article class="mini-book">
+
             <div class="mini-cover-wrap">
               <img
                 class="mini-cover"
@@ -772,18 +861,26 @@
             </div>
 
             <div class="mini-meta">
-              <div class="mini-number">Library No. 05</div>
 
-              <h3>The Personal Statement Signature</h3>
+              <div class="mini-number">
+                Library No. 05
+              </div>
+
+              <h3>
+                The Personal Statement Signature
+              </h3>
 
               <p class="mini-subtitle">
                 How to Build the Sentence Every Admissions Reader Remembers
               </p>
+
             </div>
+
           </article>
 
 
           <article class="mini-book">
+
             <div class="mini-cover-wrap">
               <img
                 class="mini-cover"
@@ -793,20 +890,31 @@
             </div>
 
             <div class="mini-meta">
-              <div class="mini-number">Library No. 06</div>
 
-              <h3>The Extracurricular Activities Overhaul</h3>
+              <div class="mini-number">
+                Library No. 06
+              </div>
+
+              <h3>
+                The Extracurricular Activities Overhaul
+              </h3>
 
               <p class="mini-subtitle">
                 How to Turn Common App Activities Into Proof Admissions Readers Believe
               </p>
+
             </div>
+
           </article>
 
         </div>
 
 
-        <a class="library-entry" href="/library.html">
+        <a
+          class="library-entry"
+          href="/library.html"
+          onclick="trackLibraryEntry('library_preview')"
+        >
           Enter the Library →
         </a>
 
@@ -814,7 +922,7 @@
     </section>
 
 
-    <!-- OFFICE -->
+    <!-- THE OFFICE -->
 
     <section id="office">
       <div class="shell">
@@ -888,27 +996,37 @@
 
           <div class="signal">
             <h3>Academics</h3>
-            <p>Range, rigor, trajectory, and intellectual context.</p>
+            <p>
+              Range, rigor, trajectory, and intellectual context.
+            </p>
           </div>
 
           <div class="signal">
             <h3>Activities</h3>
-            <p>Evidence, hierarchy, initiative, artifact, and consequence.</p>
+            <p>
+              Evidence, hierarchy, initiative, artifact, and consequence.
+            </p>
           </div>
 
           <div class="signal">
             <h3>Essays</h3>
-            <p>Meaning, structure, positioning, and reader consequence.</p>
+            <p>
+              Meaning, structure, positioning, and reader consequence.
+            </p>
           </div>
 
           <div class="signal">
             <h3>Recommendations</h3>
-            <p>Third-party witness, proximity, credibility, and proof.</p>
+            <p>
+              Third-party witness, proximity, credibility, and proof.
+            </p>
           </div>
 
           <div class="signal">
             <h3>Placement</h3>
-            <p>Institutional fit, school-specific logic, and contribution.</p>
+            <p>
+              Institutional fit, school-specific logic, and contribution.
+            </p>
           </div>
 
         </div>
@@ -1003,7 +1121,14 @@
 
       <div class="footer-links">
         <a href="/advisory.html">Advisory</a>
-        <a href="/library.html">Library</a>
+
+        <a
+          href="/library.html"
+          onclick="trackLibraryEntry('footer')"
+        >
+          Library
+        </a>
+
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
         <a href="mailto:hello@theivysanctum.com">Contact</a>
@@ -1011,6 +1136,23 @@
 
     </div>
   </footer>
+
+
+  <script>
+    function trackLibraryEntry(source) {
+      if (typeof gtag === "function") {
+        gtag("event", "library_enter", {
+          source: source
+        });
+      }
+    }
+
+    function trackOfficeHoursSubmit() {
+      if (typeof gtag === "function") {
+        gtag("event", "office_hours_submit");
+      }
+    }
+  </script>
 
 </body>
 </html>
