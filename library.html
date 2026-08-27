@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSSDCC0K1L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DSSDCC0K1L');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -52,9 +62,7 @@
       margin: 0 auto;
     }
 
-    /* --------------------------------
-       HEADER
-    -------------------------------- */
+    /* HEADER */
 
     .library-header {
       padding: 28px 0 36px;
@@ -122,9 +130,7 @@
       font-size: 0.95rem;
     }
 
-    /* --------------------------------
-       CATALOGUE
-    -------------------------------- */
+    /* CATALOGUE */
 
     .catalogue {
       border-top: 1px solid var(--line);
@@ -247,9 +253,7 @@
       color: var(--oxblood);
     }
 
-    /* --------------------------------
-       MODALS
-    -------------------------------- */
+    /* MODALS */
 
     .modal {
       position: fixed;
@@ -390,11 +394,10 @@
       color: var(--oxblood);
       padding: 13px 19px;
       cursor: pointer;
+      text-decoration: none;
     }
 
-    /* --------------------------------
-       FORTHCOMING NOTICE
-    -------------------------------- */
+    /* FORTHCOMING NOTICE */
 
     .notice {
       position: fixed;
@@ -443,9 +446,7 @@
       font-size: 1.3rem;
     }
 
-    /* --------------------------------
-       FOOTER
-    -------------------------------- */
+    /* FOOTER */
 
     footer {
       border-top: 1px solid var(--line);
@@ -471,9 +472,7 @@
       text-decoration: none;
     }
 
-    /* --------------------------------
-       MOBILE
-    -------------------------------- */
+    /* MOBILE */
 
     @media (max-width: 820px) {
       .shell {
@@ -530,10 +529,6 @@
 
 <body>
 
-  <!-- ======================================
-       HEADER
-  ======================================= -->
-
   <header class="library-header">
     <div class="shell">
 
@@ -570,10 +565,6 @@
   </header>
 
 
-  <!-- ======================================
-       CATALOGUE
-  ======================================= -->
-
   <main class="catalogue">
     <div class="shell">
 
@@ -586,9 +577,7 @@
 
       <div class="shelf">
 
-        <!-- ==================================
-             BOOK 01 — LIVE
-        =================================== -->
+        <!-- BOOK 01 — LIVE -->
 
         <article class="book">
 
@@ -633,13 +622,13 @@
                 Open the volume →
               </button>
 
-              <button
+              <a
                 class="acquire-action"
-                type="button"
-                onclick="window.location.href='https://buy.stripe.com/14AeVe2tL8K46gJ3LUdnW00'"
+                href="https://buy.stripe.com/14AeVe2tL8K46gJ3LUdnW00"
+                onclick="trackAcquire('book1')"
               >
                 Acquire the Edition
-              </button>
+              </a>
 
             </div>
 
@@ -648,9 +637,7 @@
         </article>
 
 
-        <!-- ==================================
-             BOOK 02 — FORTHCOMING
-        =================================== -->
+        <!-- BOOK 02 -->
 
         <article class="book">
 
@@ -658,7 +645,6 @@
             class="cover-button"
             type="button"
             onclick="openBook('book2')"
-            aria-label="Open The Carry Sentence"
           >
             <img
               class="cover"
@@ -698,7 +684,7 @@
               <button
                 class="acquire-action"
                 type="button"
-                onclick="showAcquireNotice()"
+                onclick="showAcquireNotice('book2')"
               >
                 Acquire the Edition
               </button>
@@ -710,9 +696,7 @@
         </article>
 
 
-        <!-- ==================================
-             BOOK 03 — FORTHCOMING
-        =================================== -->
+        <!-- BOOK 03 -->
 
         <article class="book">
 
@@ -720,7 +704,6 @@
             class="cover-button"
             type="button"
             onclick="openBook('book3')"
-            aria-label="Open The Activities Ledger"
           >
             <img
               class="cover"
@@ -760,7 +743,7 @@
               <button
                 class="acquire-action"
                 type="button"
-                onclick="showAcquireNotice()"
+                onclick="showAcquireNotice('book3')"
               >
                 Acquire the Edition
               </button>
@@ -772,9 +755,7 @@
         </article>
 
 
-        <!-- ==================================
-             BOOK 04 — LIVE
-        =================================== -->
+        <!-- BOOK 04 — LIVE -->
 
         <article class="book">
 
@@ -782,7 +763,6 @@
             class="cover-button"
             type="button"
             onclick="openBook('book4')"
-            aria-label="Open Harvard College Admissions Blueprint"
           >
             <img
               class="cover"
@@ -819,13 +799,13 @@
                 Open the volume →
               </button>
 
-              <button
+              <a
                 class="acquire-action"
-                type="button"
-                onclick="window.location.href='https://buy.stripe.com/9B6aEY3xP1hCbB34PYdnW01'"
+                href="https://buy.stripe.com/9B6aEY3xP1hCbB34PYdnW01"
+                onclick="trackAcquire('book4')"
               >
                 Acquire the Edition
-              </button>
+              </a>
 
             </div>
 
@@ -834,9 +814,7 @@
         </article>
 
 
-        <!-- ==================================
-             BOOK 05 — FORTHCOMING
-        =================================== -->
+        <!-- BOOK 05 -->
 
         <article class="book">
 
@@ -844,7 +822,6 @@
             class="cover-button"
             type="button"
             onclick="openBook('book5')"
-            aria-label="Open The Personal Statement Signature"
           >
             <img
               class="cover"
@@ -884,7 +861,7 @@
               <button
                 class="acquire-action"
                 type="button"
-                onclick="showAcquireNotice()"
+                onclick="showAcquireNotice('book5')"
               >
                 Acquire the Edition
               </button>
@@ -896,9 +873,7 @@
         </article>
 
 
-        <!-- ==================================
-             BOOK 06 — FORTHCOMING
-        =================================== -->
+        <!-- BOOK 06 -->
 
         <article class="book">
 
@@ -906,7 +881,6 @@
             class="cover-button"
             type="button"
             onclick="openBook('book6')"
-            aria-label="Open The Extracurricular Activities Overhaul"
           >
             <img
               class="cover"
@@ -946,7 +920,7 @@
               <button
                 class="acquire-action"
                 type="button"
-                onclick="showAcquireNotice()"
+                onclick="showAcquireNotice('book6')"
               >
                 Acquire the Edition
               </button>
@@ -963,9 +937,7 @@
   </main>
 
 
-  <!-- ======================================
-       BOOK 01 MODAL — LIVE
-  ======================================= -->
+  <!-- BOOK 01 MODAL -->
 
   <div
     class="modal"
@@ -979,7 +951,6 @@
         class="modal-close"
         type="button"
         onclick="closeBook('book1')"
-        aria-label="Close"
       >
         ×
       </button>
@@ -987,13 +958,11 @@
       <div class="modal-grid">
 
         <div>
-
           <img
             class="modal-cover"
             src="recommendation-letter-memo.png"
             alt="The Recommendation Letter Memo"
           >
-
         </div>
 
         <div>
@@ -1047,26 +1016,23 @@
             First Edition · 2026 · Digital PDF · 108 pages
           </div>
 
-          <button
+          <a
             class="modal-acquire"
-            type="button"
-            onclick="window.location.href='https://buy.stripe.com/14AeVe2tL8K46gJ3LUdnW00'"
+            href="https://buy.stripe.com/14AeVe2tL8K46gJ3LUdnW00"
+            onclick="trackAcquire('book1')"
           >
             Acquire the Digital Edition — $37
-          </button>
+          </a>
 
         </div>
 
       </div>
 
     </div>
-
   </div>
 
 
-  <!-- ======================================
-       BOOK 02 MODAL
-  ======================================= -->
+  <!-- BOOK 02 MODAL -->
 
   <div
     class="modal"
@@ -1080,7 +1046,6 @@
         class="modal-close"
         type="button"
         onclick="closeBook('book2')"
-        aria-label="Close"
       >
         ×
       </button>
@@ -1088,13 +1053,11 @@
       <div class="modal-grid">
 
         <div>
-
           <img
             class="modal-cover"
             src="the-carry-sentence-cover.png"
             alt="The Carry Sentence"
           >
-
         </div>
 
         <div>
@@ -1150,7 +1113,7 @@
           <button
             class="modal-acquire"
             type="button"
-            onclick="showAcquireNotice()"
+            onclick="showAcquireNotice('book2')"
           >
             Edition Forthcoming
           </button>
@@ -1160,13 +1123,10 @@
       </div>
 
     </div>
-
   </div>
 
 
-  <!-- ======================================
-       BOOK 03 MODAL
-  ======================================= -->
+  <!-- BOOK 03 MODAL -->
 
   <div
     class="modal"
@@ -1180,7 +1140,6 @@
         class="modal-close"
         type="button"
         onclick="closeBook('book3')"
-        aria-label="Close"
       >
         ×
       </button>
@@ -1188,13 +1147,11 @@
       <div class="modal-grid">
 
         <div>
-
           <img
             class="modal-cover"
             src="the-activities-ledger-cover.png"
             alt="The Activities Ledger"
           >
-
         </div>
 
         <div>
@@ -1221,8 +1178,7 @@
             <p>
               The Activities Ledger develops a method for converting that work
               into readable evidence through role, artifact, metric, progression,
-              hierarchy, and consequence. The result is an extracurricular record
-              with clearer signal and stronger proof.
+              hierarchy, and consequence.
             </p>
 
           </div>
@@ -1249,7 +1205,7 @@
           <button
             class="modal-acquire"
             type="button"
-            onclick="showAcquireNotice()"
+            onclick="showAcquireNotice('book3')"
           >
             Edition Forthcoming
           </button>
@@ -1259,13 +1215,10 @@
       </div>
 
     </div>
-
   </div>
 
 
-  <!-- ======================================
-       BOOK 04 MODAL — LIVE
-  ======================================= -->
+  <!-- BOOK 04 MODAL -->
 
   <div
     class="modal"
@@ -1279,7 +1232,6 @@
         class="modal-close"
         type="button"
         onclick="closeBook('book4')"
-        aria-label="Close"
       >
         ×
       </button>
@@ -1287,13 +1239,11 @@
       <div class="modal-grid">
 
         <div>
-
           <img
             class="modal-cover"
             src="harvard-college-admissions-blueprint-cover.png"
             alt="Harvard College Admissions Blueprint"
           >
-
         </div>
 
         <div>
@@ -1352,26 +1302,23 @@
             First Edition · 2026 · Private Digital Edition · 160 pages
           </div>
 
-          <button
+          <a
             class="modal-acquire"
-            type="button"
-            onclick="window.location.href='https://buy.stripe.com/9B6aEY3xP1hCbB34PYdnW01'"
+            href="https://buy.stripe.com/9B6aEY3xP1hCbB34PYdnW01"
+            onclick="trackAcquire('book4')"
           >
             Acquire the Private Edition — $47
-          </button>
+          </a>
 
         </div>
 
       </div>
 
     </div>
-
   </div>
 
 
-  <!-- ======================================
-       BOOK 05 MODAL
-  ======================================= -->
+  <!-- BOOK 05 MODAL -->
 
   <div
     class="modal"
@@ -1385,7 +1332,6 @@
         class="modal-close"
         type="button"
         onclick="closeBook('book5')"
-        aria-label="Close"
       >
         ×
       </button>
@@ -1393,13 +1339,11 @@
       <div class="modal-grid">
 
         <div>
-
           <img
             class="modal-cover"
             src="the-personal-statement-signature-cover.png"
             alt="The Personal Statement Signature"
           >
-
         </div>
 
         <div>
@@ -1455,7 +1399,7 @@
           <button
             class="modal-acquire"
             type="button"
-            onclick="showAcquireNotice()"
+            onclick="showAcquireNotice('book5')"
           >
             Edition Forthcoming
           </button>
@@ -1465,13 +1409,10 @@
       </div>
 
     </div>
-
   </div>
 
 
-  <!-- ======================================
-       BOOK 06 MODAL
-  ======================================= -->
+  <!-- BOOK 06 MODAL -->
 
   <div
     class="modal"
@@ -1485,7 +1426,6 @@
         class="modal-close"
         type="button"
         onclick="closeBook('book6')"
-        aria-label="Close"
       >
         ×
       </button>
@@ -1493,13 +1433,11 @@
       <div class="modal-grid">
 
         <div>
-
           <img
             class="modal-cover"
             src="the-extracurricular-activities-overhaul-cover.png"
             alt="The Extracurricular Activities Overhaul"
           >
-
         </div>
 
         <div>
@@ -1555,7 +1493,7 @@
           <button
             class="modal-acquire"
             type="button"
-            onclick="showAcquireNotice()"
+            onclick="showAcquireNotice('book6')"
           >
             Edition Forthcoming
           </button>
@@ -1565,13 +1503,10 @@
       </div>
 
     </div>
-
   </div>
 
 
-  <!-- ======================================
-       FORTHCOMING NOTICE
-  ======================================= -->
+  <!-- FORTHCOMING NOTICE -->
 
   <div
     class="notice"
@@ -1585,7 +1520,6 @@
         class="notice-close"
         type="button"
         onclick="hideAcquireNotice()"
-        aria-label="Close"
       >
         ×
       </button>
@@ -1603,10 +1537,6 @@
 
   </div>
 
-
-  <!-- ======================================
-       FOOTER
-  ======================================= -->
 
   <footer>
     <div class="shell footer-inner">
@@ -1627,64 +1557,165 @@
   </footer>
 
 
-  <!-- ======================================
-       JAVASCRIPT
-  ======================================= -->
-
   <script>
 
-    function openBook(id) {
-      document.getElementById(id).classList.add("active");
-      document.body.style.overflow = "hidden";
+    const libraryBooks = {
+      book1: {
+        library_no: "01",
+        book_title: "The Recommendation Letter Memo",
+        price: 37,
+        status: "live"
+      },
+
+      book2: {
+        library_no: "02",
+        book_title: "The Carry Sentence",
+        price: null,
+        status: "forthcoming"
+      },
+
+      book3: {
+        library_no: "03",
+        book_title: "The Activities Ledger",
+        price: null,
+        status: "forthcoming"
+      },
+
+      book4: {
+        library_no: "04",
+        book_title: "Harvard College Admissions Blueprint",
+        price: 47,
+        status: "live"
+      },
+
+      book5: {
+        library_no: "05",
+        book_title: "The Personal Statement Signature",
+        price: null,
+        status: "forthcoming"
+      },
+
+      book6: {
+        library_no: "06",
+        book_title: "The Extracurricular Activities Overhaul",
+        price: null,
+        status: "forthcoming"
+      }
+    };
+
+
+    function sendLibraryEvent(eventName, id) {
+
+      const book = libraryBooks[id];
+
+      if (!book || typeof gtag !== "function") {
+        return;
+      }
+
+      const parameters = {
+        library_no: book.library_no,
+        book_title: book.book_title,
+        availability: book.status
+      };
+
+      if (book.price !== null) {
+        parameters.value = book.price;
+        parameters.currency = "USD";
+      }
+
+      gtag("event", eventName, parameters);
     }
 
+
+    function openBook(id) {
+
+      document
+        .getElementById(id)
+        .classList
+        .add("active");
+
+      document.body.style.overflow = "hidden";
+
+      sendLibraryEvent("library_open", id);
+    }
+
+
     function closeBook(id) {
-      document.getElementById(id).classList.remove("active");
+
+      document
+        .getElementById(id)
+        .classList
+        .remove("active");
+
       document.body.style.overflow = "";
     }
 
+
     function closeFromBackdrop(event, id) {
+
       if (event.target.id === id) {
         closeBook(id);
       }
     }
 
-    function showAcquireNotice() {
+
+    function trackAcquire(id) {
+      sendLibraryEvent("library_acquire", id);
+    }
+
+
+    function showAcquireNotice(id) {
+
+      sendLibraryEvent(
+        "library_forthcoming_interest",
+        id
+      );
+
       document
         .getElementById("acquireNotice")
-        .classList.add("active");
+        .classList
+        .add("active");
     }
+
 
     function hideAcquireNotice() {
+
       document
         .getElementById("acquireNotice")
-        .classList.remove("active");
+        .classList
+        .remove("active");
     }
 
+
     function closeNoticeFromBackdrop(event) {
+
       if (event.target.id === "acquireNotice") {
         hideAcquireNotice();
       }
     }
 
-    document.addEventListener("keydown", function(event) {
 
-      if (event.key === "Escape") {
+    document.addEventListener(
+      "keydown",
+      function(event) {
 
-        document
-          .querySelectorAll(".modal.active")
-          .forEach(function(modal) {
-            modal.classList.remove("active");
-          });
+        if (event.key === "Escape") {
 
-        document
-          .getElementById("acquireNotice")
-          .classList.remove("active");
+          document
+            .querySelectorAll(".modal.active")
+            .forEach(function(modal) {
+              modal.classList.remove("active");
+            });
 
-        document.body.style.overflow = "";
+          document
+            .getElementById("acquireNotice")
+            .classList
+            .remove("active");
+
+          document.body.style.overflow = "";
+        }
       }
-
-    });
+    );
 
   </script>
 
