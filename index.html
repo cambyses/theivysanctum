@@ -2,13 +2,25 @@
 <html lang="en">
 <head>
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSSDCC0K1L"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-DSSDCC0K1L');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);
+      t.async=1;
+      t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y92ml3m7ki");
   </script>
 
   <meta charset="UTF-8">
@@ -65,8 +77,6 @@
       margin: 0 auto;
     }
 
-    /* NAVIGATION */
-
     nav {
       padding: 28px 0;
       border-bottom: 1px solid var(--line);
@@ -94,8 +104,6 @@
     .nav-links a {
       text-decoration: none;
     }
-
-    /* HERO */
 
     .hero {
       padding: 110px 0 105px;
@@ -163,8 +171,6 @@
       font-weight: 600;
     }
 
-    /* GENERAL SECTIONS */
-
     section {
       padding: 92px 0;
       border-top: 1px solid var(--line);
@@ -185,8 +191,6 @@
       font-size: 1.12rem;
       margin: 0;
     }
-
-    /* OFFICE HOURS */
 
     .hours-grid {
       display: grid;
@@ -209,10 +213,8 @@
     form {
       display: grid;
       gap: 20px;
-
       border: 1px solid rgba(37, 34, 31, 0.11);
       padding: 30px;
-
       box-shadow:
         inset 0 1px 2px rgba(37, 34, 31, 0.025),
         0 8px 24px rgba(37, 34, 31, 0.035);
@@ -260,8 +262,6 @@
       margin-top: 6px;
     }
 
-    /* LIBRARY PREVIEW */
-
     .library-preview {
       background: var(--cream-soft);
     }
@@ -301,11 +301,9 @@
       margin: 0 auto;
       aspect-ratio: 2 / 3;
       object-fit: cover;
-
       box-shadow:
         0 10px 24px rgba(37, 34, 31, 0.10),
         0 2px 6px rgba(37, 34, 31, 0.06);
-
       transition:
         transform 180ms ease,
         box-shadow 180ms ease;
@@ -313,7 +311,6 @@
 
     .mini-cover-wrap:hover .mini-cover {
       transform: translateY(-3px);
-
       box-shadow:
         0 14px 30px rgba(37, 34, 31, 0.13),
         0 3px 8px rgba(37, 34, 31, 0.07);
@@ -356,8 +353,6 @@
       font-size: 0.95rem;
     }
 
-    /* OFFICE */
-
     .office-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
@@ -373,8 +368,6 @@
     .office-detail p {
       margin: 0 0 24px;
     }
-
-    /* APPROACH */
 
     .signal-list {
       display: grid;
@@ -404,8 +397,6 @@
       text-transform: uppercase;
     }
 
-    /* ORIGIN */
-
     .origin-copy {
       max-width: 850px;
       font-size: 1.08rem;
@@ -421,8 +412,6 @@
       margin-top: 35px;
     }
 
-    /* CONTACT */
-
     .contact-block {
       max-width: 740px;
     }
@@ -437,8 +426,6 @@
       text-decoration: none;
       font-size: 1.12rem;
     }
-
-    /* FOOTER */
 
     footer {
       border-top: 1px solid var(--line);
@@ -463,8 +450,6 @@
     .footer-links a {
       text-decoration: none;
     }
-
-    /* MOBILE */
 
     @media (max-width: 860px) {
       .signal-list {
@@ -553,8 +538,6 @@
 
   <main>
 
-    <!-- HERO -->
-
     <div class="hero">
       <div class="shell">
 
@@ -604,8 +587,6 @@
     </div>
 
 
-    <!-- OFFICE HOURS -->
-
     <section id="hours">
       <div class="shell">
 
@@ -648,52 +629,29 @@
 
             <div class="field">
               <label for="name">Name</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                required
-              >
+              <input id="name" name="name" type="text" required>
             </div>
 
             <div class="field">
               <label for="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-              >
+              <input id="email" name="email" type="email" required>
             </div>
 
             <div class="field">
               <label for="grade_year">Grade / year</label>
-              <input
-                id="grade_year"
-                name="grade_year"
-                type="text"
-                required
-              >
+              <input id="grade_year" name="grade_year" type="text" required>
             </div>
 
             <div class="field">
               <label for="target_schools">
                 Target schools — optional
               </label>
-              <input
-                id="target_schools"
-                name="target_schools"
-                type="text"
-              >
+              <input id="target_schools" name="target_schools" type="text">
             </div>
 
             <div class="field">
               <label for="question">Your question</label>
-              <textarea
-                id="question"
-                name="question"
-                required
-              ></textarea>
+              <textarea id="question" name="question" required></textarea>
             </div>
 
             <button class="submit-button" type="submit">
@@ -707,8 +665,6 @@
       </div>
     </section>
 
-
-    <!-- LIBRARY PREVIEW -->
 
     <section class="library-preview" id="library">
       <div class="shell">
@@ -735,7 +691,6 @@
         <div class="mini-shelf">
 
           <article class="mini-book">
-
             <div class="mini-cover-wrap">
               <img
                 class="mini-cover"
@@ -745,26 +700,18 @@
             </div>
 
             <div class="mini-meta">
+              <div class="mini-number">Library No. 01</div>
 
-              <div class="mini-number">
-                Library No. 01
-              </div>
-
-              <h3>
-                The Recommendation Letter Memo
-              </h3>
+              <h3>The Recommendation Letter Memo</h3>
 
               <p class="mini-subtitle">
                 How to Select the Right Witnesses for Your Application
               </p>
-
             </div>
-
           </article>
 
 
           <article class="mini-book">
-
             <div class="mini-cover-wrap">
               <img
                 class="mini-cover"
@@ -774,26 +721,18 @@
             </div>
 
             <div class="mini-meta">
+              <div class="mini-number">Library No. 02</div>
 
-              <div class="mini-number">
-                Library No. 02
-              </div>
-
-              <h3>
-                The Carry Sentence
-              </h3>
+              <h3>The Carry Sentence</h3>
 
               <p class="mini-subtitle">
                 How Admissions Committees Remember, Repeat, and Defend a File
               </p>
-
             </div>
-
           </article>
 
 
           <article class="mini-book">
-
             <div class="mini-cover-wrap">
               <img
                 class="mini-cover"
@@ -803,26 +742,18 @@
             </div>
 
             <div class="mini-meta">
+              <div class="mini-number">Library No. 03</div>
 
-              <div class="mini-number">
-                Library No. 03
-              </div>
-
-              <h3>
-                The Activities Ledger
-              </h3>
+              <h3>The Activities Ledger</h3>
 
               <p class="mini-subtitle">
                 How Extracurricular Work Becomes Proof in Elite Admissions
               </p>
-
             </div>
-
           </article>
 
 
           <article class="mini-book">
-
             <div class="mini-cover-wrap">
               <img
                 class="mini-cover"
@@ -832,26 +763,18 @@
             </div>
 
             <div class="mini-meta">
+              <div class="mini-number">Library No. 04</div>
 
-              <div class="mini-number">
-                Library No. 04
-              </div>
-
-              <h3>
-                Harvard College Admissions Blueprint
-              </h3>
+              <h3>Harvard College Admissions Blueprint</h3>
 
               <p class="mini-subtitle">
                 A Methodical Application Strategy for Harvard College
               </p>
-
             </div>
-
           </article>
 
 
           <article class="mini-book">
-
             <div class="mini-cover-wrap">
               <img
                 class="mini-cover"
@@ -861,26 +784,18 @@
             </div>
 
             <div class="mini-meta">
+              <div class="mini-number">Library No. 05</div>
 
-              <div class="mini-number">
-                Library No. 05
-              </div>
-
-              <h3>
-                The Personal Statement Signature
-              </h3>
+              <h3>The Personal Statement Signature</h3>
 
               <p class="mini-subtitle">
                 How to Build the Sentence Every Admissions Reader Remembers
               </p>
-
             </div>
-
           </article>
 
 
           <article class="mini-book">
-
             <div class="mini-cover-wrap">
               <img
                 class="mini-cover"
@@ -890,21 +805,14 @@
             </div>
 
             <div class="mini-meta">
+              <div class="mini-number">Library No. 06</div>
 
-              <div class="mini-number">
-                Library No. 06
-              </div>
-
-              <h3>
-                The Extracurricular Activities Overhaul
-              </h3>
+              <h3>The Extracurricular Activities Overhaul</h3>
 
               <p class="mini-subtitle">
                 How to Turn Common App Activities Into Proof Admissions Readers Believe
               </p>
-
             </div>
-
           </article>
 
         </div>
@@ -921,8 +829,6 @@
       </div>
     </section>
 
-
-    <!-- THE OFFICE -->
 
     <section id="office">
       <div class="shell">
@@ -968,8 +874,6 @@
     </section>
 
 
-    <!-- APPROACH -->
-
     <section id="approach">
       <div class="shell">
 
@@ -996,37 +900,27 @@
 
           <div class="signal">
             <h3>Academics</h3>
-            <p>
-              Range, rigor, trajectory, and intellectual context.
-            </p>
+            <p>Range, rigor, trajectory, and intellectual context.</p>
           </div>
 
           <div class="signal">
             <h3>Activities</h3>
-            <p>
-              Evidence, hierarchy, initiative, artifact, and consequence.
-            </p>
+            <p>Evidence, hierarchy, initiative, artifact, and consequence.</p>
           </div>
 
           <div class="signal">
             <h3>Essays</h3>
-            <p>
-              Meaning, structure, positioning, and reader consequence.
-            </p>
+            <p>Meaning, structure, positioning, and reader consequence.</p>
           </div>
 
           <div class="signal">
             <h3>Recommendations</h3>
-            <p>
-              Third-party witness, proximity, credibility, and proof.
-            </p>
+            <p>Third-party witness, proximity, credibility, and proof.</p>
           </div>
 
           <div class="signal">
             <h3>Placement</h3>
-            <p>
-              Institutional fit, school-specific logic, and contribution.
-            </p>
+            <p>Institutional fit, school-specific logic, and contribution.</p>
           </div>
 
         </div>
@@ -1038,8 +932,6 @@
       </div>
     </section>
 
-
-    <!-- ORIGIN -->
 
     <section id="origin">
       <div class="shell">
@@ -1076,8 +968,6 @@
       </div>
     </section>
 
-
-    <!-- CONTACT -->
 
     <section id="contact">
       <div class="shell">
@@ -1142,14 +1032,17 @@
     function trackLibraryEntry(source) {
       if (typeof gtag === "function") {
         gtag("event", "library_enter", {
-          source: source
+          source: source,
+          transport_type: "beacon"
         });
       }
     }
 
     function trackOfficeHoursSubmit() {
       if (typeof gtag === "function") {
-        gtag("event", "office_hours_submit");
+        gtag("event", "office_hours_submit", {
+          transport_type: "beacon"
+        });
       }
     }
   </script>
