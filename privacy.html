@@ -1,22 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSSDCC0K1L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DSSDCC0K1L');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);
+      t.async=1;
+      t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y92ml3m7ki");
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="favicon.png">
 
   <title>Privacy | The Ivy Sanctum</title>
+
+  <meta
+    name="description"
+    content="Privacy information for The Ivy Sanctum, including website analytics, Office Hours submissions, email communications, and payments."
+  >
+
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
     :root {
       --cream: #f4f0e6;
+      --cream-soft: #f8f5ed;
       --crimson: #6e1423;
       --charcoal: #25221f;
       --muted: #6b655e;
       --line: rgba(37, 34, 31, 0.16);
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -26,281 +61,1117 @@
       line-height: 1.72;
     }
 
-    a { color: inherit; }
+    a {
+      color: inherit;
+    }
 
     .shell {
-      width: min(860px, calc(100% - 42px));
+      width: min(1040px, calc(100% - 48px));
       margin: 0 auto;
     }
 
+    /* --------------------------------
+       NAVIGATION
+    -------------------------------- */
+
     nav {
-      padding: 30px 0;
+      padding: 28px 0;
       border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
     }
 
     .wordmark {
       color: var(--crimson);
-      font-size: 1.2rem;
+      font-size: 1.24rem;
       text-decoration: none;
     }
 
-    main {
-      padding: 100px 0 120px;
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.88rem;
     }
 
-    .label {
+    .nav-links a {
+      text-decoration: none;
+    }
+
+    /* --------------------------------
+       HERO
+    -------------------------------- */
+
+    .privacy-hero {
+      padding: 95px 0 72px;
+    }
+
+    .eyebrow,
+    .section-label {
       color: var(--crimson);
-      font-size: .78rem;
-      letter-spacing: .16em;
+      font-size: 0.74rem;
+      letter-spacing: 0.17em;
       text-transform: uppercase;
-      margin-bottom: 18px;
+    }
+
+    .eyebrow {
+      margin-bottom: 20px;
     }
 
     h1 {
       color: var(--crimson);
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      line-height: 1;
+      font-size: clamp(3.6rem, 8vw, 6.6rem);
+      line-height: 0.98;
       font-weight: 400;
+      letter-spacing: -0.045em;
+      margin: 0 0 28px;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      font-size: 1.18rem;
+      margin: 0 0 22px;
+    }
+
+    .updated {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* --------------------------------
+       PRIVACY CONTENT
+    -------------------------------- */
+
+    .privacy-body {
+      border-top: 1px solid var(--line);
+      padding: 75px 0 95px;
+    }
+
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 72px;
+      align-items: start;
+    }
+
+    .privacy-index {
+      position: sticky;
+      top: 28px;
+    }
+
+    .privacy-index .section-label {
+      margin-bottom: 18px;
+    }
+
+    .privacy-index a {
+      display: block;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.86rem;
+      padding: 5px 0;
+    }
+
+    .privacy-index a:hover {
+      color: var(--crimson);
+    }
+
+    .privacy-content {
+      max-width: 760px;
+    }
+
+    .privacy-section {
+      padding: 0 0 46px;
+      margin: 0 0 46px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .privacy-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .privacy-section h2 {
+      color: var(--crimson);
+      font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 20px;
+    }
+
+    .privacy-section h3 {
+      color: var(--charcoal);
+      font-size: 1.08rem;
+      font-weight: 400;
+      margin: 26px 0 8px;
+    }
+
+    .privacy-section p {
+      margin: 0 0 17px;
+    }
+
+    .privacy-section ul {
+      margin: 17px 0;
+      padding-left: 21px;
+    }
+
+    .privacy-section li {
+      margin: 7px 0;
+    }
+
+    .provider-list {
+      margin-top: 25px;
+    }
+
+    .provider {
+      padding: 18px 0;
+      border-top: 1px solid rgba(37, 34, 31, 0.10);
+    }
+
+    .provider:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .provider-name {
+      color: var(--crimson);
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .provider p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.94rem;
+    }
+
+    .provider a {
+      color: var(--charcoal);
+      text-underline-offset: 3px;
+    }
+
+    /* --------------------------------
+       ORIGIN
+    -------------------------------- */
+
+    .origin {
+      border-top: 1px solid var(--line);
+      padding: 82px 0;
+      background: var(--cream-soft);
+    }
+
+    .origin-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
+      gap: 70px;
+      align-items: start;
+    }
+
+    .origin .section-label {
+      margin-bottom: 20px;
+    }
+
+    .origin h2 {
+      color: var(--crimson);
+      font-size: clamp(2.3rem, 4.8vw, 3.8rem);
+      line-height: 1.08;
+      font-weight: 400;
+      letter-spacing: -0.03em;
       margin: 0 0 25px;
     }
 
-    .effective {
+    .origin p {
+      margin: 0 0 18px;
+    }
+
+    .origin-side {
       color: var(--muted);
-      margin-bottom: 65px;
+      padding-top: 38px;
     }
 
-    h2 {
+    /* --------------------------------
+       PRIVACY CORRESPONDENCE
+    -------------------------------- */
+
+    .correspondence {
+      border-top: 1px solid var(--line);
+      padding: 78px 0;
+    }
+
+    .correspondence .section-label {
+      margin-bottom: 20px;
+    }
+
+    .correspondence h2 {
       color: var(--crimson);
-      font-size: 1.55rem;
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
       font-weight: 400;
-      margin: 52px 0 14px;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin: 0 0 24px;
     }
 
-    p { margin: 0 0 20px; }
+    .correspondence p {
+      max-width: 700px;
+      margin: 0 0 18px;
+    }
+
+    .email-link {
+      color: var(--crimson);
+      font-size: 1.08rem;
+      text-decoration: none;
+      border-bottom: 1px solid var(--crimson);
+      padding-bottom: 3px;
+    }
+
+    /* --------------------------------
+       CONTINUE NAVIGATION
+    -------------------------------- */
+
+    .continue {
+      border-top: 1px solid var(--line);
+      padding: 32px 0;
+    }
+
+    .continue-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .continue-label {
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .continue-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+
+    .continue-links a {
+      text-decoration: none;
+    }
+
+    .continue-links a:hover {
+      color: var(--crimson);
+    }
+
+    /* --------------------------------
+       FOOTER
+    -------------------------------- */
 
     footer {
       border-top: 1px solid var(--line);
-      padding: 32px 0 48px;
+      padding: 34px 0 48px;
       color: var(--muted);
-      font-size: .86rem;
+      font-size: 0.84rem;
     }
 
-    .footer {
+    .footer-inner {
       display: flex;
       justify-content: space-between;
+      gap: 25px;
       flex-wrap: wrap;
-      gap: 20px;
     }
 
-    .links {
+    .footer-links {
       display: flex;
       gap: 18px;
+      flex-wrap: wrap;
     }
 
-    .links a { text-decoration: none; }
+    .footer-links a {
+      text-decoration: none;
+    }
+
+    /* --------------------------------
+       MOBILE
+    -------------------------------- */
+
+    @media (max-width: 800px) {
+      .privacy-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .privacy-index {
+        position: static;
+        display: none;
+      }
+
+      .origin-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .origin-side {
+        padding-top: 0;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .shell {
+        width: min(100% - 30px, 1040px);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .privacy-hero {
+        padding: 75px 0 60px;
+      }
+
+      .privacy-body {
+        padding: 60px 0 75px;
+      }
+
+      .origin,
+      .correspondence {
+        padding: 65px 0;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="shell">
-    <a class="wordmark" href="index.html">The Ivy Sanctum</a>
-  </div>
-</nav>
+  <!-- ======================================
+       NAVIGATION
+  ======================================= -->
 
-<main>
-  <div class="shell">
+  <nav>
+    <div class="shell nav-inner">
 
-    <div class="label">Privacy</div>
-    <h1>Privacy Policy</h1>
-    <div class="effective">Effective August 16, 2026</div>
+      <a class="wordmark" href="/">
+        The Ivy Sanctum
+      </a>
 
-    <p>
-      Ivy Sanctum LLC respects the privacy of applicants, families, and visitors
-      who entrust us with academic, application, and personal information. This
-      Privacy Policy explains the information we collect, how we use it, and the
-      choices available to you.
-    </p>
+      <div class="nav-links">
+        <a href="/#hours">Office Hours</a>
+        <a href="/library.html">Library</a>
+        <a href="/advisory.html">Advisory</a>
+        <a href="/#approach">Approach</a>
+      </div>
 
-    <h2>Information You Provide</h2>
-
-    <p>
-      When you contact or engage Ivy Sanctum, you may provide information such as
-      your name, email address, school, grade level, academic record, GPA, testing,
-      activities, awards, target schools, essays, recommendation-related material,
-      application drafts, transcripts, and other information relevant to the
-      advisory work you request.
-    </p>
-
-    <p>
-      We also receive the communications, documents, and instructions you choose
-      to send during an engagement.
-    </p>
-
-    <h2>How We Use Your Information</h2>
-
-    <p>
-      We use submitted information to evaluate application materials, provide
-      admissions strategy and written advisory work, communicate with applicants
-      and families, administer engagements, process transactions, maintain business
-      records, improve our services, protect the integrity of the site and our
-      systems, and comply with applicable legal obligations.
-    </p>
-
-    <h2>Application Materials</h2>
-
-    <p>
-      Transcripts, essays, activity lists, recommendation materials, application
-      drafts, and related documents are treated as confidential client materials.
-      Access is limited to the work required to provide the requested engagement
-      and to service providers used to support that work.
-    </p>
-
-    <p>
-      Ivy Sanctum may use de-identified patterns, general admissions principles,
-      and aggregated insights developed through its advisory practice in research,
-      publishing, or educational material. Identifiable client material is used
-      publicly only with permission.
-    </p>
-
-    <h2>Software and AI-Assisted Tools</h2>
-
-    <p>
-      Ivy Sanctum may use professional software and AI-assisted tools to support
-      document analysis, organization, research, formatting, drafting workflows,
-      and business operations. These tools are used in connection with the requested
-      advisory work, with information limited to the scope reasonably required for
-      that purpose and available privacy controls applied where appropriate.
-    </p>
-
-    <h2>Payments</h2>
-
-    <p>
-      Payments may be processed through Stripe or another designated payment
-      provider. Payment providers receive the information required to complete and
-      administer the transaction under their own privacy practices. Ivy Sanctum does
-      not receive or store the complete payment-card credentials entered into a
-      third-party checkout.
-    </p>
-
-    <h2>Website and Technical Information</h2>
-
-    <p>
-      The site is currently delivered through third-party infrastructure, including
-      GitHub Pages and Cloudflare. Infrastructure providers may process technical
-      information such as IP address, browser or device information, request data,
-      and security information as part of operating and protecting their services.
-    </p>
-
-    <h2>Analytics and Advertising Measurement</h2>
-
-    <p>
-      Ivy Sanctum may use analytics and advertising-measurement technologies,
-      including platform pixels or similar tools, to understand site performance,
-      measure campaign effectiveness, and improve acquisition strategy. These
-      technologies may receive browser, device, referral, interaction, and similar
-      technical information according to the settings and privacy practices of the
-      relevant provider.
-    </p>
-
-    <h2>Service Providers</h2>
-
-    <p>
-      We may share information with service providers that support website hosting,
-      infrastructure, email, document handling, payment processing, analytics,
-      security, professional software, and business operations. Information is
-      shared according to the function those providers perform for Ivy Sanctum.
-    </p>
-
-    <h2>Legal and Safety Purposes</h2>
-
-    <p>
-      Information may be disclosed when reasonably necessary to comply with law,
-      legal process, regulatory obligations, enforce agreements, protect the rights
-      or safety of Ivy Sanctum or others, or investigate fraud, abuse, or security
-      concerns.
-    </p>
-
-    <h2>Retention</h2>
-
-    <p>
-      Application materials and communications are retained for the duration of the
-      engagement and for a reasonable archival period supporting continuity,
-      business records, dispute resolution, and legal obligations. Information may
-      subsequently be deleted or de-identified when its continued retention no
-      longer serves a legitimate business or legal purpose.
-    </p>
-
-    <h2>Your Choices</h2>
-
-    <p>
-      You may contact Ivy Sanctum to request access to, correction of, or deletion
-      of personal information held directly by us. Requests are handled in
-      accordance with applicable law and any legitimate record-retention
-      obligations.
-    </p>
-
-    <h2>Applicants Under 18</h2>
-
-    <p>
-      Applicants under 18 should include a parent or legal guardian in formal
-      engagement communications. The Ivy Sanctum website and services are intended
-      for users age 13 and older.
-    </p>
-
-    <p>
-      If Ivy Sanctum learns that personal information from a child under 13 has been
-      submitted without the authorization required by applicable law, we will take
-      appropriate steps to remove that information.
-    </p>
-
-    <h2>International Visitors</h2>
-
-    <p>
-      Ivy Sanctum is a United States business. Information submitted from outside
-      the United States may be processed and stored in the United States and in
-      other locations where our service providers operate.
-    </p>
-
-    <h2>Security</h2>
-
-    <p>
-      Ivy Sanctum uses reasonable administrative and technical measures appropriate
-      to the nature of the information handled. Internet transmission and electronic
-      storage involve inherent security risks, and security practices are reviewed
-      as the business and its systems develop.
-    </p>
-
-    <h2>Changes to This Policy</h2>
-
-    <p>
-      This policy may be updated as Ivy Sanctum's services, technology, or legal
-      obligations evolve. The effective date at the top of this page identifies the
-      current version.
-    </p>
-
-    <h2>Contact</h2>
-
-    <p>
-      Privacy questions and requests may be sent to
-      <a href="mailto:hello@theivysanctum.com">hello@theivysanctum.com</a>.
-    </p>
-
-  </div>
-</main>
-
-<footer>
-  <div class="shell footer">
-    <div>© 2026 Ivy Sanctum LLC</div>
-
-    <div class="links">
-      <a href="index.html">Home</a>
-      <a href="terms.html">Terms</a>
-      <a href="mailto:hello@theivysanctum.com">Contact</a>
     </div>
-  </div>
-</footer>
+  </nav>
+
+
+  <main>
+
+    <!-- ======================================
+         HERO
+    ======================================= -->
+
+    <header class="privacy-hero">
+      <div class="shell">
+
+        <div class="eyebrow">
+          Privacy
+        </div>
+
+        <h1>
+          Privacy Policy
+        </h1>
+
+        <p class="hero-copy">
+          This policy describes how Ivy Sanctum LLC collects, uses,
+          processes, and safeguards information associated with
+          The Ivy Sanctum website, correspondence, Office Hours,
+          Library purchases, and related services.
+        </p>
+
+        <div class="updated">
+          Last updated August 29, 2026
+        </div>
+
+      </div>
+    </header>
+
+
+    <!-- ======================================
+         PRIVACY BODY
+    ======================================= -->
+
+    <div class="privacy-body">
+      <div class="shell">
+
+        <div class="privacy-grid">
+
+          <!-- INDEX -->
+
+          <aside class="privacy-index">
+
+            <div class="section-label">
+              Contents
+            </div>
+
+            <a href="#information">Information</a>
+            <a href="#use">How information is used</a>
+            <a href="#office-hours">Office Hours</a>
+            <a href="#payments">Library purchases</a>
+            <a href="#analytics">Analytics</a>
+            <a href="#providers">Service providers</a>
+            <a href="#cookies">Cookies</a>
+            <a href="#retention">Retention</a>
+            <a href="#rights">Privacy rights</a>
+            <a href="#minors">Minors</a>
+            <a href="#security">Security</a>
+            <a href="#transfers">International transfers</a>
+            <a href="#changes">Changes</a>
+
+          </aside>
+
+
+          <!-- CONTENT -->
+
+          <div class="privacy-content">
+
+            <!-- INFORMATION -->
+
+            <section class="privacy-section" id="information">
+
+              <h2>
+                Information we collect
+              </h2>
+
+              <p>
+                Information reaches The Ivy Sanctum in several ways:
+                directly from you, through website interactions, through
+                service providers used to operate the site, and through
+                transactions you choose to complete.
+              </p>
+
+              <h3>
+                Information you provide
+              </h3>
+
+              <p>
+                When you submit an Office Hours question, send correspondence,
+                inquire about advisory work, purchase a Library edition, or
+                otherwise communicate with us, information may include:
+              </p>
+
+              <ul>
+                <li>Name</li>
+                <li>Email address</li>
+                <li>Grade, year, or academic stage</li>
+                <li>Target schools or programs</li>
+                <li>Questions and written correspondence</li>
+                <li>Application-related information you choose to provide</li>
+                <li>Order and transaction information</li>
+              </ul>
+
+              <p>
+                Please exercise judgment when sharing application materials
+                or personal circumstances and provide information reasonably
+                connected to the inquiry or service requested.
+              </p>
+
+
+              <h3>
+                Information generated through website use
+              </h3>
+
+              <p>
+                Website and analytics technologies may generate information
+                concerning page visits, navigation, interactions, approximate
+                geographic area, referring source, browser, operating system,
+                device type, and similar technical information.
+              </p>
+
+            </section>
+
+
+            <!-- USE -->
+
+            <section class="privacy-section" id="use">
+
+              <h2>
+                How information is used
+              </h2>
+
+              <p>
+                Information may be used to:
+              </p>
+
+              <ul>
+                <li>Respond to Office Hours questions and correspondence</li>
+                <li>Provide and administer advisory engagements</li>
+                <li>Process and fulfill Library purchases</li>
+                <li>Send transactional and service-related email</li>
+                <li>Understand website use and improve navigation</li>
+                <li>Measure interest in publications, services, and content</li>
+                <li>Maintain security and prevent abuse or fraud</li>
+                <li>Maintain accounting and transaction records</li>
+                <li>Comply with legal, tax, regulatory, and contractual obligations</li>
+              </ul>
+
+              <p>
+                Depending on the jurisdiction and context, processing may
+                rely on consent, contractual necessity, legitimate interests,
+                or compliance with legal obligations.
+              </p>
+
+            </section>
+
+
+            <!-- OFFICE HOURS -->
+
+            <section class="privacy-section" id="office-hours">
+
+              <h2>
+                Office Hours and correspondence
+              </h2>
+
+              <p>
+                The Office Hours form collects the information entered into
+                the form, including name, email address, grade or year,
+                target schools when supplied, and the question submitted.
+              </p>
+
+              <p>
+                Office Hours submissions are processed through Formspree and
+                routed to The Ivy Sanctum for review and response.
+              </p>
+
+              <p>
+                Email correspondence may be transmitted using our branded
+                email infrastructure and service providers, including Brevo.
+              </p>
+
+            </section>
+
+
+            <!-- PAYMENTS -->
+
+            <section class="privacy-section" id="payments">
+
+              <h2>
+                Library purchases and payments
+              </h2>
+
+              <p>
+                Library purchases are processed through Stripe.
+                Payment information entered into Stripe Checkout is handled
+                by Stripe according to its own privacy and security practices.
+              </p>
+
+              <p>
+                The Ivy Sanctum may receive transaction information associated
+                with a purchase, including the purchaser's email address,
+                product purchased, amount, payment status, date, and related
+                order information required for fulfillment, accounting,
+                customer support, refunds, and dispute handling.
+              </p>
+
+              <p>
+                Full payment-card credentials are processed through Stripe's
+                payment infrastructure.
+              </p>
+
+            </section>
+
+
+            <!-- ANALYTICS -->
+
+            <section class="privacy-section" id="analytics">
+
+              <h2>
+                Website analytics
+              </h2>
+
+              <p>
+                The Ivy Sanctum uses Google Analytics and Microsoft Clarity
+                to understand how visitors discover and use the website.
+              </p>
+
+              <h3>
+                Google Analytics
+              </h3>
+
+              <p>
+                Google Analytics may process information including page views,
+                sessions, approximate geographic information, referring source,
+                browser and device characteristics, and interactions measured
+                through the website.
+              </p>
+
+              <p>
+                We also use event measurement to understand activity such as
+                entering the Library, opening a volume, expressing interest
+                in forthcoming editions, clicking an acquisition link, and
+                submitting Office Hours.
+              </p>
+
+
+              <h3>
+                Microsoft Clarity
+              </h3>
+
+              <p>
+                Microsoft Clarity helps us understand website experience
+                through interaction analytics such as clicks, scrolling,
+                mouse movement, navigation patterns, and reconstructed
+                session behavior.
+              </p>
+
+              <p>
+                Clarity applies masking to information entered into text-input
+                fields in its session-recording system.
+              </p>
+
+            </section>
+
+
+            <!-- PROVIDERS -->
+
+            <section class="privacy-section" id="providers">
+
+              <h2>
+                Service providers
+              </h2>
+
+              <p>
+                The Ivy Sanctum uses specialist providers to operate different
+                parts of the website and business infrastructure.
+              </p>
+
+              <div class="provider-list">
+
+                <div class="provider">
+
+                  <div class="provider-name">
+                    Google Analytics
+                  </div>
+
+                  <p>
+                    Website traffic, usage measurement, acquisition,
+                    and event analytics.
+                    <a
+                      href="https://policies.google.com/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Google Privacy Policy
+                    </a>
+                  </p>
+
+                </div>
+
+
+                <div class="provider">
+
+                  <div class="provider-name">
+                    Microsoft Clarity
+                  </div>
+
+                  <p>
+                    Website interaction analytics, heatmaps, and session
+                    reconstruction.
+                    <a
+                      href="https://privacy.microsoft.com/privacystatement"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Microsoft Privacy Statement
+                    </a>
+                  </p>
+
+                </div>
+
+
+                <div class="provider">
+
+                  <div class="provider-name">
+                    Stripe
+                  </div>
+
+                  <p>
+                    Payment processing, transaction administration,
+                    fraud prevention, and checkout.
+                    <a
+                      href="https://stripe.com/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Stripe Privacy Policy
+                    </a>
+                  </p>
+
+                </div>
+
+
+                <div class="provider">
+
+                  <div class="provider-name">
+                    Formspree
+                  </div>
+
+                  <p>
+                    Processing, routing, storage, and notification for
+                    website form submissions.
+                    <a
+                      href="https://formspree.io/legal/privacy-policy/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Formspree Privacy Policy
+                    </a>
+                  </p>
+
+                </div>
+
+
+                <div class="provider">
+
+                  <div class="provider-name">
+                    Brevo
+                  </div>
+
+                  <p>
+                    Branded email transmission and related email
+                    infrastructure.
+                    <a
+                      href="https://www.brevo.com/legal/privacypolicy/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Brevo Privacy Policy
+                    </a>
+                  </p>
+
+                </div>
+
+              </div>
+
+              <p>
+                These providers operate under their own terms and privacy
+                practices and may process information in locations associated
+                with their infrastructure and service operations.
+              </p>
+
+            </section>
+
+
+            <!-- COOKIES -->
+
+            <section class="privacy-section" id="cookies">
+
+              <h2>
+                Cookies and similar technologies
+              </h2>
+
+              <p>
+                Analytics and technology providers may use cookies, browser
+                identifiers, and similar technologies to distinguish sessions,
+                measure website use, maintain service functionality, and
+                generate aggregated analytics.
+              </p>
+
+              <p>
+                Browser settings can be used to limit or remove cookies.
+                Restricting cookies may reduce the continuity or completeness
+                of certain analytics features.
+              </p>
+
+            </section>
+
+
+            <!-- RETENTION -->
+
+            <section class="privacy-section" id="retention">
+
+              <h2>
+                Data retention
+              </h2>
+
+              <p>
+                Information is retained for periods reasonably connected to
+                the purpose for which it was collected, including responding
+                to inquiries, delivering products or services, maintaining
+                transaction and accounting records, resolving disputes,
+                protecting the integrity of the business, and satisfying
+                legal or regulatory requirements.
+              </p>
+
+              <p>
+                Different service providers maintain their own retention
+                schedules for information processed through their systems.
+              </p>
+
+            </section>
+
+
+            <!-- RIGHTS -->
+
+            <section class="privacy-section" id="rights">
+
+              <h2>
+                Privacy rights and choices
+              </h2>
+
+              <p>
+                Depending on where you live, applicable law may provide rights
+                relating to personal information, including access, correction,
+                deletion, portability, restriction, or objection to certain
+                processing.
+              </p>
+
+              <p>
+                Requests concerning information held directly by
+                The Ivy Sanctum may be sent to
+                <a href="mailto:hello@theivysanctum.com">
+                  hello@theivysanctum.com
+                </a>.
+              </p>
+
+              <p>
+                We may request reasonable information to confirm identity
+                before completing a privacy request. Certain records may
+                continue to be retained where required for accounting,
+                taxation, legal compliance, fraud prevention, or the
+                establishment or defense of legal claims.
+              </p>
+
+            </section>
+
+
+            <!-- MINORS -->
+
+            <section class="privacy-section" id="minors">
+
+              <h2>
+                Students and minors
+              </h2>
+
+              <p>
+                The Ivy Sanctum serves an admissions audience that can include
+                students under the age of eighteen.
+              </p>
+
+              <p>
+                The website is intended for users age thirteen and older.
+                We do not knowingly solicit personal information from children
+                under thirteen. A parent or guardian who believes information
+                concerning a child under thirteen has been submitted may
+                contact us to request review and deletion.
+              </p>
+
+            </section>
+
+
+            <!-- SECURITY -->
+
+            <section class="privacy-section" id="security">
+
+              <h2>
+                Security
+              </h2>
+
+              <p>
+                The Ivy Sanctum uses reasonable technical and administrative
+                measures appropriate to the nature of the information and
+                relies on established infrastructure providers for website,
+                communications, forms, analytics, and payments.
+              </p>
+
+              <p>
+                Internet transmission and electronic storage carry inherent
+                security risks, and absolute security cannot be guaranteed.
+              </p>
+
+            </section>
+
+
+            <!-- INTERNATIONAL -->
+
+            <section class="privacy-section" id="transfers">
+
+              <h2>
+                International processing
+              </h2>
+
+              <p>
+                The Ivy Sanctum and its service providers may process
+                information in the United States and in other countries
+                where those providers maintain operations or infrastructure.
+                Privacy protections and legal requirements can differ across
+                jurisdictions.
+              </p>
+
+            </section>
+
+
+            <!-- CHANGES -->
+
+            <section class="privacy-section" id="changes">
+
+              <h2>
+                Changes to this policy
+              </h2>
+
+              <p>
+                This Privacy Policy may be updated as The Ivy Sanctum adds
+                products, publishing systems, analytics, communications
+                infrastructure, or other services.
+              </p>
+
+              <p>
+                The date at the top of this page identifies the current
+                version.
+              </p>
+
+            </section>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ======================================
+         ORIGIN
+    ======================================= -->
+
+    <section class="origin">
+
+      <div class="shell origin-grid">
+
+        <div>
+
+          <div class="section-label">
+            The Origin
+          </div>
+
+          <h2>
+            Research, advisory, and a growing body of work.
+          </h2>
+
+          <p>
+            The Ivy Sanctum is an independent admissions research and advisory
+            practice. Its methodology draws on more than 30 years of combined
+            experience across Harvard's schools, including firsthand experience
+            reading files on a Harvard graduate admissions committee.
+          </p>
+
+        </div>
+
+
+        <div class="origin-side">
+
+          <p>
+            The methodology is developed through advisory work,
+            frameworks, instruments, and publications in
+            The Ivy Sanctum Library.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         PRIVACY CORRESPONDENCE
+    ======================================= -->
+
+    <section class="correspondence">
+
+      <div class="shell">
+
+        <div class="section-label">
+          Privacy Correspondence
+        </div>
+
+        <h2>
+          Questions about your information.
+        </h2>
+
+        <p>
+          Privacy questions, requests, or concerns concerning information
+          handled directly by The Ivy Sanctum may be sent to:
+        </p>
+
+        <a
+          class="email-link"
+          href="mailto:hello@theivysanctum.com"
+        >
+          hello@theivysanctum.com
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ======================================
+         CONTINUE
+    ======================================= -->
+
+    <div class="continue">
+
+      <div class="shell continue-inner">
+
+        <div class="continue-label">
+          Continue through the Sanctum
+        </div>
+
+        <div class="continue-links">
+          <a href="/">The Sanctum</a>
+          <a href="/#hours">Office Hours</a>
+          <a href="/advisory.html">Advisory</a>
+          <a href="/library.html">Library</a>
+          <a href="/#approach">Approach</a>
+          <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
+            Top ↑
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ======================================
+       FOOTER
+  ======================================= -->
+
+  <footer>
+
+    <div class="shell footer-inner">
+
+      <div>
+        © 2026 Ivy Sanctum LLC
+      </div>
+
+      <div class="footer-links">
+        <a href="/advisory.html">Advisory</a>
+        <a href="/library.html">Library</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="mailto:hello@theivysanctum.com">Contact</a>
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
 </html>
