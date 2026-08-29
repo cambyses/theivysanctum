@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSSDCC0K1L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DSSDCC0K1L');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);
+      t.async=1;
+      t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y92ml3m7ki");
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Approach | The Ivy Sanctum</title>
+
+  <meta
+    name="description"
+    content="The Ivy Sanctum methodology for reading, architecting, and positioning selective admissions files across essays, activities, recommendations, academics, and institutional fit."
+  >
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    :root {
+      --cream: #f4f0e6;
+      --cream-soft: #f8f5ed;
+      --crimson: #6e1423;
+      --charcoal: #25221f;
+      --muted: #6b655e;
+      --line: rgba(37, 34, 31, 0.16);
+      --line-strong: rgba(37, 34, 31, 0.26);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.68;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    input,
+    button {
+      font: inherit;
+    }
+
+    .shell {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* --------------------------------
+       NAVIGATION
+    -------------------------------- */
+
+    nav {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .wordmark {
+      color: var(--crimson);
+      font-size: 1.24rem;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.88rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+    }
+
+    /* --------------------------------
+       GLOBAL
+    -------------------------------- */
+
+    section {
+      padding: 96px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .eyebrow,
+    .section-label,
+    .method-code {
+      color: var(--crimson);
+      font-size: 0.74rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .section-label {
+      margin-bottom: 21px;
+    }
+
+    h1 {
+      color: var(--crimson);
+      font-size: clamp(4rem, 9vw, 7.3rem);
+      line-height: 0.96;
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      margin: 0 0 34px;
+    }
+
+    h2 {
+      color: var(--crimson);
+      font-size: clamp(2.5rem, 5vw, 4.35rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      font-weight: 400;
+      margin: 0 0 28px;
+    }
+
+    h3 {
+      font-weight: 400;
+    }
+
+    .section-intro {
+      max-width: 830px;
+      font-size: 1.12rem;
+      margin: 0;
+    }
+
+    .text-link {
+      display: inline-block;
+      color: var(--crimson);
+      text-decoration: none;
+      border-bottom: 1px solid var(--crimson);
+      padding-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    /* --------------------------------
+       HERO
+    -------------------------------- */
+
+    .hero {
+      padding: 110px 0 105px;
+    }
+
+    .hero .eyebrow {
+      margin-bottom: 22px;
+    }
+
+    .hero-copy {
+      max-width: 870px;
+      font-size: clamp(1.35rem, 2.65vw, 1.95rem);
+      line-height: 1.48;
+      margin: 0 0 28px;
+    }
+
+    .hero-detail {
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 1.02rem;
+      margin: 0;
+    }
+
+    /* --------------------------------
+       MASTER METHOD
+    -------------------------------- */
+
+    .master {
+      background: var(--cream-soft);
+    }
+
+    .master-line {
+      color: var(--crimson);
+      font-size: clamp(2rem, 4.8vw, 4rem);
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin: 52px 0 67px;
+    }
+
+    .master-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+    }
+
+    .master-step {
+      border-top: 1px solid var(--line-strong);
+      padding-top: 20px;
+    }
+
+    .master-step-number {
+      color: var(--muted);
+      font-size: 0.67rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .master-step h3 {
+      color: var(--crimson);
+      font-size: 1.45rem;
+      margin: 0 0 13px;
+    }
+
+    .master-step p {
+      margin: 0;
+      font-size: 0.98rem;
+    }
+
+    /* --------------------------------
+       LANE INTRO
+    -------------------------------- */
+
+    .lane-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 70px;
+      align-items: start;
+      margin-bottom: 72px;
+    }
+
+    .lane-number {
+      color: var(--muted);
+      font-size: 0.69rem;
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+      margin-bottom: 17px;
+    }
+
+    .lane-heading h2 {
+      margin-bottom: 0;
+    }
+
+    .lane-copy {
+      font-size: 1.08rem;
+      margin: 3px 0 0;
+      max-width: 700px;
+    }
+
+    /* --------------------------------
+       DEEP METHOD
+    -------------------------------- */
+
+    .deep-method {
+      border-top: 1px solid var(--line-strong);
+      padding-top: 36px;
+      margin-bottom: 76px;
+    }
+
+    .deep-method-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 65px;
+      margin-bottom: 48px;
+      align-items: start;
+    }
+
+    .method-code {
+      margin-bottom: 13px;
+    }
+
+    .deep-method h3 {
+      color: var(--crimson);
+      font-size: clamp(1.9rem, 3.6vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    .equation {
+      color: var(--charcoal);
+      font-size: clamp(1.12rem, 2.15vw, 1.55rem);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .method-explanation {
+      max-width: 830px;
+      font-size: 1.05rem;
+      margin: 0 0 42px;
+    }
+
+    .sequence {
+      border-top: 1px solid var(--line);
+    }
+
+    .sequence-row {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 35px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .sequence-term {
+      color: var(--crimson);
+      font-size: 0.96rem;
+    }
+
+    .sequence-definition {
+      margin: 0;
+      max-width: 760px;
+      font-size: 0.97rem;
+    }
+
+    /* --------------------------------
+       METHOD LEDGER
+    -------------------------------- */
+
+    .supporting-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 24px;
+    }
+
+    .supporting-head h3 {
+      color: var(--crimson);
+      font-size: 1.65rem;
+      margin: 0;
+    }
+
+    .supporting-head p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .ledger {
+      border-top: 1px solid var(--line-strong);
+    }
+
+    .ledger-row {
+      display: grid;
+      grid-template-columns: 235px minmax(0, 1fr);
+      gap: 45px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .ledger-name {
+      color: var(--crimson);
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .ledger-equation {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* --------------------------------
+       APPLICATION ROUTES
+    -------------------------------- */
+
+    .routes {
+      background: var(--cream-soft);
+    }
+
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 70px;
+      margin-top: 52px;
+    }
+
+    .route {
+      border-top: 1px solid var(--line-strong);
+      padding-top: 23px;
+    }
+
+    .route h3 {
+      color: var(--crimson);
+      font-size: 1.6rem;
+      margin: 0 0 14px;
+    }
+
+    .route p {
+      margin: 0 0 24px;
+      max-width: 480px;
+    }
+
+    /* --------------------------------
+       JOURNAL
+    -------------------------------- */
+
+    .journal-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.85fr);
+      gap: 75px;
+      align-items: start;
+    }
+
+    .journal-copy p {
+      max-width: 740px;
+      font-size: 1.05rem;
+      margin: 0 0 20px;
+    }
+
+    .journal-form {
+      border-top: 1px solid var(--line-strong);
+      padding-top: 24px;
+    }
+
+    .journal-form label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-bottom: 10px;
+    }
+
+    .journal-form input[type="email"] {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--line-strong);
+      border-radius: 0;
+      padding: 12px 2px;
+      color: var(--charcoal);
+      outline: none;
+    }
+
+    .journal-form input[type="email"]:focus {
+      border-bottom-color: var(--crimson);
+    }
+
+    .journal-submit {
+      margin-top: 20px;
+      border: 1px solid var(--crimson);
+      background: transparent;
+      color: var(--crimson);
+      padding: 12px 18px;
+      cursor: pointer;
+    }
+
+    .journal-note {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 14px;
+    }
+
+    .journal-note a {
+      text-underline-offset: 3px;
+    }
+
+    /* --------------------------------
+       ORIGIN
+    -------------------------------- */
+
+    .origin {
+      background: var(--cream-soft);
+    }
+
+    .origin-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
+      gap: 70px;
+      align-items: start;
+    }
+
+    .origin p {
+      margin: 0 0 20px;
+    }
+
+    .origin-side {
+      color: var(--muted);
+      padding-top: 39px;
+    }
+
+    /* --------------------------------
+       OFFICE HOURS
+    -------------------------------- */
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.7fr);
+      gap: 70px;
+      align-items: end;
+    }
+
+    .hours-copy {
+      max-width: 720px;
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .hours-action {
+      text-align: right;
+    }
+
+    /* --------------------------------
+       CONTINUE
+    -------------------------------- */
+
+    .continue {
+      border-top: 1px solid var(--line);
+      padding: 32px 0;
+    }
+
+    .continue-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .continue-label {
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .continue-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+
+    .continue-links a {
+      text-decoration: none;
+    }
+
+    .continue-links a:hover {
+      color: var(--crimson);
+    }
+
+    /* --------------------------------
+       FOOTER
+    -------------------------------- */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 34px 0 48px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+    }
+
+    /* --------------------------------
+       RESPONSIVE
+    -------------------------------- */
+
+    @media (max-width: 860px) {
+
+      .master-grid,
+      .route-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .lane-heading,
+      .deep-method-head,
+      .journal-grid,
+      .origin-grid,
+      .hours-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hours-action {
+        text-align: left;
+      }
+
+      .ledger-row {
+        grid-template-columns: 190px minmax(0, 1fr);
+      }
+
+    }
+
+    @media (max-width: 680px) {
+
+      .shell {
+        width: min(100% - 30px, 1120px);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 82px 0;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+
+      .master-line {
+        margin: 40px 0 50px;
+      }
+
+      .sequence-row,
+      .ledger-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .supporting-head {
+        display: block;
+      }
+
+      .supporting-head p {
+        margin-top: 10px;
+      }
+
+    }
+  </style>
+</head>
+
+
+<body id="top">
+
+  <!-- ======================================
+       NAVIGATION
+  ======================================= -->
+
+  <nav>
+    <div class="shell nav-inner">
+
+      <a class="wordmark" href="/">
+        The Ivy Sanctum
+      </a>
+
+      <div class="nav-links">
+
+        <a href="/#hours">
+          Office Hours
+        </a>
+
+        <a
+          href="/library.html"
+          onclick="trackLibraryEntry('approach_navigation')"
+        >
+          Library
+        </a>
+
+        <a href="/advisory.html">
+          Advisory
+        </a>
+
+        <a href="/approach.html">
+          Approach
+        </a>
+
+      </div>
+
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- ======================================
+         HERO
+    ======================================= -->
+
+    <header class="hero">
+      <div class="shell">
+
+        <div class="eyebrow">
+          Admissions Method
+        </div>
+
+        <h1>
+          The Approach
+        </h1>
+
+        <p class="hero-copy">
+          Selective applications are systems of evidence.
+          The Ivy Sanctum reads the file at three levels:
+          what the reader sees, how the pieces work together,
+          and what interpretation the dossier carries into committee.
+        </p>
+
+        <p class="hero-detail">
+          The methodology connects academic record, activities, honors,
+          recommendations, essays, supplements, institutional fit,
+          and contextual evidence into one coherent admissions argument.
+        </p>
+
+      </div>
+    </header>
+
+
+    <!-- ======================================
+         MASTER METHOD
+    ======================================= -->
+
+    <section class="master">
+      <div class="shell">
+
+        <div class="section-label">
+          The Master Method
+        </div>
+
+        <h2>
+          Read the evidence. Architect the file. Position the candidate.
+        </h2>
+
+        <div class="master-line">
+          Read → Architect → Position
+        </div>
+
+
+        <div class="master-grid">
+
+          <div class="master-step">
+
+            <div class="master-step-number">
+              01
+            </div>
+
+            <h3>
+              Read
+            </h3>
+
+            <p>
+              Decompose the file into claims, receipts, witnesses,
+              patterns, gaps, context, and institutional signals.
+              Each component is read individually and in relation
+              to the complete dossier.
+            </p>
+
+          </div>
+
+
+          <div class="master-step">
+
+            <div class="master-step-number">
+              02
+            </div>
+
+            <h3>
+              Architect
+            </h3>
+
+            <p>
+              Assign every component a defined burden of proof.
+              Activities establish residue. Recommendations establish
+              witness. Essays establish interpretation. Supplements
+              establish placement and future direction.
+            </p>
+
+          </div>
+
+
+          <div class="master-step">
+
+            <div class="master-step-number">
+              03
+            </div>
+
+            <h3>
+              Position
+            </h3>
+
+            <p>
+              Shape the final interpretation of the candidate:
+              the argument the reader remembers, the language a
+              committee can repeat, and the evidence available
+              to support that judgment.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================
+         FILE ARCHITECTURE
+    ======================================= -->
+
+    <section id="file-architecture">
+      <div class="shell">
+
+        <div class="lane-heading">
+
+          <div>
+
+            <div class="lane-number">
+              Method 01
+            </div>
+
+            <h2>
+              File Architecture
+            </h2>
+
+          </div>
+
+          <p class="lane-copy">
+            File Architecture treats the application as a coordinated
+            dossier. Every section carries a defined function, every
+            claim requires evidence, and every piece of evidence gains
+            strength through deliberate placement.
+          </p>
+
+        </div>
+
+
+        <!-- COMMON APP FILE -->
+
+        <div class="deep-method">
+
+          <div class="deep-method-head">
+
+            <div>
+
+              <div class="method-code">
+                F.01
+              </div>
+
+              <h3>
+                The Common App File
+              </h3>
+
+            </div>
+
+            <p class="equation">
+              Claim → Proof → Witness → Placement → Context
+            </p>
+
+          </div>
+
+
+          <p class="method-explanation">
+            A file read begins by identifying the central claims the
+            application asks a reader to carry forward. The method then
+            traces the evidence supporting each claim, the people capable
+            of confirming it, the location where that evidence carries
+            greatest force, and the context required for accurate judgment.
+          </p>
+
+
+          <div class="sequence">
+
+            <div class="sequence-row">
+              <div class="sequence-term">Claim</div>
+              <p class="sequence-definition">
+                The proposition the file establishes about the candidate:
+                intellectual character, contribution, initiative, judgment,
+                technical ability, artistic direction, or another governing
+                pattern.
+              </p>
+            </div>
+
+            <div class="sequence-row">
+              <div class="sequence-term">Proof</div>
+              <p class="sequence-definition">
+                Observable evidence that gives the claim weight:
+                artifacts, outcomes, sustained work, metrics, decisions,
+                research, performances, publications, or institutional
+                responsibility.
+              </p>
+            </div>
+
+            <div class="sequence-row">
+              <div class="sequence-term">Witness</div>
+              <p class="sequence-definition">
+                Credible third-party confirmation. A teacher, mentor,
+                supervisor, principal investigator, coach, or institutional
+                actor gives the committee an external point of verification.
+              </p>
+            </div>
+
+            <div class="sequence-row">
+              <div class="sequence-term">Placement</div>
+              <p class="sequence-definition">
+                The location in the application where a piece of evidence
+                carries the clearest strategic function: activities,
+                recommendations, personal writing, supplements, honors,
+                or contextual information.
+              </p>
+            </div>
+
+            <div class="sequence-row">
+              <div class="sequence-term">Context</div>
+              <p class="sequence-definition">
+                The denominator that allows the reader to interpret the
+                evidence accurately: access, selectivity, school environment,
+                family circumstances, timeline, institutional constraints,
+                or scale.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUPPORTING FILE METHODS -->
+
+        <div class="supporting-head">
+
+          <h3>
+            Supporting file systems
+          </h3>
+
+          <p>
+            Selected methods from the working repository.
+          </p>
+
+        </div>
+
+
+        <div class="ledger">
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              The Activity Ledger
+            </div>
+            <p class="ledger-equation">
+              Role → Artifact → User → Metric → Afterlife
+            </p>
+          </div>
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              The Honors Authority Line
+            </div>
+            <p class="ledger-equation">
+              Honor → Issuer → Scope → Selectivity → Rank → Signal
+            </p>
+          </div>
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              Dossier Triangulation Map
+            </div>
+            <p class="ledger-equation">
+              Essay Claim → Activity Residue → Letter Witness →
+              Supplement Placement → Context Protection
+            </p>
+          </div>
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              Placeability Map
+            </div>
+            <p class="ledger-equation">
+              Receipt × Room × Role
+            </p>
+          </div>
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              Additional Info Ledger
+            </div>
+            <p class="ledger-equation">
+              Event → Timeline → Effect → Context → Proof → Protected Read
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================
+         WRITING OVERHAUL
+    ======================================= -->
+
+    <section id="writing-overhaul">
+      <div class="shell">
+
+        <div class="lane-heading">
+
+          <div>
+
+            <div class="lane-number">
+              Method 02
+            </div>
+
+            <h2>
+              Writing Overhaul
+            </h2>
+
+          </div>
+
+          <p class="lane-copy">
+            Writing Overhaul studies how interpretation moves through
+            language. The work begins with the candidate's real material
+            and develops a structure that carries observation, meaning,
+            evidence, and direction with precision.
+          </p>
+
+        </div>
+
+
+        <!-- CARRY SENTENCE -->
+
+        <div class="deep-method">
+
+          <div class="deep-method-head">
+
+            <div>
+
+              <div class="method-code">
+                W.01
+              </div>
+
+              <h3>
+                The Carry Sentence
+              </h3>
+
+            </div>
+
+            <p class="equation">
+              Notice → Meaning → Response → Proof → Direction
+            </p>
+
+          </div>
+
+
+          <p class="method-explanation">
+            Strong application writing creates an interpretation the
+            reader can carry forward. The Carry Sentence method develops
+            that interpretation by tracing a movement from observation
+            through meaning and response into evidence and future direction.
+          </p>
+
+
+          <div class="sequence">
+
+            <div class="sequence-row">
+              <div class="sequence-term">Notice</div>
+              <p class="sequence-definition">
+                The observation, tension, question, pattern, or detail
+                that reveals how the student attends to the world.
+              </p>
+            </div>
+
+            <div class="sequence-row">
+              <div class="sequence-term">Meaning</div>
+              <p class="sequence-definition">
+                The student's interpretation of that observation and the
+                intellectual, personal, or ethical significance attached to it.
+              </p>
+            </div>
+
+            <div class="sequence-row">
+              <div class="sequence-term">Response</div>
+              <p class="sequence-definition">
+                The decision, inquiry, creation, intervention, or repeated
+                behavior generated by that interpretation.
+              </p>
+            </div>
+
+            <div class="sequence-row">
+              <div class="sequence-term">Proof</div>
+              <p class="sequence-definition">
+                The residue of the response: an artifact, changed system,
+                result, body of work, relationship, contribution, or
+                observable pattern.
+              </p>
+            </div>
+
+            <div class="sequence-row">
+              <div class="sequence-term">Direction</div>
+              <p class="sequence-definition">
+                The future vector revealed by the pattern: the questions,
+                environments, disciplines, and forms of contribution the
+                student is prepared to pursue next.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUPPORTING WRITING METHODS -->
+
+        <div class="supporting-head">
+
+          <h3>
+            Supporting writing systems
+          </h3>
+
+          <p>
+            Methods for supplements, fit, and academic direction.
+          </p>
+
+        </div>
+
+
+        <div class="ledger">
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              Supplement Routing Map
+            </div>
+            <p class="ledger-equation">
+              Why Major = Problem + Method<br>
+              Why School = Course + Unit + First Move<br>
+              Community = Role Under Pressure<br>
+              Activity = Artifact + Metric<br>
+              Additional Info = Ledger + Misread Prevention
+            </p>
+          </div>
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              Why Major Method
+            </div>
+            <p class="ledger-equation">
+              Problem → Method → Evidence → Direction
+            </p>
+          </div>
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              Fit Bridge
+            </div>
+            <p class="ledger-equation">
+              Course → Unit → Method → First Move
+            </p>
+          </div>
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              The Personal Statement Signature
+            </div>
+            <p class="ledger-equation">
+              Governing Pattern → Scene → Interpretation → Residue → Carry
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================
+         PRIVATE COUNSEL
+    ======================================= -->
+
+    <section id="private-counsel">
+      <div class="shell">
+
+        <div class="lane-heading">
+
+          <div>
+
+            <div class="lane-number">
+              Method 03
+            </div>
+
+            <h2>
+              Private Counsel
+            </h2>
+
+          </div>
+
+          <p class="lane-copy">
+            Private Counsel extends the same methodology across time:
+            academic choices, testing posture, school-list architecture,
+            recommender strategy, application sequencing, file development,
+            and response to new outcomes throughout the cycle.
+          </p>
+
+        </div>
+
+
+        <!-- DOSSIER TRIANGULATION -->
+
+        <div class="deep-method">
+
+          <div class="deep-method-head">
+
+            <div>
+
+              <div class="method-code">
+                C.01
+              </div>
+
+              <h3>
+                Dossier Triangulation
+              </h3>
+
+            </div>
+
+            <p class="equation">
+              Essay Claim → Activity Residue → Letter Witness →
+              Supplement Placement → Context Protection
+            </p>
+
+          </div>
+
+
+          <p class="method-explanation">
+            Dossier Triangulation tests whether the central interpretation
+            of the candidate survives across the complete application.
+            A strong file creates reinforcement across independent surfaces:
+            personal writing introduces the claim, activities leave residue,
+            recommendations witness the pattern, supplements place it inside
+            the institution, and context protects the reader's interpretation.
+          </p>
+
+
+          <div class="sequence">
+
+            <div class="sequence-row">
+              <div class="sequence-term">Essay Claim</div>
+              <p class="sequence-definition">
+                The interpretation the student's writing establishes about
+                character, intellectual direction, motive, or contribution.
+              </p>
+            </div>
+
+            <div class="sequence-row">
+              <div class="sequence-term">Activity Residue</div>
+              <p class="sequence-definition">
+                Evidence that the pattern has produced visible work,
+                responsibility, artifacts, outcomes, or sustained behavior.
+              </p>
+            </div>
+
+            <div class="sequence-row">
+              <div class="sequence-term">Letter Witness</div>
+              <p class="sequence-definition">
+                Independent confirmation from a credible observer who has
+                seen the pattern operate in a meaningful environment.
+              </p>
+            </div>
+
+            <div class="sequence-row">
+              <div class="sequence-term">Supplement Placement</div>
+              <p class="sequence-definition">
+                Evidence that connects the candidate's established pattern
+                to the courses, units, communities, methods, and opportunities
+                available at the institution.
+              </p>
+            </div>
+
+            <div class="sequence-row">
+              <div class="sequence-term">Context Protection</div>
+              <p class="sequence-definition">
+                The information required to preserve an accurate reading of
+                the file across school environment, access, timeline,
+                opportunity, family circumstances, or institutional scale.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUPPORTING COUNSEL METHODS -->
+
+        <div class="supporting-head">
+
+          <h3>
+            Supporting counsel systems
+          </h3>
+
+          <p>
+            Methods for sequence, witnesses, planning, and repair.
+          </p>
+
+        </div>
+
+
+        <div class="ledger">
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              The Witness Gate
+            </div>
+            <p class="ledger-equation">
+              Strength → Specificity → Witness → Scale
+            </p>
+          </div>
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              The Rec Letter Memo
+            </div>
+            <p class="ledger-equation">
+              Placement → Witness<br>
+              Denominator → Episode → Artifact → Stance
+            </p>
+          </div>
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              Micro / Macro Recommendation Strategy
+            </div>
+            <p class="ledger-equation">
+              Micro = Bounded Proof / Specific Artifact<br>
+              Macro = Long Arc / Repeated Pattern
+            </p>
+          </div>
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              College List Architecture
+            </div>
+            <p class="ledger-equation">
+              Selectivity × Major Gate × Student Band<br>
+              Fit = Two Courses × One Unit × One Proof
+            </p>
+          </div>
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              Senior-Year Rigor Spine
+            </div>
+            <p class="ledger-equation">
+              Lane Match → Stretch Course → Stabilizer →
+              Quotable Line → Artifact
+            </p>
+          </div>
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              Test-Optional Substitution Map
+            </div>
+            <p class="ledger-equation">
+              Receipt Stack → Corridor Stack → Witness Stack
+            </p>
+          </div>
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              Six-Month Repair Map
+            </div>
+            <p class="ledger-equation">
+              Two Receipts → One Corridor → Two Witness Lines
+            </p>
+          </div>
+
+          <div class="ledger-row">
+            <div class="ledger-name">
+              Waitlist / Deferral Update Ledger
+            </div>
+            <p class="ledger-equation">
+              Proof → Insert → Date
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================
+         METHOD TO APPLICATION
+    ======================================= -->
+
+    <section class="routes">
+      <div class="shell">
+
+        <div class="section-label">
+          From Method to Application
+        </div>
+
+        <h2>
+          The methodology moves through two working surfaces.
+        </h2>
+
+        <p class="section-intro">
+          The Library publishes the systems in durable form.
+          Advisory applies those systems to the candidate's actual
+          materials, decisions, and admissions cycle.
+        </p>
+
+
+        <div class="route-grid">
+
+          <div class="route">
+
+            <h3>
+              The Library
+            </h3>
+
+            <p>
+              Private editions and working instruments devoted to
+              recommendation strategy, application coherence,
+              personal writing, activities, and selective admissions.
+            </p>
+
+            <a
+              class="text-link"
+              href="/library.html"
+              onclick="trackLibraryEntry('approach_method_route')"
+            >
+              Enter the Library →
+            </a>
+
+          </div>
+
+
+          <div class="route">
+
+            <h3>
+              Advisory
+            </h3>
+
+            <p>
+              The methodology applied through File Architecture,
+              Writing Overhaul, and Private Counsel.
+            </p>
+
+            <a
+              class="text-link"
+              href="/advisory.html"
+              onclick="trackAdvisoryEntry('approach_method_route')"
+            >
+              Explore Advisory →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================
+         JOURNAL
+    ======================================= -->
+
+    <section id="journal">
+      <div class="shell">
+
+        <div class="journal-grid">
+
+          <div class="journal-copy">
+
+            <div class="section-label">
+              The Journal
+            </div>
+
+            <h2>
+              Weekly work on how selective files are read.
+            </h2>
+
+            <p>
+              The Journal will extend the methodology through essays,
+              case analysis, admissions reading, academic positioning,
+              recommendation strategy, writing systems, institutional fit,
+              and the mechanics of selective admission.
+            </p>
+
+            <p>
+              Each issue will begin on The Ivy Sanctum and feed a wider
+              archive of research, methods, and applications of the work.
+            </p>
+
+          </div>
+
+
+          <form
+            class="journal-form"
+            action="https://formspree.io/f/xljrooez"
+            method="POST"
+            onsubmit="trackJournalInterest()"
+          >
+
+            <input
+              type="hidden"
+              name="form_type"
+              value="weekly_letter"
+            >
+
+            <input
+              type="hidden"
+              name="_subject"
+              value="Ivy Sanctum Weekly Letter"
+            >
+
+            <label for="journal_email">
+              Join the advance list for the weekly letter
+            </label>
+
+            <input
+              id="journal_email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="Email address"
+              required
+            >
+
+            <button
+              class="journal-submit"
+              type="submit"
+            >
+              Join the weekly letter
+            </button>
+
+            <div class="journal-note">
+              Email addresses are handled under the
+              <a href="/privacy.html">Privacy Policy</a>.
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================
+         ORIGIN
+    ======================================= -->
+
+    <section class="origin" id="origin">
+      <div class="shell origin-grid">
+
+        <div>
+
+          <div class="section-label">
+            The Origin
+          </div>
+
+          <h2>
+            Research, advisory, and a growing body of work.
+          </h2>
+
+          <p>
+            The Ivy Sanctum is an independent admissions research and
+            advisory practice. Its methodology draws on more than 30 years
+            of combined experience across Harvard's schools, including
+            firsthand experience reading files on a Harvard graduate
+            admissions committee.
+          </p>
+
+        </div>
+
+
+        <div class="origin-side">
+
+          <p>
+            The work develops through direct advisory engagements,
+            frameworks, instruments, publications, and a growing
+            repository of admissions methods.
+          </p>
+
+          <p>
+            Admissions is where the work begins.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================
+         OFFICE HOURS
+    ======================================= -->
+
+    <section id="hours">
+      <div class="shell">
+
+        <div class="hours-grid">
+
+          <div>
+
+            <div class="section-label">
+              Office Hours
+            </div>
+
+            <h2>
+              Bring one question from the application in front of you.
+            </h2>
+
+            <p class="hours-copy">
+              Office Hours is a complimentary route for a focused question
+              about the file, essays, recommendations, activities,
+              school strategy, transfer planning, or another admissions
+              decision currently under consideration.
+            </p>
+
+          </div>
+
+          <div class="hours-action">
+
+            <a
+              class="text-link"
+              href="/#hours"
+              onclick="trackOfficeHoursEntry()"
+            >
+              Ask a question →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================
+         CONTINUE
+    ======================================= -->
+
+    <div class="continue">
+
+      <div class="shell continue-inner">
+
+        <div class="continue-label">
+          Continue through the Sanctum
+        </div>
+
+        <div class="continue-links">
+
+          <a href="#top">
+            Top ↑
+          </a>
+
+          <a href="/#hours">
+            Office Hours
+          </a>
+
+          <a href="/advisory.html">
+            Advisory
+          </a>
+
+          <a
+            href="/library.html"
+            onclick="trackLibraryEntry('approach_continue')"
+          >
+            Library
+          </a>
+
+          <a href="/approach.html">
+            Approach
+          </a>
+
+          <a href="mailto:hello@theivysanctum.com">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- ======================================
+       FOOTER
+  ======================================= -->
+
+  <footer>
+    <div class="shell footer-inner">
+
+      <div>
+        © 2026 Ivy Sanctum LLC
+      </div>
+
+      <div class="footer-links">
+
+        <a href="/advisory.html">
+          Advisory
+        </a>
+
+        <a
+          href="/library.html"
+          onclick="trackLibraryEntry('approach_footer')"
+        >
+          Library
+        </a>
+
+        <a href="/approach.html">
+          Approach
+        </a>
+
+        <a href="/privacy.html">
+          Privacy
+        </a>
+
+        <a href="/terms.html">
+          Terms
+        </a>
+
+        <a href="mailto:hello@theivysanctum.com">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ======================================
+       TRACKING
+  ======================================= -->
+
+  <script>
+
+    function trackLibraryEntry(source) {
+      if (typeof gtag === "function") {
+        gtag("event", "library_enter", {
+          source: source,
+          transport_type: "beacon"
+        });
+      }
+    }
+
+    function trackAdvisoryEntry(source) {
+      if (typeof gtag === "function") {
+        gtag("event", "advisory_enter", {
+          source: source,
+          transport_type: "beacon"
+        });
+      }
+    }
+
+    function trackOfficeHoursEntry() {
+      if (typeof gtag === "function") {
+        gtag("event", "office_hours_enter", {
+          source: "approach",
+          transport_type: "beacon"
+        });
+      }
+    }
+
+    function trackJournalInterest() {
+      if (typeof gtag === "function") {
+        gtag("event", "journal_interest_submit", {
+          source: "approach",
+          transport_type: "beacon"
+        });
+      }
+    }
+
+  </script>
+
+</body>
+</html>
