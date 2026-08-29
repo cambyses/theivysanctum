@@ -77,6 +77,10 @@
       margin: 0 auto;
     }
 
+    /* --------------------------------
+       NAVIGATION
+    -------------------------------- */
+
     nav {
       padding: 28px 0;
       border-bottom: 1px solid var(--line);
@@ -104,6 +108,10 @@
     .nav-links a {
       text-decoration: none;
     }
+
+    /* --------------------------------
+       HERO
+    -------------------------------- */
 
     .hero {
       padding: 110px 0 105px;
@@ -148,28 +156,25 @@
       align-items: center;
     }
 
-    .primary-link,
-    .secondary-link,
-    .tertiary-link {
+    .hero-link {
+      color: var(--crimson);
       text-decoration: none;
       font-size: 0.95rem;
-    }
-
-    .primary-link {
-      color: var(--crimson);
       border-bottom: 1px solid var(--crimson);
       padding-bottom: 4px;
     }
 
-    .secondary-link {
-      border-bottom: 1px solid var(--charcoal);
+    .primary-link {
+      color: var(--crimson);
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 1px solid var(--crimson);
       padding-bottom: 4px;
     }
 
-    .tertiary-link {
-      color: var(--charcoal);
-      font-weight: 600;
-    }
+    /* --------------------------------
+       GLOBAL SECTIONS
+    -------------------------------- */
 
     section {
       padding: 92px 0;
@@ -191,6 +196,10 @@
       font-size: 1.12rem;
       margin: 0;
     }
+
+    /* --------------------------------
+       OFFICE HOURS
+    -------------------------------- */
 
     .hours-grid {
       display: grid;
@@ -261,6 +270,10 @@
       cursor: pointer;
       margin-top: 6px;
     }
+
+    /* --------------------------------
+       LIBRARY PREVIEW
+    -------------------------------- */
 
     .library-preview {
       background: var(--cream-soft);
@@ -353,6 +366,10 @@
       font-size: 0.95rem;
     }
 
+    /* --------------------------------
+       THE OFFICE
+    -------------------------------- */
+
     .office-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
@@ -369,33 +386,88 @@
       margin: 0 0 24px;
     }
 
-    .signal-list {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 28px;
-      margin-top: 55px;
+    /* --------------------------------
+       APPROACH
+    -------------------------------- */
+
+    .approach-intro {
+      max-width: 860px;
     }
 
-    .signal h3 {
-      color: var(--crimson);
-      font-size: 1.06rem;
-      font-weight: 400;
-      margin: 0 0 9px;
+    .approach-intro h2 {
+      margin-bottom: 22px;
     }
 
-    .signal p {
-      color: var(--muted);
-      font-size: 0.93rem;
+    .approach-copy {
+      max-width: 790px;
+      font-size: 1.08rem;
       margin: 0;
     }
 
-    .method-line {
-      margin-top: 48px;
+    .master-method {
       color: var(--crimson);
-      letter-spacing: 0.12em;
-      font-size: 0.82rem;
-      text-transform: uppercase;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      line-height: 1.3;
+      letter-spacing: 0.025em;
+      margin: 44px 0 54px;
     }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 42px;
+    }
+
+    .method {
+      border-top: 1px solid var(--line-strong);
+      padding-top: 19px;
+    }
+
+    .method-number {
+      color: var(--muted);
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    .method h3 {
+      margin: 0 0 7px;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--crimson);
+    }
+
+    .method-name {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-style: italic;
+      margin-bottom: 17px;
+    }
+
+    .schema {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .method a {
+      text-decoration: none;
+    }
+
+    .approach-entry {
+      display: inline-block;
+      margin-top: 47px;
+      color: var(--crimson);
+      text-decoration: none;
+      border-bottom: 1px solid var(--crimson);
+      padding-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    /* --------------------------------
+       ORIGIN
+    -------------------------------- */
 
     .origin-copy {
       max-width: 850px;
@@ -412,6 +484,10 @@
       margin-top: 35px;
     }
 
+    /* --------------------------------
+       CONTACT
+    -------------------------------- */
+
     .contact-block {
       max-width: 740px;
     }
@@ -426,6 +502,49 @@
       text-decoration: none;
       font-size: 1.12rem;
     }
+
+    /* --------------------------------
+       CONTINUE NAVIGATION
+    -------------------------------- */
+
+    .continue {
+      border-top: 1px solid var(--line);
+      padding: 32px 0;
+    }
+
+    .continue-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .continue-label {
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .continue-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+
+    .continue-links a {
+      text-decoration: none;
+    }
+
+    .continue-links a:hover {
+      color: var(--crimson);
+    }
+
+    /* --------------------------------
+       FOOTER
+    -------------------------------- */
 
     footer {
       border-top: 1px solid var(--line);
@@ -451,11 +570,11 @@
       text-decoration: none;
     }
 
-    @media (max-width: 860px) {
-      .signal-list {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    /* --------------------------------
+       RESPONSIVE
+    -------------------------------- */
 
+    @media (max-width: 860px) {
       .office-grid,
       .hours-grid {
         grid-template-columns: 1fr;
@@ -468,6 +587,11 @@
 
       .mini-cover {
         height: 180px;
+      }
+
+      .method-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
       }
     }
 
@@ -492,10 +616,6 @@
         padding: 24px 20px;
       }
 
-      .signal-list {
-        grid-template-columns: 1fr;
-      }
-
       .mini-shelf {
         grid-template-columns: 1fr;
         gap: 55px;
@@ -505,11 +625,19 @@
         height: auto;
         width: min(52vw, 240px);
       }
+
+      .master-method {
+        margin: 36px 0 44px;
+      }
     }
   </style>
 </head>
 
-<body>
+<body id="top">
+
+  <!-- ======================================
+       NAVIGATION
+  ======================================= -->
 
   <nav>
     <div class="shell nav-inner">
@@ -519,7 +647,10 @@
       </a>
 
       <div class="nav-links">
-        <a href="#hours">Office Hours</a>
+
+        <a href="#hours">
+          Office Hours
+        </a>
 
         <a
           href="/library.html"
@@ -528,8 +659,17 @@
           Library
         </a>
 
-        <a href="/advisory.html">Advisory</a>
-        <a href="#approach">Approach</a>
+        <a href="/advisory.html">
+          Advisory
+        </a>
+
+        <a
+          href="/approach.html"
+          onclick="trackApproachEntry('navigation')"
+        >
+          Approach
+        </a>
+
       </div>
 
     </div>
@@ -537,6 +677,10 @@
 
 
   <main>
+
+    <!-- ======================================
+         HERO
+    ======================================= -->
 
     <div class="hero">
       <div class="shell">
@@ -565,16 +709,16 @@
 
         <div class="hero-actions">
 
-          <a class="primary-link" href="#hours">
+          <a class="hero-link" href="#hours">
             Ask a question →
           </a>
 
-          <a class="secondary-link" href="/advisory.html">
+          <a class="hero-link" href="/advisory.html">
             Explore Advisory →
           </a>
 
           <a
-            class="tertiary-link"
+            class="hero-link"
             href="/library.html"
             onclick="trackLibraryEntry('hero')"
           >
@@ -586,6 +730,10 @@
       </div>
     </div>
 
+
+    <!-- ======================================
+         OFFICE HOURS
+    ======================================= -->
 
     <section id="hours">
       <div class="shell">
@@ -665,6 +813,10 @@
       </div>
     </section>
 
+
+    <!-- ======================================
+         LIBRARY
+    ======================================= -->
 
     <section class="library-preview" id="library">
       <div class="shell">
@@ -830,6 +982,10 @@
     </section>
 
 
+    <!-- ======================================
+         THE OFFICE
+    ======================================= -->
+
     <section id="office">
       <div class="shell">
 
@@ -858,7 +1014,7 @@
 
             <p>
               The Office applies Ivy Sanctum’s methodology through written
-              diagnostics, essay and supplement architecture, activity framing,
+              diagnostics, essay and supplement development, activity framing,
               recommender strategy, and full-file planning.
             </p>
 
@@ -874,64 +1030,135 @@
     </section>
 
 
+    <!-- ======================================
+         APPROACH
+    ======================================= -->
+
     <section id="approach">
       <div class="shell">
 
-        <div class="section-label">
-          The Approach
-        </div>
+        <div class="approach-intro">
 
-        <h2>
-          The application is read as one argument.
-        </h2>
-
-        <p class="section-copy">
-          Academics establish range. Activities create evidence. Essays give
-          that evidence meaning. Recommendations provide witness.
-          School-specific writing establishes placement.
-          <br><br>
-          Ivy Sanctum reads these signals together and builds strategy around
-          the file as a whole: what carries authority, where the strongest proof
-          sits, how the narrative should move, and which parts of the application
-          should do the heaviest work.
-        </p>
-
-        <div class="signal-list">
-
-          <div class="signal">
-            <h3>Academics</h3>
-            <p>Range, rigor, trajectory, and intellectual context.</p>
+          <div class="section-label">
+            The Approach
           </div>
 
-          <div class="signal">
-            <h3>Activities</h3>
-            <p>Evidence, hierarchy, initiative, artifact, and consequence.</p>
-          </div>
+          <h2>
+            The application is built as one coherent argument.
+          </h2>
 
-          <div class="signal">
-            <h3>Essays</h3>
-            <p>Meaning, structure, positioning, and reader consequence.</p>
-          </div>
-
-          <div class="signal">
-            <h3>Recommendations</h3>
-            <p>Third-party witness, proximity, credibility, and proof.</p>
-          </div>
-
-          <div class="signal">
-            <h3>Placement</h3>
-            <p>Institutional fit, school-specific logic, and contribution.</p>
-          </div>
+          <p class="approach-copy">
+            Ivy Sanctum uses a defined system for reading evidence,
+            assigning each component its function, and shaping the final
+            interpretation a reader carries into committee.
+          </p>
 
         </div>
 
-        <div class="method-line">
+
+        <div class="master-method">
           Read → Architect → Position
         </div>
+
+
+        <div class="method-grid">
+
+          <div class="method">
+
+            <div class="method-number">
+              Method 01
+            </div>
+
+            <h3>
+              <a
+                href="/approach.html#file-architecture"
+                onclick="trackApproachEntry('file_architecture')"
+              >
+                File Architecture
+              </a>
+            </h3>
+
+            <div class="method-name">
+              The Common App File
+            </div>
+
+            <p class="schema">
+              Claim → Proof → Witness → Placement → Context
+            </p>
+
+          </div>
+
+
+          <div class="method">
+
+            <div class="method-number">
+              Method 02
+            </div>
+
+            <h3>
+              <a
+                href="/approach.html#writing-overhaul"
+                onclick="trackApproachEntry('writing_overhaul')"
+              >
+                Writing Overhaul
+              </a>
+            </h3>
+
+            <div class="method-name">
+              The Carry Sentence
+            </div>
+
+            <p class="schema">
+              Notice → Meaning → Response → Proof → Direction
+            </p>
+
+          </div>
+
+
+          <div class="method">
+
+            <div class="method-number">
+              Method 03
+            </div>
+
+            <h3>
+              <a
+                href="/approach.html#private-counsel"
+                onclick="trackApproachEntry('private_counsel')"
+              >
+                Private Counsel
+              </a>
+            </h3>
+
+            <div class="method-name">
+              Dossier Triangulation
+            </div>
+
+            <p class="schema">
+              Essay Claim → Activity Residue → Letter Witness →
+              Supplement Placement → Context Protection
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <a
+          class="approach-entry"
+          href="/approach.html"
+          onclick="trackApproachEntry('approach_preview')"
+        >
+          Enter the Method →
+        </a>
 
       </div>
     </section>
 
+
+    <!-- ======================================
+         ORIGIN
+    ======================================= -->
 
     <section id="origin">
       <div class="shell">
@@ -969,6 +1196,10 @@
     </section>
 
 
+    <!-- ======================================
+         CONTACT
+    ======================================= -->
+
     <section id="contact">
       <div class="shell">
 
@@ -999,8 +1230,62 @@
       </div>
     </section>
 
+
+    <!-- ======================================
+         CONTINUE
+    ======================================= -->
+
+    <div class="continue">
+
+      <div class="shell continue-inner">
+
+        <div class="continue-label">
+          Continue through the Sanctum
+        </div>
+
+        <div class="continue-links">
+
+          <a href="#top">
+            Top ↑
+          </a>
+
+          <a href="#hours">
+            Office Hours
+          </a>
+
+          <a href="/advisory.html">
+            Advisory
+          </a>
+
+          <a
+            href="/library.html"
+            onclick="trackLibraryEntry('continue_navigation')"
+          >
+            Library
+          </a>
+
+          <a
+            href="/approach.html"
+            onclick="trackApproachEntry('continue_navigation')"
+          >
+            Approach
+          </a>
+
+          <a href="#contact">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+
   </main>
 
+
+  <!-- ======================================
+       FOOTER
+  ======================================= -->
 
   <footer>
     <div class="shell footer-inner">
@@ -1010,7 +1295,10 @@
       </div>
 
       <div class="footer-links">
-        <a href="/advisory.html">Advisory</a>
+
+        <a href="/advisory.html">
+          Advisory
+        </a>
 
         <a
           href="/library.html"
@@ -1019,19 +1307,49 @@
           Library
         </a>
 
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="mailto:hello@theivysanctum.com">Contact</a>
+        <a
+          href="/approach.html"
+          onclick="trackApproachEntry('footer')"
+        >
+          Approach
+        </a>
+
+        <a href="/privacy.html">
+          Privacy
+        </a>
+
+        <a href="/terms.html">
+          Terms
+        </a>
+
+        <a href="mailto:hello@theivysanctum.com">
+          Contact
+        </a>
+
       </div>
 
     </div>
   </footer>
 
 
+  <!-- ======================================
+       TRACKING
+  ======================================= -->
+
   <script>
+
     function trackLibraryEntry(source) {
       if (typeof gtag === "function") {
         gtag("event", "library_enter", {
+          source: source,
+          transport_type: "beacon"
+        });
+      }
+    }
+
+    function trackApproachEntry(source) {
+      if (typeof gtag === "function") {
+        gtag("event", "approach_enter", {
           source: source,
           transport_type: "beacon"
         });
@@ -1045,6 +1363,7 @@
         });
       }
     }
+
   </script>
 
 </body>
