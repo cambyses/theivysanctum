@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSSDCC0K1L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DSSDCC0K1L');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);
+      t.async=1;
+      t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y92ml3m7ki");
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,7 +30,7 @@
 
   <meta
     name="description"
-    content="Reader-grade diagnostics, essay architecture, recommender strategy, and full application advisory from The Ivy Sanctum."
+    content="Admissions advisory from The Ivy Sanctum across file architecture, application writing, and private counsel."
   >
 
   <link rel="icon" type="image/png" href="favicon.png">
@@ -16,10 +38,12 @@
   <style>
     :root {
       --cream: #f4f0e6;
+      --cream-soft: #f8f5ed;
       --crimson: #6e1423;
       --charcoal: #25221f;
-      --muted: #6d665f;
+      --muted: #6b655e;
       --line: rgba(37, 34, 31, 0.16);
+      --line-strong: rgba(37, 34, 31, 0.26);
     }
 
     * {
@@ -43,11 +67,13 @@
     }
 
     .shell {
-      width: min(1080px, calc(100% - 48px));
+      width: min(1120px, calc(100% - 48px));
       margin: 0 auto;
     }
 
-    /* NAVIGATION */
+    /* --------------------------------
+       NAVIGATION
+    -------------------------------- */
 
     nav {
       padding: 28px 0;
@@ -58,199 +84,320 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 24px;
+      gap: 28px;
     }
 
     .wordmark {
       color: var(--crimson);
-      font-size: 1.25rem;
+      font-size: 1.24rem;
       text-decoration: none;
     }
 
     .nav-links {
       display: flex;
       gap: 24px;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
 
     .nav-links a {
       text-decoration: none;
     }
 
-    /* HERO */
+    /* --------------------------------
+       GLOBAL
+    -------------------------------- */
 
-    .hero {
-      padding: 110px 0 100px;
+    section {
+      padding: 96px 0;
+      border-top: 1px solid var(--line);
     }
 
     .eyebrow,
-    .section-label {
+    .section-label,
+    .offer-number {
       color: var(--crimson);
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
+      font-size: 0.74rem;
+      letter-spacing: 0.17em;
       text-transform: uppercase;
-      margin-bottom: 22px;
+    }
+
+    .section-label {
+      margin-bottom: 21px;
     }
 
     h1 {
       color: var(--crimson);
-      font-size: clamp(3.6rem, 8vw, 7rem);
-      line-height: 0.97;
+      font-size: clamp(4rem, 9vw, 7.3rem);
+      line-height: 0.96;
       font-weight: 400;
-      letter-spacing: -0.04em;
-      margin: 0 0 32px;
-      max-width: 950px;
-    }
-
-    .hero-copy {
-      max-width: 820px;
-      font-size: clamp(1.35rem, 2.6vw, 2rem);
-      line-height: 1.45;
-      margin: 0 0 28px;
-    }
-
-    .hero-detail {
-      max-width: 800px;
-      color: var(--muted);
-      font-size: 1.05rem;
-      margin: 0;
-    }
-
-    /* SECTIONS */
-
-    section {
-      padding: 90px 0;
-      border-top: 1px solid var(--line);
+      letter-spacing: -0.045em;
+      margin: 0 0 34px;
     }
 
     h2 {
       color: var(--crimson);
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      font-weight: 400;
+      font-size: clamp(2.5rem, 5vw, 4.35rem);
       line-height: 1.08;
-      letter-spacing: -0.025em;
-      margin: 0 0 28px;
-      max-width: 900px;
-    }
-
-    .intro {
-      max-width: 820px;
-      font-size: 1.15rem;
-      margin: 0;
-    }
-
-    /* PATHWAYS */
-
-    .path-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      margin-top: 52px;
-    }
-
-    .path h3 {
-      color: var(--crimson);
+      letter-spacing: -0.03em;
       font-weight: 400;
-      font-size: 1.35rem;
-      margin: 0 0 12px;
+      margin: 0 0 28px;
     }
 
-    .path p {
-      margin: 0;
+    h3 {
+      font-weight: 400;
+    }
+
+    .text-link {
+      display: inline-block;
+      color: var(--crimson);
+      text-decoration: none;
+      border-bottom: 1px solid var(--crimson);
+      padding-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    /* --------------------------------
+       HERO
+    -------------------------------- */
+
+    .hero {
+      padding: 110px 0 105px;
+    }
+
+    .hero .eyebrow {
+      margin-bottom: 22px;
+    }
+
+    .hero-copy {
+      max-width: 900px;
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      line-height: 1.46;
+      margin: 0 0 29px;
+    }
+
+    .hero-detail {
+      max-width: 830px;
       color: var(--muted);
+      font-size: 1.03rem;
+      margin: 0;
     }
 
-    /* OFFERS */
+    /* --------------------------------
+       THREE OFFERS
+    -------------------------------- */
 
-    .offers {
-      margin-top: 20px;
+    .engagements {
+      background: var(--cream-soft);
+    }
+
+    .engagement-intro {
+      max-width: 850px;
+      margin-bottom: 64px;
+    }
+
+    .engagement-intro p {
+      max-width: 790px;
+      font-size: 1.08rem;
+      margin: 0;
+    }
+
+    .offer-list {
+      border-top: 1px solid var(--line-strong);
     }
 
     .offer {
       display: grid;
-      grid-template-columns: 235px minmax(0, 1fr);
-      gap: 55px;
-      padding: 52px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .offer:last-child {
+      grid-template-columns: 160px minmax(260px, 0.82fr) minmax(0, 1.18fr);
+      gap: 48px;
+      padding: 42px 0;
       border-bottom: 1px solid var(--line);
+      align-items: start;
     }
 
-    .offer h3 {
+    .offer-number {
+      padding-top: 7px;
+    }
+
+    .offer-title h3 {
       color: var(--crimson);
-      font-size: 1.42rem;
-      line-height: 1.25;
-      font-weight: 400;
-      margin: 0 0 8px;
-    }
-
-    .price {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .offer-copy {
-      max-width: 720px;
-    }
-
-    .offer-copy p {
+      font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
       margin: 0 0 18px;
     }
 
-    .offer-copy p:first-child {
-      font-size: 1.08rem;
+    .offer-copy p {
+      margin: 0 0 23px;
+      font-size: 1rem;
+      max-width: 640px;
     }
 
-    .offer-copy p:last-child {
-      margin-bottom: 0;
-    }
-
-    .output {
+    .offer-scope {
       color: var(--muted);
-      font-size: 0.97rem;
+      font-size: 0.91rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
     }
 
-    /* BEGIN */
+    /* --------------------------------
+       METHOD BRIDGE
+    -------------------------------- */
 
-    .begin {
-      max-width: 780px;
+    .method-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+      gap: 72px;
+      align-items: end;
     }
 
-    .begin p {
-      font-size: 1.1rem;
-      margin: 0 0 22px;
+    .method-copy {
+      max-width: 760px;
     }
 
-    .email-link {
+    .method-copy p {
+      margin: 0 0 20px;
+      font-size: 1.05rem;
+    }
+
+    .method-line {
       color: var(--crimson);
+      font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin: 38px 0 0;
+    }
+
+    .method-action {
+      text-align: right;
+    }
+
+    /* --------------------------------
+       LIBRARY
+    -------------------------------- */
+
+    .library {
+      background: var(--cream-soft);
+    }
+
+    .library-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+      gap: 72px;
+      align-items: end;
+    }
+
+    .library-copy {
+      max-width: 760px;
+    }
+
+    .library-copy p {
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .library-action {
+      text-align: right;
+    }
+
+    /* --------------------------------
+       ORIGIN
+    -------------------------------- */
+
+    .origin-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
+      gap: 70px;
+      align-items: start;
+    }
+
+    .origin p {
+      margin: 0 0 20px;
+    }
+
+    .origin-side {
+      color: var(--muted);
+      padding-top: 39px;
+    }
+
+    /* --------------------------------
+       OFFICE HOURS
+    -------------------------------- */
+
+    .hours {
+      background: var(--cream-soft);
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.7fr);
+      gap: 70px;
+      align-items: end;
+    }
+
+    .hours-copy {
+      max-width: 720px;
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .hours-action {
+      text-align: right;
+    }
+
+    /* --------------------------------
+       CONTINUE
+    -------------------------------- */
+
+    .continue {
+      border-top: 1px solid var(--line);
+      padding: 32px 0;
+    }
+
+    .continue-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .continue-label {
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .continue-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+
+    .continue-links a {
       text-decoration: none;
     }
 
-    .button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 14px 22px;
-      background: var(--crimson);
-      color: var(--cream);
-      text-decoration: none;
-      font-size: 0.94rem;
+    .continue-links a:hover {
+      color: var(--crimson);
     }
 
-    /* FOOTER */
+    /* --------------------------------
+       FOOTER
+    -------------------------------- */
 
     footer {
       border-top: 1px solid var(--line);
-      padding: 34px 0 50px;
+      padding: 34px 0 48px;
       color: var(--muted);
-      font-size: 0.86rem;
+      font-size: 0.84rem;
     }
 
     .footer-inner {
       display: flex;
       justify-content: space-between;
-      gap: 24px;
+      gap: 25px;
       flex-wrap: wrap;
     }
 
@@ -264,11 +411,36 @@
       text-decoration: none;
     }
 
-    /* MOBILE */
+    /* --------------------------------
+       RESPONSIVE
+    -------------------------------- */
 
-    @media (max-width: 760px) {
+    @media (max-width: 900px) {
+
+      .offer {
+        grid-template-columns: 90px minmax(210px, 0.85fr) minmax(0, 1.15fr);
+        gap: 30px;
+      }
+
+      .method-grid,
+      .library-grid,
+      .origin-grid,
+      .hours-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .method-action,
+      .library-action,
+      .hours-action {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 680px) {
+
       .shell {
-        width: min(100% - 30px, 1080px);
+        width: min(100% - 30px, 1120px);
       }
 
       .nav-links {
@@ -276,41 +448,64 @@
       }
 
       .hero {
-        padding: 80px 0;
+        padding: 82px 0;
       }
 
       section {
-        padding: 70px 0;
+        padding: 72px 0;
       }
 
       .offer {
         grid-template-columns: 1fr;
-        gap: 14px;
-        padding: 42px 0;
+        gap: 12px;
+        padding: 35px 0;
       }
 
-      .path-grid {
-        grid-template-columns: 1fr;
+      .offer-number {
+        padding-top: 0;
       }
     }
   </style>
 </head>
 
-<body>
 
-  <!-- NAVIGATION -->
+<body id="top">
+
+  <!-- ======================================
+       NAVIGATION
+  ======================================= -->
 
   <nav>
     <div class="shell nav-inner">
 
-      <a class="wordmark" href="index.html">
+      <a class="wordmark" href="/">
         The Ivy Sanctum
       </a>
 
       <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#hours">Office Hours</a>
-        <a href="library.html">Library</a>
+
+        <a href="/#hours">
+          Office Hours
+        </a>
+
+        <a
+          href="/library.html"
+          onclick="trackLibraryEntry('advisory_navigation')"
+        >
+          Library
+        </a>
+
+        <a href="/advisory.html">
+          Advisory
+        </a>
+
+        <a
+          href="/approach.html"
+          onclick="trackApproachEntry('advisory_navigation')"
+        >
+          Approach
+        </a>
+
       </div>
 
     </div>
@@ -319,493 +514,442 @@
 
   <main>
 
-    <!-- HERO -->
+    <!-- ======================================
+         HERO
+    ======================================= -->
 
-    <div class="hero">
+    <header class="hero">
       <div class="shell">
 
         <div class="eyebrow">
-          Advisory
+          The Office
         </div>
 
         <h1>
-          Strategy built around the file.
+          Advisory
         </h1>
 
         <p class="hero-copy">
-          Reader-grade diagnostics, essay architecture, recommender strategy,
-          application positioning, and full-file advisory for selective admissions.
+          The Ivy Sanctum applies its admissions methodology directly
+          to the application in front of you.
         </p>
 
         <p class="hero-detail">
-          Each engagement begins with the application problem in front of us
-          and applies the level of analysis, architecture, and written strategy
-          required to move the file forward.
+          Engagements are organized around three forms of work:
+          the evidentiary file, the written application, and continuous
+          strategic counsel across the full admissions cycle.
         </p>
 
       </div>
-    </div>
+    </header>
 
 
-    <!-- WAYS TO WORK -->
+    <!-- ======================================
+         ENGAGEMENTS
+    ======================================= -->
 
-    <section>
+    <section class="engagements">
       <div class="shell">
 
-        <div class="section-label">
-          Ways to Work
-        </div>
-
-        <h2>
-          Choose the pressure point.
-        </h2>
-
-        <p class="intro">
-          Some files need diagnosis. Some need focused work on essays,
-          activities, recommendations, or school-specific writing. Others
-          benefit from full application architecture across the entire file.
-        </p>
-
-        <div class="path-grid">
-
-          <div class="path">
-            <h3>Diagnose</h3>
-
-            <p>
-              Establish how the file reads, where its strongest proof sits,
-              and which strategic moves carry the greatest value.
-            </p>
-          </div>
-
-          <div class="path">
-            <h3>Develop</h3>
-
-            <p>
-              Work directly on the component carrying the most pressure:
-              statement, supplements, activities, recommendations, or positioning.
-            </p>
-          </div>
-
-          <div class="path">
-            <h3>Architect</h3>
-
-            <p>
-              Coordinate the entire application around one governing admissions
-              argument from evidence through final submission.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- PRIVATE WRITTEN WORK -->
-
-    <section>
-      <div class="shell">
-
-        <div class="section-label">
-          Private Written Work
-        </div>
-
-        <div class="offers">
-
-          <!-- FILE READ -->
-
-          <div class="offer">
-
-            <div>
-              <h3>File Read</h3>
-              <div class="price">$233</div>
-            </div>
-
-            <div class="offer-copy">
-
-              <p>
-                A reader-grade assessment of the current application file.
-              </p>
-
-              <p>
-                The File Read establishes the file’s first impression: academic
-                rigor, GPA and testing context, activity signal, school-list
-                alignment, essay material or early angles, and the opening layer
-                of recommender posture. It identifies the strongest admissions
-                signal, the primary pressure point, and the most intelligent next move.
-              </p>
-
-              <p class="output">
-                The output is an annotated file read with a written reader memo.
-                The purpose is clarity before deeper architecture: what the file
-                is already carrying, where its authority concentrates, and which
-                move should come first.
-              </p>
-
-            </div>
-          </div>
-
-
-          <!-- STRATEGY DIAGNOSTIC -->
-
-          <div class="offer">
-
-            <div>
-              <h3>Strategy Diagnostic</h3>
-              <div class="price">$466</div>
-            </div>
-
-            <div class="offer-copy">
-
-              <p>
-                A full diagnostic of the application as a single admissions argument.
-              </p>
-
-              <p>
-                The Strategy Diagnostic reads academic context, narrative spine,
-                positioning, activities architecture, school-list logic,
-                recommender strategy, essay direction, and fit pressure as one
-                system moving through a reader’s mind. It clarifies what the
-                application is proving, which evidence carries the most authority,
-                and how each component should be sequenced for maximum force.
-              </p>
-
-              <p class="output">
-                The output is a written strategy memo with margin notes and a
-                build sequence. The memo defines the file’s governing argument,
-                proof hierarchy, priority upgrades, and 4–12 week strategic path.
-              </p>
-
-            </div>
-          </div>
-
-
-          <!-- STATEMENT ARCHITECTURE -->
-
-          <div class="offer">
-
-            <div>
-              <h3>Statement Architecture</h3>
-              <div class="price">$727</div>
-            </div>
-
-            <div class="offer-copy">
-
-              <p>
-                A strategic architecture pass on the personal statement or
-                central admissions essay.
-              </p>
-
-              <p>
-                The statement is treated as the file’s central movement: a
-                controlled piece of evidence with consequence, rhythm, and proof.
-                The work clarifies the essay’s governing claim, opening position,
-                evidence sequence, paragraph pressure, reader consequence, and
-                final movement.
-              </p>
-
-              <p class="output">
-                The output is an annotated draft, architecture memo, and revision
-                directives calibrated to the essay’s admissions function. The
-                candidate’s voice remains intact; the structure becomes sharper,
-                more deliberate, and more compelling.
-              </p>
-
-            </div>
-          </div>
-
-
-          <!-- STATEMENT BUILD -->
-
-          <div class="offer">
-
-            <div>
-              <h3>Statement Build</h3>
-              <div class="price">$987</div>
-            </div>
-
-            <div class="offer-copy">
-
-              <p>
-                A complete personal-statement build from raw material through
-                final admissions architecture.
-              </p>
-
-              <p>
-                The work begins with ideation, evidence excavation, intellectual
-                and personal positioning, angle selection, and fit within the
-                larger application. From there, the statement develops through
-                governing claim, opening position, structural spine, evidence
-                sequence, paragraph movement, reader consequence, revision, and
-                final calibration.
-              </p>
-
-              <p class="output">
-                The output is an ideation map, evidence inventory, angle strategy,
-                structural architecture, annotated development, revision direction,
-                and final reader calibration. The result is a statement built
-                around a clear admissions function, strong evidence, and
-                controlled movement.
-              </p>
-
-            </div>
-          </div>
-
-
-          <!-- SUPPLEMENTS MAP -->
-
-          <div class="offer">
-
-            <div>
-              <h3>Supplements Map</h3>
-              <div class="price">$787</div>
-            </div>
-
-            <div class="offer-copy">
-
-              <p>
-                School-specific strategy for up to seven supplements.
-              </p>
-
-              <p>
-                The Supplements Map assigns each response a distinct function
-                inside the larger file: intellectual fit, institutional reason,
-                contribution logic, academic direction, community signal, or
-                proof expansion. The work clarifies prompt strategy,
-                school-specific fit, claim distribution, essay-to-activity
-                alignment, and evidence placement across the supplement set.
-              </p>
-
-              <p class="output">
-                The output is a complete supplement map with annotated drafts,
-                margin notes, and readiness guidance. Each school receives a
-                precise reason to believe the candidate belongs in its room.
-              </p>
-
-            </div>
-          </div>
-
-
-          <!-- MICROCOPY -->
-
-          <div class="offer">
-
-            <div>
-              <h3>Microcopy</h3>
-              <div class="price">$377</div>
-            </div>
-
-            <div class="offer-copy">
-
-              <p>
-                A precision review of Activities, Honors, and Additional Information.
-              </p>
-
-              <p>
-                Microcopy shapes reader inference in the smallest fields of the
-                application. This work strengthens role clarity, artifact, metric,
-                hierarchy, compression, honors framing, contextual explanation,
-                and proof density across the application’s compressed sections.
-              </p>
-
-              <p class="output">
-                The output is revised microcopy with strategic framing notes.
-                The result is cleaner signal, stronger hierarchy, sharper evidence,
-                and tighter alignment between the compressed sections and the
-                larger file.
-              </p>
-
-            </div>
-          </div>
-
-
-          <!-- RECOMMENDER MEMO -->
-
-          <div class="offer">
-
-            <div>
-              <h3>Recommender Memo</h3>
-              <div class="price">$377</div>
-            </div>
-
-            <div class="offer-copy">
-
-              <p>
-                A strategic memo for recommendation-letter architecture.
-              </p>
-
-              <p>
-                Recommendation letters function as third-party evidence. The
-                Recommender Memo identifies the strongest recommender pairing,
-                the role each letter should play, and the evidence each writer
-                can carry with proximity and authority.
-              </p>
-
-              <p class="output">
-                The output is a Macro × Micro recommender map, evidence
-                distribution, letter calibration, and Evidence Brief guidance.
-                The goal is a recommendation structure that verifies the file’s
-                strongest claims with specificity, credibility, and force.
-              </p>
-
-            </div>
-          </div>
-
-
-          <!-- OXFORD / UK STATEMENT -->
-
-          <div class="offer">
-
-            <div>
-              <h3>Oxford / UK Statement</h3>
-              <div class="price">$466</div>
-            </div>
-
-            <div class="offer-copy">
-
-              <p>
-                A strategic review of the UCAS, Oxford, Cambridge, or UK
-                academic statement.
-              </p>
-
-              <p>
-                UK admissions writing is evaluated through academic seriousness:
-                subject command, intellectual trajectory, preparation, course fit,
-                reading, research, and disciplined engagement. This review
-                sharpens the statement’s governing argument, strengthens academic
-                proof, calibrates course fit, and gives the statement a cleaner
-                intellectual line.
-              </p>
-
-              <p class="output">
-                The output is an annotated draft, structure memo, targeted
-                revision directives, and course-fit calibration. The result is a
-                statement that reads with authority, focus, and intellectual credibility.
-              </p>
-
-            </div>
-          </div>
-
-
-          <!-- APPLICATION SPRINT -->
-
-          <div class="offer">
-
-            <div>
-              <h3>Application Sprint</h3>
-              <div class="price">$1,597</div>
-            </div>
-
-            <div class="offer-copy">
-
-              <p>
-                A seven-day application lock-in for candidates approaching deadline.
-              </p>
-
-              <p>
-                The Sprint brings existing application materials into one
-                coherent admissions system. It covers personal statement
-                architecture, up to five supplements, microcopy, activities
-                alignment, claim distribution, school-specific fit, and final
-                submission readiness.
-              </p>
-
-              <p class="output">
-                The output is a set of written strategy memos, annotated documents,
-                margin notes, refined application components, and a final
-                readiness audit. The result is a file with clearer hierarchy,
-                stronger proof, and disciplined coherence under deadline pressure.
-              </p>
-
-            </div>
-          </div>
-
-
-          <!-- FULL FILE ARCHITECTURE -->
-
-          <div class="offer">
-
-            <div>
-              <h3>Full File Architecture</h3>
-              <div class="price">$2,397</div>
-            </div>
-
-            <div class="offer-copy">
-
-              <p>
-                A full strategic build of the application file as a reader will
-                encounter it.
-              </p>
-
-              <p>
-                Full File Architecture aligns the candidate’s academic record,
-                activities, essays, recommendations, school list, and fit logic
-                into one admissions argument. The work establishes identity
-                pillars, personal statement spine, activities architecture,
-                recommender matrix, Evidence Briefs, supplement strategy,
-                school-specific fit map, and final readiness architecture.
-              </p>
-
-              <p class="output">
-                The output is a sequence of written strategy letters, margin
-                notes, and structured file decisions across the build. The result
-                is a file that reads with coherence, proof, restraint, and force.
-              </p>
-
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- BEGIN -->
-
-    <section>
-      <div class="shell">
-
-        <div class="begin">
+        <div class="engagement-intro">
 
           <div class="section-label">
-            Begin
+            Three Engagements
           </div>
 
           <h2>
-            Start with the question in front of you.
+            Choose the part of the application that requires judgment.
           </h2>
 
           <p>
-            Office Hours offers a simple starting point when the appropriate
-            engagement is still taking shape. Send one question about your file,
-            essays, activities, recommendations, school strategy, or another
-            admissions decision.
+            Each engagement page sets out the scope of work, deliverables,
+            process, available levels of support, and pricing.
+          </p>
+
+        </div>
+
+
+        <div class="offer-list">
+
+          <!-- FILE ARCHITECTURE -->
+
+          <article class="offer">
+
+            <div class="offer-number">
+              01
+            </div>
+
+            <div class="offer-title">
+
+              <h3>
+                File Architecture
+              </h3>
+
+            </div>
+
+            <div class="offer-copy">
+
+              <p>
+                A strategic read of the evidence already present across
+                the application, followed by a plan for strengthening
+                hierarchy, coherence, credibility, and placement.
+              </p>
+
+              <div class="offer-scope">
+                Academic record · Course rigor · Testing · Honors ·
+                Activities · Recommendations · Context · School strategy ·
+                Application coherence
+              </div>
+
+              <a
+                class="text-link"
+                href="/file-architecture.html"
+                onclick="trackOfferOpen('file_architecture')"
+              >
+                Explore File Architecture →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- WRITING OVERHAUL -->
+
+          <article class="offer">
+
+            <div class="offer-number">
+              02
+            </div>
+
+            <div class="offer-title">
+
+              <h3>
+                Writing Overhaul
+              </h3>
+
+            </div>
+
+            <div class="offer-copy">
+
+              <p>
+                Development of the substantive written application,
+                from early ideation and governing argument through
+                structure, revision, refinement, and final positioning.
+              </p>
+
+              <div class="offer-scope">
+                Personal statement · Supplemental essays · Why Major ·
+                Why School · Community essays · Activity writing ·
+                Short responses · Ideation · Revision · Final refinement
+              </div>
+
+              <a
+                class="text-link"
+                href="/writing-overhaul.html"
+                onclick="trackOfferOpen('writing_overhaul')"
+              >
+                Explore Writing Overhaul →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRIVATE COUNSEL -->
+
+          <article class="offer">
+
+            <div class="offer-number">
+              03
+            </div>
+
+            <div class="offer-title">
+
+              <h3>
+                Private Counsel
+              </h3>
+
+            </div>
+
+            <div class="offer-copy">
+
+              <p>
+                Continuous strategic counsel across the full application,
+                bringing file strategy, writing, sequencing, school decisions,
+                recommendations, updates, and application development into
+                one ongoing engagement.
+              </p>
+
+              <div class="offer-scope">
+                File strategy · Writing · School list · Recommendations ·
+                Academic planning · Application sequencing · Decision support ·
+                Updates · Full-cycle continuity
+              </div>
+
+              <a
+                class="text-link"
+                href="/private-counsel.html"
+                onclick="trackOfferOpen('private_counsel')"
+              >
+                Explore Private Counsel →
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================
+         METHOD
+    ======================================= -->
+
+    <section>
+      <div class="shell">
+
+        <div class="method-grid">
+
+          <div class="method-copy">
+
+            <div class="section-label">
+              The Method
+            </div>
+
+            <h2>
+              One methodology governs every engagement.
+            </h2>
+
+            <p>
+              The work begins by reading the evidence already present,
+              identifying the argument the application can support,
+              and assigning each component its role in that argument.
+            </p>
+
+            <div class="method-line">
+              Read → Architect → Position
+            </div>
+
+          </div>
+
+
+          <div class="method-action">
+
+            <a
+              class="text-link"
+              href="/approach.html"
+              onclick="trackApproachEntry('advisory_method')"
+            >
+              Enter the Method →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================
+         LIBRARY
+    ======================================= -->
+
+    <section class="library">
+      <div class="shell">
+
+        <div class="library-grid">
+
+          <div class="library-copy">
+
+            <div class="section-label">
+              The Library
+            </div>
+
+            <h2>
+              The methodology also exists in published form.
+            </h2>
+
+            <p>
+              The Ivy Sanctum Library develops recommendation strategy,
+              file coherence, activities, personal writing, school-specific
+              strategy, and related methods into focused private editions.
+            </p>
+
+          </div>
+
+
+          <div class="library-action">
+
+            <a
+              class="text-link"
+              href="/library.html"
+              onclick="trackLibraryEntry('advisory_library')"
+            >
+              Enter the Library →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================
+         ORIGIN
+    ======================================= -->
+
+    <section class="origin" id="origin">
+      <div class="shell origin-grid">
+
+        <div>
+
+          <div class="section-label">
+            The Origin
+          </div>
+
+          <h2>
+            Research, advisory, and a growing body of work.
+          </h2>
+
+          <p>
+            The Ivy Sanctum is an independent admissions research and
+            advisory practice. Its methodology draws on more than 30 years
+            of combined experience across Harvard's schools, including
+            firsthand experience reading files on a Harvard graduate
+            admissions committee.
+          </p>
+
+        </div>
+
+
+        <div class="origin-side">
+
+          <p>
+            The work develops through direct advisory engagements,
+            frameworks, instruments, publications, and a growing
+            repository of admissions methods.
           </p>
 
           <p>
-            For direct advisory inquiries and application materials:
-            <a
-              class="email-link"
-              href="mailto:hello@theivysanctum.com"
-            >
-              hello@theivysanctum.com
-            </a>
+            Admissions is where the work begins.
           </p>
 
-          <a class="button" href="index.html#hours">
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================
+         OFFICE HOURS
+    ======================================= -->
+
+    <section class="hours" id="hours">
+      <div class="shell">
+
+        <div class="hours-grid">
+
+          <div>
+
+            <div class="section-label">
+              Office Hours
+            </div>
+
+            <h2>
+              Bring one question from the application in front of you.
+            </h2>
+
+            <p class="hours-copy">
+              Office Hours provides a complimentary route for a focused
+              question about the file, essays, recommendations, activities,
+              school strategy, transfer planning, or another admissions
+              decision currently under consideration.
+            </p>
+
+          </div>
+
+
+          <div class="hours-action">
+
+            <a
+              class="text-link"
+              href="/#hours"
+              onclick="trackOfficeHoursEntry()"
+            >
+              Ask a question →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================
+         CONTINUE
+    ======================================= -->
+
+    <div class="continue">
+
+      <div class="shell continue-inner">
+
+        <div class="continue-label">
+          Continue through the Sanctum
+        </div>
+
+        <div class="continue-links">
+
+          <a href="#top">
+            Top ↑
+          </a>
+
+          <a href="/#hours">
             Office Hours
+          </a>
+
+          <a href="/advisory.html">
+            Advisory
+          </a>
+
+          <a
+            href="/library.html"
+            onclick="trackLibraryEntry('advisory_continue')"
+          >
+            Library
+          </a>
+
+          <a
+            href="/approach.html"
+            onclick="trackApproachEntry('advisory_continue')"
+          >
+            Approach
+          </a>
+
+          <a href="mailto:hello@theivysanctum.com">
+            Contact
           </a>
 
         </div>
 
       </div>
-    </section>
+    </div>
 
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- ======================================
+       FOOTER
+  ======================================= -->
 
   <footer>
     <div class="shell footer-inner">
@@ -815,15 +959,86 @@
       </div>
 
       <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="library.html">Library</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="mailto:hello@theivysanctum.com">Contact</a>
+
+        <a href="/advisory.html">
+          Advisory
+        </a>
+
+        <a
+          href="/library.html"
+          onclick="trackLibraryEntry('advisory_footer')"
+        >
+          Library
+        </a>
+
+        <a
+          href="/approach.html"
+          onclick="trackApproachEntry('advisory_footer')"
+        >
+          Approach
+        </a>
+
+        <a href="/privacy.html">
+          Privacy
+        </a>
+
+        <a href="/terms.html">
+          Terms
+        </a>
+
+        <a href="mailto:hello@theivysanctum.com">
+          Contact
+        </a>
+
       </div>
 
     </div>
   </footer>
+
+
+  <!-- ======================================
+       TRACKING
+  ======================================= -->
+
+  <script>
+
+    function trackOfferOpen(offer) {
+      if (typeof gtag === "function") {
+        gtag("event", "advisory_offer_open", {
+          offer: offer,
+          transport_type: "beacon"
+        });
+      }
+    }
+
+    function trackLibraryEntry(source) {
+      if (typeof gtag === "function") {
+        gtag("event", "library_enter", {
+          source: source,
+          transport_type: "beacon"
+        });
+      }
+    }
+
+    function trackApproachEntry(source) {
+      if (typeof gtag === "function") {
+        gtag("event", "approach_enter", {
+          source: source,
+          transport_type: "beacon"
+        });
+      }
+    }
+
+    function trackOfficeHoursEntry() {
+      if (typeof gtag === "function") {
+        gtag("event", "office_hours_enter", {
+          source: "advisory",
+          transport_type: "beacon"
+        });
+      }
+    }
+
+  </script>
 
 </body>
 </html>
