@@ -27,7 +27,7 @@
 
   <meta
     name="description"
-    content="The Ivy Sanctum Library: private editions and admissions instruments on recommendations, essays, activities, file architecture, and selective admissions."
+    content="The Ivy Sanctum Library: private editions and admissions instruments on recommendations, essays, activities, file architecture, application strategy, and selective admissions."
   >
 
   <link rel="icon" type="image/png" href="favicon.png">
@@ -600,10 +600,6 @@
 
 <body id="top">
 
-  <!-- ======================================
-       NAVIGATION
-  ======================================= -->
-
   <nav>
     <div class="shell nav-inner">
 
@@ -623,10 +619,6 @@
 
 
   <main>
-
-    <!-- ======================================
-         IMPRINT
-    ======================================= -->
 
     <header class="imprint">
       <div class="shell">
@@ -658,10 +650,6 @@
     </header>
 
 
-    <!-- ======================================
-         INTRO
-    ======================================= -->
-
     <section class="intro">
       <div class="shell">
 
@@ -678,10 +666,6 @@
       </div>
     </section>
 
-
-    <!-- ======================================
-         CATALOGUE
-    ======================================= -->
 
     <section class="catalogue">
       <div class="shell">
@@ -939,15 +923,53 @@
 
           </article>
 
+
+          <!-- BOOK 07 -->
+
+          <article class="book-card">
+
+            <button
+              class="book-button"
+              type="button"
+              onclick="openBook('book7')"
+              aria-label="Open The Two Clocks"
+            >
+
+              <img
+                class="cover"
+                src="the-two-clocks-cover.png"
+                alt="The Two Clocks"
+              >
+
+              <div class="book-meta">
+
+                <div class="book-number">
+                  Library No. 07
+                </div>
+
+                <h2 class="book-title">
+                  The Two Clocks
+                </h2>
+
+                <p class="book-subtitle">
+                  A Strategic Method for Choosing ED, EA, REA, or RD
+                </p>
+
+                <div class="book-status live">
+                  Digital Edition · $27
+                </div>
+
+              </div>
+
+            </button>
+
+          </article>
+
         </div>
 
       </div>
     </section>
 
-
-    <!-- ======================================
-         ORIGIN
-    ======================================= -->
 
     <section class="origin">
       <div class="shell origin-grid">
@@ -993,10 +1015,6 @@
     </section>
 
 
-    <!-- ======================================
-         OFFICE HOURS
-    ======================================= -->
-
     <section class="hours">
       <div class="shell">
 
@@ -1038,10 +1056,6 @@
     </section>
 
 
-    <!-- ======================================
-         CONTINUE
-    ======================================= -->
-
     <div class="continue">
       <div class="shell continue-inner">
 
@@ -1064,10 +1078,6 @@
   </main>
 
 
-  <!-- ======================================
-       FOOTER
-  ======================================= -->
-
   <footer>
     <div class="shell footer-inner">
 
@@ -1087,10 +1097,6 @@
     </div>
   </footer>
 
-
-  <!-- ======================================
-       BOOK MODAL
-  ======================================= -->
 
   <div
     class="modal"
@@ -1160,10 +1166,6 @@
 
   </div>
 
-
-  <!-- ======================================
-       DATA + TRACKING
-  ======================================= -->
 
   <script>
 
@@ -1245,6 +1247,19 @@
         availability: "forthcoming",
         price: null,
         checkout: null
+      },
+
+      book7: {
+        library_no: "07",
+        title: "The Two Clocks",
+        subtitle: "A Strategic Method for Choosing ED, EA, REA, or RD",
+        cover: "the-two-clocks-cover.png",
+        edition: "First Edition · 2026 · Digital PDF · 86 pages",
+        description:
+          "The Two Clocks develops a strategic method for choosing among ED, EA, REA, and RD. It examines readiness, commitment, flexibility, timing, school-list architecture, and the value of additional evidence across the admissions cycle. Through clear frameworks and worked cases, the edition helps students choose an application round deliberately and align timing with the strongest version of their file.",
+        availability: "live",
+        price: 27,
+        checkout: "https://buy.stripe.com/bJecN6b0h2lG6gJ4PYdnW03"
       }
 
     };
