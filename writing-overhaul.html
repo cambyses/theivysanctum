@@ -1,7 +1,9 @@
-<!DOCTYPE html>
+from pathlib import Path
+from bs4 import BeautifulSoup
+
+html = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
-
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSSDCC0K1L"></script>
   <script>
@@ -22,14 +24,11 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Writing Overhaul | The Ivy Sanctum</title>
-
   <meta
     name="description"
     content="Writing Overhaul from The Ivy Sanctum: personal statement and supplemental essay development for selective applications."
   >
-
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
@@ -41,6 +40,7 @@
       --muted:#6b655e;
       --line:rgba(37,34,31,.16);
       --line-strong:rgba(37,34,31,.26);
+      --overlay:rgba(24,21,19,.72);
     }
 
     * { box-sizing:border-box; }
@@ -55,7 +55,10 @@
       line-height:1.68;
     }
 
+    body.modal-open { overflow:hidden; }
+
     a { color:inherit; }
+    button { font:inherit; }
 
     .shell {
       width:min(1120px,calc(100% - 48px));
@@ -65,6 +68,7 @@
     nav {
       padding:28px 0;
       border-bottom:1px solid var(--line);
+      background:var(--cream);
     }
 
     .nav-inner {
@@ -87,22 +91,17 @@
     }
 
     .nav-links a { text-decoration:none; }
-
-    section {
-      padding:96px 0;
-      border-top:1px solid var(--line);
-    }
+    .nav-links a.active { color:var(--crimson); }
 
     .eyebrow,
     .section-label,
-    .tier-label {
+    .family-number,
+    .modal-kicker {
       color:var(--crimson);
       font-size:.74rem;
       letter-spacing:.17em;
       text-transform:uppercase;
     }
-
-    .section-label { margin-bottom:21px; }
 
     h1 {
       color:var(--crimson);
@@ -122,7 +121,7 @@
       margin:0 0 28px;
     }
 
-    h3 { font-weight:400; }
+    h3, h4 { font-weight:400; }
 
     .text-link {
       display:inline-block;
@@ -133,7 +132,11 @@
       font-size:.95rem;
     }
 
-    .hero { padding:110px 0 105px; }
+    /* HERO */
+    .hero {
+      padding:110px 0 105px;
+      background:var(--cream-soft);
+    }
 
     .hero .eyebrow { margin-bottom:22px; }
 
@@ -151,128 +154,139 @@
       margin:0;
     }
 
-    .scope { background:var(--cream-soft); }
-
-    .scope-grid {
-      display:grid;
-      grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
-      gap:75px;
-      align-items:start;
+    /* ENGAGEMENTS */
+    .engagements {
+      padding:96px 0 88px;
+      border-top:1px solid var(--line);
     }
 
-    .scope-copy {
+    .engagement-intro {
+      max-width:850px;
+      margin-bottom:64px;
+    }
+
+    .section-label { margin-bottom:21px; }
+
+    .engagement-intro p {
       max-width:720px;
-      font-size:1.06rem;
+      font-size:1.05rem;
+      margin:0;
     }
 
-    .scope-copy p { margin:0 0 20px; }
-
-    .scope-ledger {
+    .family {
+      display:grid;
+      grid-template-columns:190px minmax(0,1fr);
+      gap:52px;
+      padding:50px 0;
       border-top:1px solid var(--line-strong);
     }
 
-    .scope-row {
-      display:grid;
-      grid-template-columns:190px minmax(0,1fr);
-      gap:30px;
-      padding:18px 0;
-      border-bottom:1px solid var(--line);
+    .family:last-of-type {
+      border-bottom:1px solid var(--line-strong);
     }
 
-    .scope-name { color:var(--crimson); }
+    .family-number { margin-bottom:13px; }
 
-    .scope-definition {
+    .family-title {
+      color:var(--crimson);
+      font-size:clamp(2rem,3.5vw,3rem);
+      line-height:1.08;
+      letter-spacing:-.025em;
+      margin:0 0 13px;
+    }
+
+    .family-tagline {
+      color:var(--muted);
       margin:0;
+      max-width:230px;
+      font-size:.96rem;
+    }
+
+    .option-list {
+      border-top:1px solid var(--line);
+    }
+
+    .engagement-option {
+      width:100%;
+      appearance:none;
+      border:0;
+      border-bottom:1px solid var(--line);
+      background:transparent;
+      color:inherit;
+      padding:20px 0;
+      cursor:pointer;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto auto;
+      gap:28px;
+      align-items:center;
+      text-align:left;
+    }
+
+    .engagement-option:hover .option-title,
+    .engagement-option:focus-visible .option-title,
+    .engagement-option:hover .option-open,
+    .engagement-option:focus-visible .option-open {
+      color:var(--crimson);
+    }
+
+    .option-title {
+      font-size:1.12rem;
+      transition:color 150ms ease;
+    }
+
+    .option-price {
+      font-size:1rem;
+      color:var(--charcoal);
+      white-space:nowrap;
+    }
+
+    .option-open {
+      color:var(--muted);
+      font-size:.86rem;
+      white-space:nowrap;
+      transition:color 150ms ease;
+    }
+
+    /* ADD-ONS */
+    .addons {
+      padding:0 0 96px;
+    }
+
+    .addons-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:0;
+      border-bottom:1px solid var(--line-strong);
+    }
+
+    .addon {
+      padding:34px 34px 34px 0;
+      border-top:1px solid var(--line-strong);
+    }
+
+    .addon + .addon {
+      padding-left:34px;
+      border-left:1px solid var(--line);
+    }
+
+    .addon h3 {
+      color:var(--crimson);
+      font-size:1.4rem;
+      margin:0 0 10px;
+    }
+
+    .addon p {
+      margin:0;
+      color:var(--muted);
       font-size:.94rem;
     }
 
-    /* METHOD */
+    .addon .text-link { margin-top:15px; }
 
-    .method-copy {
-      max-width:940px;
-    }
-
-    .method-copy p {
-      margin:0;
-      font-size:1.05rem;
-      max-width:820px;
-    }
-
-    .method-line {
-      width:100%;
-      color:var(--crimson);
-      font-size:clamp(2rem,4.4vw,3.5rem);
-      line-height:1.3;
-      letter-spacing:-.025em;
-      margin:42px 0 0;
-    }
-
-    .engagements { background:var(--cream-soft); }
-
-    .engagement-intro {
-      max-width:820px;
-      margin-bottom:58px;
-    }
-
-    .engagement-intro p {
-      font-size:1.06rem;
-      margin:0;
-    }
-
-    .tier-list {
-      border-top:1px solid var(--line-strong);
-    }
-
-    .tier {
-      display:grid;
-      grid-template-columns:150px minmax(250px,.72fr) minmax(0,1.28fr);
-      gap:45px;
-      padding:45px 0;
-      border-bottom:1px solid var(--line);
-      align-items:start;
-    }
-
-    .tier-label { padding-top:7px; }
-
-    .tier-title h3 {
-      color:var(--crimson);
-      font-size:clamp(1.75rem,3vw,2.55rem);
-      line-height:1.12;
-      letter-spacing:-.02em;
-      margin:0 0 12px;
-    }
-
-    .price {
-      color:var(--charcoal);
-      font-size:1.22rem;
-    }
-
-    .tier-copy p { margin:0 0 21px; }
-
-    .deliverables {
-      margin:0 0 26px;
-      padding:0;
-      list-style:none;
-      color:var(--muted);
-      font-size:.93rem;
-    }
-
-    .deliverables li {
-      padding:7px 0;
-      border-bottom:1px solid rgba(37,34,31,.09);
-    }
-
-    .process-copy {
-      max-width:810px;
-      font-size:1.06rem;
-      margin:0;
-    }
-
-    .process-line {
-      color:var(--crimson);
-      font-size:clamp(1.65rem,3.7vw,2.7rem);
-      line-height:1.4;
-      margin:42px 0 0;
+    /* EXISTING LIBRARY SECTION */
+    section.library-section {
+      padding:96px 0;
+      border-top:1px solid var(--line);
     }
 
     .library-grid {
@@ -317,24 +331,10 @@
       line-height:1.35;
     }
 
-    .origin { background:var(--cream-soft); }
-
-    .origin-grid {
-      display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(280px,.75fr);
-      gap:70px;
-      align-items:start;
-    }
-
-    .origin p { margin:0 0 20px; }
-
-    .origin-side {
-      color:var(--muted);
-      padding-top:39px;
-    }
-
-    .origin-side .text-link {
-      margin-top:10px;
+    /* EXISTING OFFICE HOURS SECTION */
+    section.hours-section {
+      padding:96px 0;
+      border-top:1px solid var(--line);
     }
 
     .hours-grid {
@@ -352,6 +352,7 @@
 
     .hours-action { text-align:right; }
 
+    /* CONTINUE + FOOTER */
     .continue {
       border-top:1px solid var(--line);
       padding:32px 0;
@@ -403,21 +404,196 @@
 
     .footer-links a { text-decoration:none; }
 
+    /* MODALS */
+    .modal {
+      position:fixed;
+      inset:0;
+      z-index:1000;
+      background:var(--overlay);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+    }
+
+    .modal.open { display:flex; }
+
+    .modal-panel {
+      width:min(920px,100%);
+      max-height:calc(100vh - 56px);
+      overflow-y:auto;
+      background:var(--cream-soft);
+      box-shadow:0 24px 70px rgba(0,0,0,.23);
+    }
+
+    .modal-close {
+      position:sticky;
+      top:16px;
+      margin:16px 18px -36px auto;
+      z-index:3;
+      display:block;
+      border:0;
+      background:transparent;
+      color:var(--crimson);
+      font-size:1.8rem;
+      line-height:1;
+      cursor:pointer;
+      padding:4px 8px;
+    }
+
+    .modal-inner {
+      padding:58px 64px 64px;
+    }
+
+    .modal-kicker { margin-bottom:15px; }
+
+    .modal-title {
+      color:var(--crimson);
+      font-size:clamp(2.6rem,6vw,4.6rem);
+      line-height:1;
+      letter-spacing:-.035em;
+      margin:0 0 13px;
+      font-weight:400;
+    }
+
+    .modal-tagline {
+      font-size:1.1rem;
+      color:var(--muted);
+      margin:0 0 18px;
+      max-width:680px;
+    }
+
+    .modal-fee {
+      font-size:1.28rem;
+      margin:0 0 24px;
+    }
+
+    .commission-button {
+      display:inline-block;
+      border:1px solid var(--crimson);
+      color:var(--crimson);
+      text-decoration:none;
+      padding:13px 19px;
+      background:transparent;
+    }
+
+    .commission-button:hover,
+    .commission-button:focus-visible {
+      background:var(--crimson);
+      color:var(--cream-soft);
+    }
+
+    .modal-rule {
+      border:0;
+      border-top:1px solid var(--line-strong);
+      margin:38px 0;
+    }
+
+    .modal-section {
+      margin:0 0 36px;
+    }
+
+    .modal-section h3 {
+      color:var(--crimson);
+      font-size:1.58rem;
+      line-height:1.2;
+      margin:0 0 14px;
+    }
+
+    .modal-section p {
+      margin:0 0 16px;
+    }
+
+    .modal-section p:last-child { margin-bottom:0; }
+
+    .process-diagram {
+      margin:24px 0 0;
+      padding:20px 0;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      color:var(--crimson);
+      font-size:clamp(1.05rem,2.3vw,1.42rem);
+      line-height:1.65;
+      letter-spacing:-.01em;
+    }
+
+    .deliverable-list {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:0 28px;
+      margin:0;
+      padding:0;
+      list-style:none;
+      border-top:1px solid var(--line);
+    }
+
+    .deliverable-list li {
+      padding:11px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .timing-ledger {
+      border-top:1px solid var(--line);
+      margin-top:18px;
+    }
+
+    .timing-row {
+      display:grid;
+      grid-template-columns:160px minmax(0,1fr);
+      gap:24px;
+      padding:12px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .timing-name { color:var(--crimson); }
+
+    .modal-bottom {
+      border-top:1px solid var(--line-strong);
+      padding-top:32px;
+      margin-top:44px;
+    }
+
+    .modal-note {
+      color:var(--muted);
+      font-size:.84rem;
+      margin:14px 0 0;
+    }
+
+    /* PRIORITY MODAL */
+    .priority-table {
+      width:100%;
+      border-collapse:collapse;
+      margin-top:18px;
+    }
+
+    .priority-table th,
+    .priority-table td {
+      text-align:left;
+      padding:12px 10px;
+      border-bottom:1px solid var(--line);
+      font-weight:400;
+    }
+
+    .priority-table th {
+      color:var(--crimson);
+    }
+
+    /* RESPONSIVE */
     @media (max-width:900px) {
-      .scope-grid,
+      .family {
+        grid-template-columns:1fr;
+        gap:26px;
+      }
+
+      .family-tagline { max-width:620px; }
+
       .library-grid,
-      .origin-grid,
       .hours-grid {
         grid-template-columns:1fr;
         gap:38px;
       }
 
       .hours-action { text-align:left; }
-
-      .tier {
-        grid-template-columns:90px minmax(220px,.8fr) minmax(0,1.2fr);
-        gap:28px;
-      }
     }
 
     @media (max-width:680px) {
@@ -428,361 +604,203 @@
       .nav-links { display:none; }
 
       .hero { padding:82px 0; }
+      .engagements { padding:72px 0 64px; }
+      .addons { padding-bottom:72px; }
+      section.library-section,
+      section.hours-section { padding:72px 0; }
 
-      section { padding:72px 0; }
-
-      .scope-row,
-      .tier {
-        grid-template-columns:1fr;
-        gap:10px;
+      .engagement-option {
+        grid-template-columns:1fr auto;
+        gap:7px 18px;
       }
 
-      .tier-label { padding-top:0; }
+      .option-open {
+        grid-column:1 / -1;
+      }
+
+      .addons-grid {
+        grid-template-columns:1fr;
+      }
+
+      .addon,
+      .addon + .addon {
+        padding:28px 0;
+        border-left:0;
+      }
 
       .book-grid { grid-template-columns:1fr; }
+
+      .modal {
+        padding:12px;
+      }
+
+      .modal-panel {
+        max-height:calc(100vh - 24px);
+      }
+
+      .modal-inner {
+        padding:52px 24px 34px;
+      }
+
+      .deliverable-list {
+        grid-template-columns:1fr;
+      }
+
+      .timing-row {
+        grid-template-columns:1fr;
+        gap:3px;
+      }
+
+      .priority-table {
+        font-size:.86rem;
+      }
     }
   </style>
 </head>
 
 <body id="top">
-
   <nav>
     <div class="shell nav-inner">
-
-      <a class="wordmark" href="/">
-        The Ivy Sanctum
-      </a>
-
+      <a class="wordmark" href="/">The Ivy Sanctum</a>
       <div class="nav-links">
-        <a href="/#hours">Office Hours</a>
         <a href="/library.html">Library</a>
-        <a href="/advisory.html">Advisory</a>
-        <a href="/approach.html">Approach</a>
+        <a href="/file-architecture.html">Profile Review</a>
+        <a class="active" href="/writing-overhaul.html">Essays</a>
       </div>
-
     </div>
   </nav>
 
   <main>
-
     <header class="hero">
       <div class="shell">
-
-        <div class="eyebrow">
-          Advisory · Writing
-        </div>
-
-        <h1>
-          Writing Overhaul
-        </h1>
-
-        <p class="hero-copy">
-          Substantive development of the written application.
-        </p>
-
+        <div class="eyebrow">Essays</div>
+        <h1>Writing Overhaul</h1>
+        <p class="hero-copy">Substantive development of the written application.</p>
         <p class="hero-detail">
-          Writing Overhaul applies Ivy Sanctum methodology to personal
-          statements, supplemental essays, short responses, academic
-          positioning, institutional fit, and the language carrying the
-          student's strongest interpretation across the application.
+          Personal statements, supplemental essays, and the complete written application—
+          examined at the level of language, structure, reader consequence, and application architecture.
         </p>
-
       </div>
     </header>
 
-    <section class="scope">
-      <div class="shell">
-
-        <div class="scope-grid">
-
-          <div class="scope-copy">
-
-            <div class="section-label">
-              The Writing
-            </div>
-
-            <h2>
-              Every piece carries part of the application’s meaning.
-            </h2>
-
-            <p>
-              The work begins with the student’s actual material: interests,
-              experiences, observations, intellectual questions, activities,
-              and future direction.
-            </p>
-
-            <p>
-              From that material, the writing develops a governing
-              interpretation and routes the strongest evidence across the
-              personal statement, school-specific supplements, and shorter
-              written responses.
-            </p>
-
-          </div>
-
-          <div class="scope-ledger">
-
-            <div class="scope-row">
-              <div class="scope-name">Personal Statement</div>
-              <p class="scope-definition">
-                Governing pattern, narrative movement, interpretation,
-                evidence, voice, and the central impression carried forward.
-              </p>
-            </div>
-
-            <div class="scope-row">
-              <div class="scope-name">Why Major</div>
-              <p class="scope-definition">
-                Intellectual problem, method, existing evidence, and
-                academic direction.
-              </p>
-            </div>
-
-            <div class="scope-row">
-              <div class="scope-name">Why School</div>
-              <p class="scope-definition">
-                Courses, units, faculty environments, methods, and the
-                student’s first credible move inside the institution.
-              </p>
-            </div>
-
-            <div class="scope-row">
-              <div class="scope-name">Community</div>
-              <p class="scope-definition">
-                Role, behavior, contribution, responsibility, and the
-                pattern the student brings into shared environments.
-              </p>
-            </div>
-
-            <div class="scope-row">
-              <div class="scope-name">Activity Writing</div>
-              <p class="scope-definition">
-                Artifacts, metrics, users, responsibility, and the evidence
-                carried through compressed application space.
-              </p>
-            </div>
-
-            <div class="scope-row">
-              <div class="scope-name">Short Responses</div>
-              <p class="scope-definition">
-                Precision, compression, variation, voice, and strategic use
-                of every available line.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section>
-      <div class="shell">
-
-        <div class="method-copy">
-
-          <div class="section-label">
-            The Method
-          </div>
-
-          <h2>
-            Strong writing turns experience into a defensible interpretation.
-          </h2>
-
-          <p>
-            Writing Overhaul draws from the Carry Sentence,
-            Supplement Routing Map, Why Major Method, Fit Bridge,
-            Dossier Triangulation, and related Ivy Sanctum systems.
-          </p>
-
-          <div class="method-line">
-            Notice → Meaning → Response → Proof → Direction
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
     <section class="engagements">
       <div class="shell">
-
         <div class="engagement-intro">
+          <div class="section-label">Engagements</div>
+          <h2>Choose the depth of the work.</h2>
+          <p>
+            Each engagement is available for a principal essay, a seven-response supplement set,
+            or the essay and supplements together.
+          </p>
+        </div>
 
-          <div class="section-label">
-            Engagements
+        <article class="family">
+          <div>
+            <div class="family-number">I</div>
+            <h3 class="family-title">One Pass</h3>
+            <p class="family-tagline">One decisive editorial and admissions read.</p>
           </div>
 
-          <h2>
-            Three ways to develop the written application.
-          </h2>
+          <div class="option-list">
+            <button class="engagement-option" type="button" onclick="openEngagement('oneEssay')">
+              <span class="option-title">Essay</span>
+              <span class="option-price">527</span>
+              <span class="option-open">View Engagement →</span>
+            </button>
+            <button class="engagement-option" type="button" onclick="openEngagement('oneSupplements')">
+              <span class="option-title">Supplements</span>
+              <span class="option-price">687</span>
+              <span class="option-open">View Engagement →</span>
+            </button>
+            <button class="engagement-option" type="button" onclick="openEngagement('oneCombined')">
+              <span class="option-title">Essay + Supplements</span>
+              <span class="option-price">997</span>
+              <span class="option-open">View Engagement →</span>
+            </button>
+          </div>
+        </article>
 
-          <p>
-            Each engagement applies the same underlying methodology to a
-            different body of writing and level of application scope.
-          </p>
+        <article class="family">
+          <div>
+            <div class="family-number">II</div>
+            <h3 class="family-title">Two Passes</h3>
+            <p class="family-tagline">First return. Revision. Final pass.</p>
+          </div>
 
-        </div>
+          <div class="option-list">
+            <button class="engagement-option" type="button" onclick="openEngagement('twoEssay')">
+              <span class="option-title">Essay</span>
+              <span class="option-price">727</span>
+              <span class="option-open">View Engagement →</span>
+            </button>
+            <button class="engagement-option" type="button" onclick="openEngagement('twoSupplements')">
+              <span class="option-title">Supplements</span>
+              <span class="option-price">927</span>
+              <span class="option-open">View Engagement →</span>
+            </button>
+            <button class="engagement-option" type="button" onclick="openEngagement('twoCombined')">
+              <span class="option-title">Essay + Supplements</span>
+              <span class="option-price">1,297</span>
+              <span class="option-open">View Engagement →</span>
+            </button>
+          </div>
+        </article>
 
-        <div class="tier-list">
+        <article class="family">
+          <div>
+            <div class="family-number">III</div>
+            <h3 class="family-title">Complete</h3>
+            <p class="family-tagline">Direction first. Architecture next. Writing follows.</p>
+          </div>
 
-          <article class="tier">
-
-            <div class="tier-label">I</div>
-
-            <div class="tier-title">
-              <h3>Personal Statement Architecture</h3>
-              <div class="price">$727</div>
-            </div>
-
-            <div class="tier-copy">
-
-              <p>
-                Development of the central personal statement from raw
-                material through governing idea, structure, narrative
-                movement, evidence, and final refinement.
-              </p>
-
-              <ul class="deliverables">
-                <li>Source-material and idea review</li>
-                <li>Core narrative and governing argument</li>
-                <li>Essay architecture</li>
-                <li>Scene and evidence selection</li>
-                <li>Structural revision</li>
-                <li>Sentence-level refinement</li>
-                <li>Final positioning review</li>
-              </ul>
-
-              <a
-                class="text-link"
-                href="mailto:hello@theivysanctum.com?subject=Personal%20Statement%20Architecture%20Inquiry"
-                onclick="trackEngagement('personal_statement',727)"
-              >
-                Request Personal Statement Architecture →
-              </a>
-
-            </div>
-
-          </article>
-
-          <article class="tier">
-
-            <div class="tier-label">II</div>
-
-            <div class="tier-title">
-              <h3>Supplement Suite</h3>
-              <div class="price">$787</div>
-            </div>
-
-            <div class="tier-copy">
-
-              <p>
-                Strategic development of the supplemental writing across a
-                selected school set, with each response assigned a distinct
-                role inside the larger application.
-              </p>
-
-              <ul class="deliverables">
-                <li>Prompt and school-set review</li>
-                <li>Supplement routing map</li>
-                <li>Why Major development</li>
-                <li>Why School development</li>
-                <li>Community and contribution writing</li>
-                <li>Activity and short-response refinement</li>
-                <li>Cross-supplement coherence review</li>
-              </ul>
-
-              <a
-                class="text-link"
-                href="mailto:hello@theivysanctum.com?subject=Supplement%20Suite%20Inquiry"
-                onclick="trackEngagement('supplement_suite',787)"
-              >
-                Request Supplement Suite →
-              </a>
-
-            </div>
-
-          </article>
-
-          <article class="tier">
-
-            <div class="tier-label">III</div>
-
-            <div class="tier-title">
-              <h3>Complete Writing Overhaul</h3>
-              <div class="price">$1,597</div>
-            </div>
-
-            <div class="tier-copy">
-
-              <p>
-                A complete architecture of the substantive written
-                application, connecting the personal statement, supplements,
-                academic direction, institutional fit, and compressed writing
-                into one coherent written dossier.
-              </p>
-
-              <ul class="deliverables">
-                <li>Personal statement architecture</li>
-                <li>Supplement routing across the selected school set</li>
-                <li>Why Major and Why School development</li>
-                <li>Community and activity writing</li>
-                <li>Short-form response refinement</li>
-                <li>Cross-essay claim and evidence mapping</li>
-                <li>Voice and repetition review</li>
-                <li>Final written-dossier coherence review</li>
-              </ul>
-
-              <a
-                class="text-link"
-                href="mailto:hello@theivysanctum.com?subject=Complete%20Writing%20Overhaul%20Inquiry"
-                onclick="trackEngagement('complete_writing_overhaul',1597)"
-              >
-                Request Complete Writing Overhaul →
-              </a>
-
-            </div>
-
-          </article>
-
-        </div>
-
+          <div class="option-list">
+            <button class="engagement-option" type="button" onclick="openEngagement('completeEssay')">
+              <span class="option-title">Essay Overhaul</span>
+              <span class="option-price">1,797</span>
+              <span class="option-open">View Engagement →</span>
+            </button>
+            <button class="engagement-option" type="button" onclick="openEngagement('completeSupplements')">
+              <span class="option-title">Supplement Overhaul</span>
+              <span class="option-price">1,997</span>
+              <span class="option-open">View Engagement →</span>
+            </button>
+            <button class="engagement-option" type="button" onclick="openEngagement('completeCombined')">
+              <span class="option-title">Essay + Supplements Overhaul</span>
+              <span class="option-price">2,797</span>
+              <span class="option-open">View Engagement →</span>
+            </button>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section>
+    <div class="addons">
       <div class="shell">
+        <div class="addons-grid">
+          <div class="addon">
+            <h3>Additional Supplements</h3>
+            <p>
+              Beyond the included seven: One Pass · 87 each &nbsp; / &nbsp;
+              Two Passes · 127 each &nbsp; / &nbsp; Complete · 177 each
+            </p>
+          </div>
 
-        <div class="section-label">
-          The Engagement
+          <div class="addon">
+            <h3>Priority Release</h3>
+            <p>Reserved Sanctum response windows begin at 297.</p>
+            <button class="text-link" type="button" onclick="openPriority()" style="background:none;border-left:0;border-right:0;border-top:0;cursor:pointer;padding-left:0;padding-right:0;">
+              View Priority Release →
+            </button>
+          </div>
         </div>
-
-        <h2>
-          Material becomes structure. Structure becomes language.
-        </h2>
-
-        <p class="process-copy">
-          The student submits existing drafts, prompts, application
-          information, and relevant source material. The writing is developed
-          through interpretation, architecture, evidence placement, revision,
-          and final positioning across the selected scope.
-        </p>
-
-        <div class="process-line">
-          Gather → Architect → Draft → Refine → Position
-        </div>
-
       </div>
-    </section>
+    </div>
 
-    <section>
+    <!-- EXISTING LIBRARY SECTION — retained -->
+    <section class="library-section">
       <div class="shell">
-
         <div class="library-grid">
-
           <div class="library-copy">
-
             <div class="section-label">
               From the Library
             </div>
@@ -804,13 +822,10 @@
             >
               Enter the Library →
             </a>
-
           </div>
 
           <div class="book-grid">
-
             <div class="book">
-
               <a href="/library.html">
                 <img
                   src="the-carry-sentence-cover.png"
@@ -825,11 +840,9 @@
               <div class="book-title">
                 The Carry Sentence
               </div>
-
             </div>
 
             <div class="book">
-
               <a href="/library.html">
                 <img
                   src="the-personal-statement-signature-cover.png"
@@ -844,67 +857,17 @@
               <div class="book-title">
                 The Personal Statement Signature
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
     </section>
 
-    <section class="origin">
-      <div class="shell origin-grid">
-
-        <div>
-
-          <div class="section-label">
-            The Origin
-          </div>
-
-          <h2>
-            Research, advisory, and a growing body of work.
-          </h2>
-
-          <p>
-            The Ivy Sanctum is an independent admissions research and
-            advisory practice. Its methodology draws on more than 30 years
-            of combined experience across Harvard's schools, including
-            firsthand experience reading files on a Harvard graduate
-            admissions committee.
-          </p>
-
-        </div>
-
-        <div class="origin-side">
-
-          <p>
-            The methodology develops through direct advisory work,
-            frameworks, instruments, publications, and a growing
-            repository of admissions methods.
-          </p>
-
-          <a
-            class="text-link"
-            href="/approach.html"
-            onclick="trackMethodOpen()"
-          >
-            Explore the Method →
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section>
+    <!-- EXISTING OFFICE HOURS SECTION — retained -->
+    <section class="hours-section">
       <div class="shell">
-
         <div class="hours-grid">
-
           <div>
-
             <div class="section-label">
               Office Hours
             </div>
@@ -918,11 +881,9 @@
               question about personal statements, supplements, essay ideas,
               positioning, structure, or another writing decision.
             </p>
-
           </div>
 
           <div class="hours-action">
-
             <a
               class="text-link"
               href="/#hours"
@@ -930,72 +891,1006 @@
             >
               Ask a question →
             </a>
-
           </div>
-
         </div>
-
       </div>
     </section>
 
     <div class="continue">
       <div class="shell continue-inner">
-
-        <div class="continue-label">
-          Continue through the Sanctum
-        </div>
-
+        <div class="continue-label">Continue through the Sanctum</div>
         <div class="continue-links">
           <a href="#top">Top ↑</a>
-          <a href="/#hours">Office Hours</a>
-          <a href="/advisory.html">Advisory</a>
           <a href="/library.html">Library</a>
-          <a href="/approach.html">Approach</a>
+          <a href="/file-architecture.html">Profile Review</a>
+          <a href="/writing-overhaul.html">Essays</a>
           <a href="mailto:hello@theivysanctum.com">Contact</a>
         </div>
-
       </div>
     </div>
-
   </main>
 
   <footer>
     <div class="shell footer-inner">
-
-      <div>
-        © 2026 Ivy Sanctum LLC
-      </div>
-
+      <div>© 2026 Ivy Sanctum LLC</div>
       <div class="footer-links">
-        <a href="/advisory.html">Advisory</a>
         <a href="/library.html">Library</a>
-        <a href="/approach.html">Approach</a>
+        <a href="/file-architecture.html">Profile Review</a>
+        <a href="/writing-overhaul.html">Essays</a>
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
         <a href="mailto:hello@theivysanctum.com">Contact</a>
       </div>
-
     </div>
   </footer>
 
-  <script>
+  <!-- ENGAGEMENT MODAL -->
+  <div class="modal" id="engagementModal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" onclick="closeEngagement()" aria-label="Close">×</button>
+      <div class="modal-inner">
+        <div class="modal-kicker" id="modalKicker"></div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-tagline" id="modalTagline"></p>
+        <div class="modal-fee" id="modalFee"></div>
+        <a class="commission-button" id="modalCommissionTop" href="#">Commission the Engagement</a>
 
-    function trackEngagement(engagement, value) {
+        <hr class="modal-rule">
+
+        <div id="modalBody"></div>
+
+        <div class="modal-bottom">
+          <a class="commission-button" id="modalCommissionBottom" href="#">Commission the Engagement</a>
+          <p class="modal-note">Engagement fees are in USD.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIORITY MODAL -->
+  <div class="modal" id="priorityModal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="priorityTitle">
+      <button class="modal-close" type="button" onclick="closePriority()" aria-label="Close">×</button>
+      <div class="modal-inner">
+        <div class="modal-kicker">Priority Release</div>
+        <h2 class="modal-title" id="priorityTitle">The Sanctum clock.</h2>
+        <p class="modal-tagline">
+          Priority Release reserves a defined response window for time under the control of The Ivy Sanctum.
+        </p>
+
+        <hr class="modal-rule">
+
+        <div class="modal-section">
+          <h3>How the clock works</h3>
+          <p>
+            The clock begins when every material required for the relevant stage has been received.
+            It ends when The Ivy Sanctum releases that stage of work back to the applicant.
+          </p>
+          <div class="process-diagram">
+            Complete Material → Sanctum Clock Begins → Sanctum Release → Clock Ends
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h3>Two-Pass example</h3>
+          <p>
+            A 48-hour Priority Release begins when the complete first draft is received.
+            The first Sanctum return is released within 48 hours.
+          </p>
+          <p>
+            The applicant then controls the revision period. When the rewritten draft is uploaded,
+            a new 48-hour Sanctum clock begins for the final pass.
+          </p>
+          <div class="process-diagram">
+            Draft Received → 48 Hours → First Return → Applicant Revision → Revised Draft Uploaded → New 48-Hour Clock → Final Return
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h3>Priority fees</h3>
+          <table class="priority-table">
+            <thead>
+              <tr>
+                <th>Engagement</th>
+                <th>72 hours</th>
+                <th>48 hours</th>
+                <th>24 hours</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>One Pass</td>
+                <td>297</td>
+                <td>397</td>
+                <td>597</td>
+              </tr>
+              <tr>
+                <td>Two Passes</td>
+                <td>397</td>
+                <td>547</td>
+                <td>797</td>
+              </tr>
+              <tr>
+                <td>Complete</td>
+                <td>697</td>
+                <td>997</td>
+                <td>1,497</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="modal-note">
+            Priority Release is capacity-controlled and confirmed for the selected engagement and release window.
+          </p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Complete engagements</h3>
+          <p>
+            Complete contains several Sanctum-controlled stages. The selected Priority Release applies each time
+            the materials required for the next defined stage are complete. Applicant selection, drafting, and
+            revision periods remain separate from the Sanctum clock.
+          </p>
+        </div>
+
+        <div class="modal-bottom">
+          <a class="commission-button" href="mailto:hello@theivysanctum.com?subject=Priority%20Release%20Inquiry">
+            Reserve Priority Release
+          </a>
+          <p class="modal-note">Priority fees are in USD.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /*
+      TODAY'S MANUAL FULFILLMENT:
+      These links currently open a pre-addressed commissioning email.
+      When the nine Stripe Payment Links are ready, replace only the values
+      in checkoutLinks below. No other page code needs to change.
+    */
+    const checkoutLinks = {
+      oneEssay: "mailto:hello@theivysanctum.com?subject=Commission%20%E2%80%94%20One%20Pass%20Essay",
+      oneSupplements: "mailto:hello@theivysanctum.com?subject=Commission%20%E2%80%94%20One%20Pass%20Supplements",
+      oneCombined: "mailto:hello@theivysanctum.com?subject=Commission%20%E2%80%94%20One%20Pass%20Essay%20%2B%20Supplements",
+      twoEssay: "mailto:hello@theivysanctum.com?subject=Commission%20%E2%80%94%20Two%20Passes%20Essay",
+      twoSupplements: "mailto:hello@theivysanctum.com?subject=Commission%20%E2%80%94%20Two%20Passes%20Supplements",
+      twoCombined: "mailto:hello@theivysanctum.com?subject=Commission%20%E2%80%94%20Two%20Passes%20Essay%20%2B%20Supplements",
+      completeEssay: "mailto:hello@theivysanctum.com?subject=Commission%20%E2%80%94%20Complete%20Essay%20Overhaul",
+      completeSupplements: "mailto:hello@theivysanctum.com?subject=Commission%20%E2%80%94%20Complete%20Supplement%20Overhaul",
+      completeCombined: "mailto:hello@theivysanctum.com?subject=Commission%20%E2%80%94%20Complete%20Essay%20%2B%20Supplements%20Overhaul"
+    };
+
+    const engagements = {
+      oneEssay: {
+        family: "I · One Pass",
+        title: "Essay",
+        tagline: "One decisive editorial and admissions read of a complete principal essay.",
+        fee: "527",
+        body: `
+          <div class="modal-section">
+            <h3>Inside the Editorial Room</h3>
+            <p>
+              The personal statement receives a close editorial and admissions read as a complete piece.
+              We examine sentence-level mechanics, clarity, structure, pacing, voice, imagery, transitions,
+              and the strength of the central idea, while also assessing what the essay communicates about
+              the applicant beyond grades, activities, awards, and institutional credentials.
+            </p>
+            <p>
+              The review identifies the passages carrying the greatest distinction, the places where the
+              writing becomes more generalized, the points where evidence can become more precise, and the
+              moments where a stronger example, sharper observation, or clearer sequence can materially
+              deepen the reader's understanding.
+            </p>
+            <p>
+              We also read the essay within the broader application. Its themes are considered alongside
+              activities, recommendations, academic profile, intended field, and school list. The review
+              asks what the essay contributes to the file, how that contribution complements the existing
+              evidence, and which final impression is likely to remain with an admissions reader after the
+              first pass through the application.
+            </p>
+            <p>
+              Comments are organized around concrete revision actions. Full-context examples may be used
+              where they clarify an editorial possibility or open a stronger direction. The student's
+              language, judgment, and authorship remain at the center of the work.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>What you send</h3>
+            <p>
+              One complete principal essay, the relevant prompt, intended field or academic direction,
+              target institutions, and the application context that helps establish the role of the piece.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>What returns to you</h3>
+            <ul class="deliverable-list">
+              <li>Annotated principal essay</li>
+              <li>Written revision directives</li>
+              <li>Structural and narrative analysis</li>
+              <li>Sentence-level editorial analysis</li>
+              <li>Admissions-reader analysis</li>
+              <li>Application-context analysis</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3>The movement of the engagement</h3>
+            <div class="process-diagram">Complete Draft → Editorial Room → Annotated Return → Close</div>
+            <p>
+              The Sanctum clock begins when the complete submission is received. The engagement concludes
+              when the annotated essay and revision directives are released.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Timing</h3>
+            <div class="timing-ledger">
+              <div class="timing-row"><div class="timing-name">Standard Release</div><div>Within 14 calendar days of complete submission.</div></div>
+              <div class="timing-row"><div class="timing-name">Priority Release</div><div>72, 48, and 24-hour Sanctum response windows are available through Priority Release.</div></div>
+            </div>
+          </div>
+        `
+      },
+
+      oneSupplements: {
+        family: "I · One Pass",
+        title: "Supplements",
+        tagline: "One coordinated editorial and admissions read across up to seven supplemental responses.",
+        fee: "687",
+        body: `
+          <div class="modal-section">
+            <h3>Inside the Editorial Room</h3>
+            <p>
+              Each response is read as an individual piece and as part of a larger written set. We examine
+              clarity, pacing, voice, specificity, prompt alignment, evidence, institutional knowledge,
+              intellectual signal, contribution, and the quality of the conclusion each response asks the
+              reader to draw.
+            </p>
+            <p>
+              The set is then read horizontally. We trace which claims appear across several responses,
+              which dimensions of the applicant receive the strongest proof, where a new example can expand
+              the file, and how the prompts can work together to create range rather than repetition.
+            </p>
+            <p>
+              School-specific writing receives particular attention to fit. Courses, programs, faculty
+              environments, methods, communities, and institutional opportunities are examined for the
+              precision of the connection between the applicant's existing record and the proposed next move.
+            </p>
+            <p>
+              Comments translate the analysis into concrete revision actions for each response while preserving
+              the applicant's language and ownership of the final writing.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>What you send</h3>
+            <p>
+              Up to seven developed supplemental responses, every corresponding prompt, the relevant target
+              institutions, intended field or academic direction, and application context that helps establish
+              the role of each response.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>What returns to you</h3>
+            <ul class="deliverable-list">
+              <li>Annotated set of up to seven responses</li>
+              <li>Response-by-response revision directives</li>
+              <li>Cross-supplement architecture analysis</li>
+              <li>Claim-distribution review</li>
+              <li>Institutional-fit review</li>
+              <li>Voice, range, and specificity review</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3>The movement of the engagement</h3>
+            <div class="process-diagram">Complete Set → Editorial Room → Annotated Return → Close</div>
+            <p>
+              The Sanctum clock begins when the complete seven-response set and prompts are received. The
+              engagement concludes when the annotated set and revision directives are released.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Scope + timing</h3>
+            <div class="timing-ledger">
+              <div class="timing-row"><div class="timing-name">Included</div><div>Up to seven supplemental responses submitted together.</div></div>
+              <div class="timing-row"><div class="timing-name">Additional Response</div><div>87 each.</div></div>
+              <div class="timing-row"><div class="timing-name">Standard Release</div><div>Within 14 calendar days of complete submission.</div></div>
+              <div class="timing-row"><div class="timing-name">Priority Release</div><div>72, 48, and 24-hour Sanctum response windows are available through Priority Release.</div></div>
+            </div>
+          </div>
+        `
+      },
+
+      oneCombined: {
+        family: "I · One Pass",
+        title: "Essay + Supplements",
+        tagline: "One complete admissions read of the principal essay and up to seven supplements as a single written system.",
+        fee: "997",
+        body: `
+          <div class="modal-section">
+            <h3>Inside the Editorial Room</h3>
+            <p>
+              The principal essay and supplement set are read together as one body of evidence. The essay
+              receives the same close analysis of mechanics, clarity, structure, pacing, voice, imagery,
+              transitions, central idea, and reader consequence used throughout the Writing Overhaul.
+            </p>
+            <p>
+              Each supplement receives its own prompt-level review for specificity, evidence, intellectual
+              signal, contribution, institutional fit, and voice. We then examine the relationship among all
+              pieces: which ideas deserve the most space, which examples carry the greatest proof, where
+              themes reinforce one another, and where another dimension of the applicant can be made visible.
+            </p>
+            <p>
+              The larger question is what the complete written application leaves the committee carrying
+              forward. We study how the personal statement establishes a central impression, how the supplements
+              extend that impression, and how the writing complements the academic profile, activities,
+              recommendations, intended field, and school list.
+            </p>
+            <p>
+              The return converts that analysis into concrete revision actions across the complete written file.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>What you send</h3>
+            <p>
+              One complete principal essay, up to seven developed supplemental responses, every corresponding
+              prompt, target institutions, intended field or academic direction, and relevant application context.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>What returns to you</h3>
+            <ul class="deliverable-list">
+              <li>Annotated principal essay</li>
+              <li>Annotated supplement set</li>
+              <li>Written revision directives</li>
+              <li>Cross-essay claim map</li>
+              <li>Repetition and evidence review</li>
+              <li>Complete written-file analysis</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3>The movement of the engagement</h3>
+            <div class="process-diagram">Complete Written File → Editorial Room → Coordinated Return → Close</div>
+            <p>
+              The Sanctum clock begins when the principal essay, supplement set, prompts, and application
+              context are received together.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Scope + timing</h3>
+            <div class="timing-ledger">
+              <div class="timing-row"><div class="timing-name">Included</div><div>One principal essay + up to seven supplemental responses.</div></div>
+              <div class="timing-row"><div class="timing-name">Additional Response</div><div>87 each.</div></div>
+              <div class="timing-row"><div class="timing-name">Standard Release</div><div>Within 14 calendar days of complete submission.</div></div>
+              <div class="timing-row"><div class="timing-name">Priority Release</div><div>72, 48, and 24-hour Sanctum response windows are available through Priority Release.</div></div>
+            </div>
+          </div>
+        `
+      },
+
+      twoEssay: {
+        family: "II · Two Passes",
+        title: "Essay",
+        tagline: "A complete editorial cycle: first return, applicant revision, and final Sanctum pass.",
+        fee: "727",
+        body: `
+          <div class="modal-section">
+            <h3>First Pass — The Editorial Room</h3>
+            <p>
+              The first pass is a close editorial and admissions read of the essay as a complete piece. We
+              examine sentence-level mechanics, clarity, pacing, voice, imagery, transitions, structural
+              movement, the strength of the central idea, and the sequence through which meaning accumulates.
+            </p>
+            <p>
+              We assess what the essay allows a reader to understand about the applicant beyond grades and
+              activities. The review identifies the passages carrying distinction, the places where evidence
+              can become more precise, the moments where a stronger example or sharper observation can deepen
+              the reader's understanding, and the structural decisions that can strengthen the final impression.
+            </p>
+            <p>
+              The essay is also read against activities, recommendations, academic profile, intended field,
+              and school list so the written piece performs a clear role inside the broader application.
+              Comments are organized around concrete revision actions, with full-context examples where useful
+              for ideation and execution.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Applicant Revision</h3>
+            <p>
+              The applicant receives the annotated essay and written revision directives, then rewrites the
+              piece. The revision window remains open for 30 calendar days after the first return.
+            </p>
+            <p>
+              During the applicant revision period, the Sanctum clock is paused. The next Sanctum clock begins
+              the moment the rewritten draft is uploaded.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Second Pass — The Final Read</h3>
+            <p>
+              The revised essay is read again in full. We examine how the new draft carries the established
+              architecture, how the evidence now supports the central idea, how the revised sequence shapes
+              reader understanding, and how the voice remains coherent through the changes.
+            </p>
+            <p>
+              The final return gives the applicant one complete closing read of the revised essay and completes
+              the engagement.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>The movement of the engagement</h3>
+            <div class="process-diagram">Submission → First Pass → Return → Applicant Revision → Final Pass → Release</div>
+          </div>
+
+          <div class="modal-section">
+            <h3>What you receive</h3>
+            <ul class="deliverable-list">
+              <li>First annotated essay</li>
+              <li>Written architecture and revision directives</li>
+              <li>One complete applicant revision cycle</li>
+              <li>Final annotated pass</li>
+              <li>Application-context analysis</li>
+              <li>Closing reader-consequence review</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3>The Sanctum clock</h3>
+            <div class="timing-ledger">
+              <div class="timing-row"><div class="timing-name">First Pass</div><div>Within 14 calendar days of complete submission.</div></div>
+              <div class="timing-row"><div class="timing-name">Applicant Revision</div><div>Up to 30 calendar days after the first return.</div></div>
+              <div class="timing-row"><div class="timing-name">Final Pass</div><div>Within 7 calendar days after the rewritten draft is uploaded.</div></div>
+              <div class="timing-row"><div class="timing-name">Priority Release</div><div>72 hours · 397 &nbsp; / &nbsp; 48 hours · 547 &nbsp; / &nbsp; 24 hours · 797</div></div>
+            </div>
+            <p>
+              A selected Priority Release applies to both Sanctum-controlled passes. Applicant revision time
+              remains separate from the Sanctum clock.
+            </p>
+          </div>
+        `
+      },
+
+      twoSupplements: {
+        family: "II · Two Passes",
+        title: "Supplements",
+        tagline: "Up to seven supplemental responses carried through one complete revision cycle.",
+        fee: "927",
+        body: `
+          <div class="modal-section">
+            <h3>First Pass — The Editorial Room</h3>
+            <p>
+              Each response receives a full prompt-level editorial and admissions read. We examine clarity,
+              pacing, voice, specificity, evidence, institutional knowledge, intellectual signal, contribution,
+              and the precise conclusion each response creates about the applicant.
+            </p>
+            <p>
+              The complete set is then read as an architecture. We trace claim distribution across the seven
+              responses, identify where themes reinforce each other, locate repetition, evaluate the range of
+              evidence, and determine where another example can widen the committee's understanding of the applicant.
+            </p>
+            <p>
+              School-specific responses receive a fit analysis connecting the applicant's existing record to
+              courses, units, faculty environments, methods, communities, and institutional opportunities.
+              The first return converts the analysis into concrete revision directives across the full set.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Applicant Revision</h3>
+            <p>
+              The annotated set and revision directives return together. The applicant revises the complete
+              set within a 30-calendar-day revision window.
+            </p>
+            <p>
+              The Sanctum clock pauses during revision and begins again when the revised set is uploaded.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Second Pass — The Final Read</h3>
+            <p>
+              The revised responses are read individually and together. We examine the execution of the first
+              directives, the distribution of claims across the set, institutional specificity, evidence,
+              tonal range, and the final impression created by the complete supplement portfolio.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>The movement of the engagement</h3>
+            <div class="process-diagram">Complete Set → First Pass → Return → Applicant Revision → Final Pass → Release</div>
+          </div>
+
+          <div class="modal-section">
+            <h3>What you receive</h3>
+            <ul class="deliverable-list">
+              <li>First annotated set of up to seven responses</li>
+              <li>Response-by-response revision directives</li>
+              <li>Cross-supplement architecture analysis</li>
+              <li>One complete applicant revision cycle</li>
+              <li>Final pass across the revised set</li>
+              <li>Closing coherence review</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3>Scope + Sanctum clock</h3>
+            <div class="timing-ledger">
+              <div class="timing-row"><div class="timing-name">Included</div><div>Up to seven supplemental responses.</div></div>
+              <div class="timing-row"><div class="timing-name">Additional Response</div><div>127 each.</div></div>
+              <div class="timing-row"><div class="timing-name">First Pass</div><div>Within 14 calendar days of complete submission.</div></div>
+              <div class="timing-row"><div class="timing-name">Applicant Revision</div><div>Up to 30 calendar days after the first return.</div></div>
+              <div class="timing-row"><div class="timing-name">Final Pass</div><div>Within 7 calendar days after the revised set is uploaded.</div></div>
+              <div class="timing-row"><div class="timing-name">Priority Release</div><div>72 hours · 397 &nbsp; / &nbsp; 48 hours · 547 &nbsp; / &nbsp; 24 hours · 797</div></div>
+            </div>
+          </div>
+        `
+      },
+
+      twoCombined: {
+        family: "II · Two Passes",
+        title: "Essay + Supplements",
+        tagline: "The complete written application carried through one coordinated revision cycle.",
+        fee: "1,297",
+        body: `
+          <div class="modal-section">
+            <h3>First Pass — The Written File</h3>
+            <p>
+              The principal essay and up to seven supplements are examined as one written dossier. The essay
+              receives the full close read for mechanics, voice, imagery, structure, central idea, evidence,
+              and reader consequence. Each supplement receives the same prompt-level analysis for specificity,
+              institutional fit, intellectual signal, contribution, and proof.
+            </p>
+            <p>
+              The complete set is then read across pieces. We examine which themes anchor the personal statement,
+              which supplements extend the file, how claims are distributed, where evidence can become more
+              precise, and what the committee is likely to remember after moving through the complete written application.
+            </p>
+            <p>
+              The first return provides annotations across every included piece plus coordinated revision
+              directives for the written file as a whole.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Applicant Revision</h3>
+            <p>
+              The applicant revises the essay and supplement set within a 30-calendar-day revision window.
+              The Sanctum clock pauses while the writing is with the applicant and begins again when the revised
+              written file is uploaded.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Second Pass — The Final Read</h3>
+            <p>
+              The complete revised written file is read again. We examine execution at the sentence and structural
+              level, the relationship among pieces, the balance of evidence, the distribution of meaning, and the
+              final impression carried across the application.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>The movement of the engagement</h3>
+            <div class="process-diagram">Written File → First Pass → Return → Applicant Revision → Final Pass → Release</div>
+          </div>
+
+          <div class="modal-section">
+            <h3>What you receive</h3>
+            <ul class="deliverable-list">
+              <li>First annotated principal essay</li>
+              <li>First annotated supplement set</li>
+              <li>Coordinated written-file directives</li>
+              <li>Cross-essay claim and evidence analysis</li>
+              <li>One complete applicant revision cycle</li>
+              <li>Final pass across the revised written file</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3>Scope + Sanctum clock</h3>
+            <div class="timing-ledger">
+              <div class="timing-row"><div class="timing-name">Included</div><div>One principal essay + up to seven supplemental responses.</div></div>
+              <div class="timing-row"><div class="timing-name">Additional Response</div><div>127 each.</div></div>
+              <div class="timing-row"><div class="timing-name">First Pass</div><div>Within 14 calendar days of complete submission.</div></div>
+              <div class="timing-row"><div class="timing-name">Applicant Revision</div><div>Up to 30 calendar days after the first return.</div></div>
+              <div class="timing-row"><div class="timing-name">Final Pass</div><div>Within 7 calendar days after the revised written file is uploaded.</div></div>
+              <div class="timing-row"><div class="timing-name">Priority Release</div><div>72 hours · 397 &nbsp; / &nbsp; 48 hours · 547 &nbsp; / &nbsp; 24 hours · 797</div></div>
+            </div>
+          </div>
+        `
+      },
+
+      completeEssay: {
+        family: "III · Complete",
+        title: "Essay Overhaul",
+        tagline: "Direction, architecture, drafting, first pass, revision, and final pass for the principal essay.",
+        fee: "1,797",
+        body: `
+          <div class="modal-section">
+            <h3>The Direction Room</h3>
+            <p>
+              Complete begins with source material. The applicant may submit up to seven possible scenarios:
+              experiences, encounters, intellectual questions, tensions, projects, places, responsibilities,
+              discoveries, observations, or other material from which the principal essay might emerge.
+            </p>
+            <p>
+              Each scenario may be supported by relevant application material—activities, academic work,
+              research, employment, family or community context, awards, intended field, prior writing,
+              personal history, and institutional ambitions. Concise scenario descriptions are sufficient
+              when they give the Sanctum enough material to understand the event, the applicant's role, and
+              the meaning available inside it.
+            </p>
+            <p>
+              The Ivy Sanctum reads the seven possibilities against the complete application. We examine
+              narrative force, available evidence, intellectual and emotional depth, distinctiveness, vivid
+              detail, reflective potential, relationship to the rest of the file, and the reader understanding
+              each direction can produce.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>The Direction Memorandum</h3>
+            <p>
+              The applicant receives a written analysis of the available directions. The memorandum identifies
+              the strongest possibilities, explains what each can reveal, considers the evidence available to
+              support it, and recommends the architecture with the greatest potential.
+            </p>
+            <p>
+              The applicant selects one direction. That selection establishes the essay architecture and opens
+              the drafting phase.
+            </p>
+            <div class="process-diagram">Up to Seven Scenarios → Sanctum Analysis → Direction Memorandum → Applicant Selects</div>
+          </div>
+
+          <div class="modal-section">
+            <h3>The Editorial Room</h3>
+            <p>
+              Once the first complete draft is uploaded, the essay receives the full editorial and admissions
+              analysis used throughout Writing Overhaul: sentence mechanics, clarity, structure, pacing, voice,
+              imagery, transitions, evidence, central idea, and reader consequence.
+            </p>
+            <p>
+              The draft is also measured against the architecture established during the Direction Phase and
+              against the broader application. Comments translate that analysis into concrete revision actions
+              while preserving the applicant's authorship and voice.
+            </p>
+            <p>
+              The applicant revises. The revised draft returns for one final Sanctum pass.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>The complete movement</h3>
+            <div class="process-diagram">Application Material → Seven Scenarios → Direction Memorandum → Selection → Draft → First Pass → Revision → Final Pass</div>
+          </div>
+
+          <div class="modal-section">
+            <h3>What you receive</h3>
+            <ul class="deliverable-list">
+              <li>Analysis of up to seven scenarios</li>
+              <li>Written Direction Memorandum</li>
+              <li>One selected essay architecture</li>
+              <li>First substantive annotated pass</li>
+              <li>One applicant revision cycle</li>
+              <li>One final Sanctum pass</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3>The Sanctum clock</h3>
+            <div class="timing-ledger">
+              <div class="timing-row"><div class="timing-name">Direction Memorandum</div><div>Within 7 calendar days of complete Direction intake.</div></div>
+              <div class="timing-row"><div class="timing-name">Direction Window</div><div>The applicant selects one direction within 7 calendar days of the memorandum.</div></div>
+              <div class="timing-row"><div class="timing-name">First Pass</div><div>Within 14 calendar days after the complete first draft is uploaded.</div></div>
+              <div class="timing-row"><div class="timing-name">Final Pass</div><div>Within 7 calendar days after the revised draft is uploaded.</div></div>
+              <div class="timing-row"><div class="timing-name">Engagement Window</div><div>60 calendar days from release of the Direction Memorandum.</div></div>
+              <div class="timing-row"><div class="timing-name">Priority Release</div><div>72 hours · 697 &nbsp; / &nbsp; 48 hours · 997 &nbsp; / &nbsp; 24 hours · 1,497</div></div>
+            </div>
+            <p>
+              Each Sanctum-controlled stage begins when the materials required for that stage are complete.
+              Applicant selection, drafting, and revision periods remain separate from the Sanctum clock.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>Questions before commissioning</h3>
+            <p>
+              Applicants who would like clarification about fit or scope may write to
+              <a class="text-link" href="mailto:hello@theivysanctum.com">hello@theivysanctum.com</a>.
+            </p>
+          </div>
+        `
+      },
+
+      completeSupplements: {
+        family: "III · Complete",
+        title: "Supplement Overhaul",
+        tagline: "Prompt strategy, supplement architecture, drafting, first pass, revision, and final pass for up to seven responses.",
+        fee: "1,997",
+        body: `
+          <div class="modal-section">
+            <h3>The Direction Room</h3>
+            <p>
+              The applicant submits the complete prompt set together with the experiences, intellectual interests,
+              activities, institutional reasons, academic direction, community roles, projects, and other source
+              material that could support the responses.
+            </p>
+            <p>
+              Up to seven source scenarios or material clusters may be included to give the Sanctum a clear view
+              of the applicant's strongest available evidence. The analysis considers what each prompt is asking,
+              what each piece of evidence can prove, and how the complete set can reveal range across intellectual
+              life, contribution, institutional fit, character, and future direction.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>The Supplement Architecture</h3>
+            <p>
+              The Ivy Sanctum assigns each response a distinct function inside the application. We determine
+              where intellectual material belongs, where institutional fit needs concrete evidence, where an
+              activity deserves expansion, where community contribution can become visible, and where personal
+              material can reveal another dimension of the applicant.
+            </p>
+            <p>
+              The resulting Supplement Architecture maps prompts to material, identifies the governing purpose
+              of each response, and establishes the distribution of claims before the full drafting cycle begins.
+            </p>
+            <div class="process-diagram">Prompts + Source Material → Sanctum Analysis → Supplement Architecture → Drafting</div>
+          </div>
+
+          <div class="modal-section">
+            <h3>The Editorial Room</h3>
+            <p>
+              Once the developed set is uploaded, each response receives a full editorial and admissions read
+              for clarity, pacing, voice, specificity, evidence, institutional knowledge, intellectual signal,
+              contribution, and reader consequence.
+            </p>
+            <p>
+              The seven are also read together for range, claim distribution, coherence, repetition, and the
+              cumulative understanding they create. The applicant revises from the first return, then submits
+              the revised set for one final Sanctum pass.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>The complete movement</h3>
+            <div class="process-diagram">Prompts + Material → Supplement Architecture → Drafts → First Pass → Revision → Final Pass</div>
+          </div>
+
+          <div class="modal-section">
+            <h3>What you receive</h3>
+            <ul class="deliverable-list">
+              <li>Source-material analysis</li>
+              <li>Supplement Architecture for up to seven responses</li>
+              <li>First annotated supplement set</li>
+              <li>Written revision directives</li>
+              <li>One applicant revision cycle</li>
+              <li>One final Sanctum pass</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3>Scope + Sanctum clock</h3>
+            <div class="timing-ledger">
+              <div class="timing-row"><div class="timing-name">Included</div><div>Up to seven supplemental responses.</div></div>
+              <div class="timing-row"><div class="timing-name">Additional Response</div><div>177 each.</div></div>
+              <div class="timing-row"><div class="timing-name">Architecture</div><div>Within 7 calendar days of complete Direction intake.</div></div>
+              <div class="timing-row"><div class="timing-name">First Pass</div><div>Within 14 calendar days after the complete drafted set is uploaded.</div></div>
+              <div class="timing-row"><div class="timing-name">Final Pass</div><div>Within 7 calendar days after the revised set is uploaded.</div></div>
+              <div class="timing-row"><div class="timing-name">Engagement Window</div><div>60 calendar days from release of the Supplement Architecture.</div></div>
+              <div class="timing-row"><div class="timing-name">Priority Release</div><div>72 hours · 697 &nbsp; / &nbsp; 48 hours · 997 &nbsp; / &nbsp; 24 hours · 1,497</div></div>
+            </div>
+          </div>
+
+          <div class="modal-section">
+            <h3>Questions before commissioning</h3>
+            <p>
+              Applicants who would like clarification about fit or scope may write to
+              <a class="text-link" href="mailto:hello@theivysanctum.com">hello@theivysanctum.com</a>.
+            </p>
+          </div>
+        `
+      },
+
+      completeCombined: {
+        family: "III · Complete",
+        title: "Essay + Supplements Overhaul",
+        tagline: "The principal essay and up to seven supplements developed as one written application.",
+        fee: "2,797",
+        body: `
+          <div class="modal-section">
+            <h3>The Direction Room</h3>
+            <p>
+              The complete written application begins with one shared pool of source material. The applicant
+              submits up to seven possible principal-essay scenarios together with the full supplement prompt set,
+              activities, academic direction, research, employment, community context, awards, prior writing,
+              target institutions, and other material that can support the written file.
+            </p>
+            <p>
+              The Ivy Sanctum reads that material as a system. We examine narrative force, available evidence,
+              intellectual and emotional depth, institutional relevance, distinctiveness, reflective potential,
+              and the role each piece of material can perform across the application.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>The Written Architecture</h3>
+            <p>
+              The central architectural question is placement: what belongs in the principal essay, what should
+              be reserved for a supplement, which claims deserve one appearance, which themes can recur through
+              a different lens, and what dimension of the applicant still needs to become visible.
+            </p>
+            <p>
+              The applicant receives a written architecture that combines principal-essay direction with the
+              supplement map. The essay portion identifies the strongest scenario directions and recommends the
+              architecture with the greatest potential. The supplement portion assigns each prompt a function and
+              routes supporting evidence across the set.
+            </p>
+            <p>
+              The applicant selects the principal-essay direction. That selection establishes the complete written
+              architecture and opens the drafting phase.
+            </p>
+            <div class="process-diagram">Application Material → Sanctum Analysis → Written Architecture → Essay Direction Selected → Drafting</div>
+          </div>
+
+          <div class="modal-section">
+            <h3>The Editorial Room</h3>
+            <p>
+              Once the principal essay and supplement set are drafted, the complete written file receives a close
+              editorial and admissions read. We examine sentence mechanics, clarity, pacing, voice, imagery,
+              transitions, structure, evidence, central ideas, prompt performance, institutional specificity,
+              contribution, and reader consequence.
+            </p>
+            <p>
+              We then read across every included piece for claim distribution, repetition, range, consistency,
+              and the final impression created by the writing as a whole. Comments translate the analysis into
+              concrete revision actions across the complete written file.
+            </p>
+            <p>
+              The applicant revises and returns the complete written file for one final Sanctum pass.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h3>The complete movement</h3>
+            <div class="process-diagram">Source Material → Written Architecture → Drafting → First Pass → Revision → Final Pass → Release</div>
+          </div>
+
+          <div class="modal-section">
+            <h3>What you receive</h3>
+            <ul class="deliverable-list">
+              <li>Analysis of up to seven principal-essay scenarios</li>
+              <li>Principal-essay Direction Memorandum</li>
+              <li>Supplement Architecture for up to seven responses</li>
+              <li>First annotated complete written file</li>
+              <li>One applicant revision cycle</li>
+              <li>One final Sanctum pass</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h3>Scope + Sanctum clock</h3>
+            <div class="timing-ledger">
+              <div class="timing-row"><div class="timing-name">Included</div><div>One principal essay + up to seven supplemental responses.</div></div>
+              <div class="timing-row"><div class="timing-name">Additional Response</div><div>177 each.</div></div>
+              <div class="timing-row"><div class="timing-name">Written Architecture</div><div>Within 7 calendar days of complete Direction intake.</div></div>
+              <div class="timing-row"><div class="timing-name">Direction Window</div><div>The applicant selects the principal-essay direction within 7 calendar days of the architecture.</div></div>
+              <div class="timing-row"><div class="timing-name">First Pass</div><div>Within 14 calendar days after the complete drafted written file is uploaded.</div></div>
+              <div class="timing-row"><div class="timing-name">Final Pass</div><div>Within 7 calendar days after the revised written file is uploaded.</div></div>
+              <div class="timing-row"><div class="timing-name">Engagement Window</div><div>60 calendar days from release of the Written Architecture.</div></div>
+              <div class="timing-row"><div class="timing-name">Priority Release</div><div>72 hours · 697 &nbsp; / &nbsp; 48 hours · 997 &nbsp; / &nbsp; 24 hours · 1,497</div></div>
+            </div>
+          </div>
+
+          <div class="modal-section">
+            <h3>Questions before commissioning</h3>
+            <p>
+              Applicants who would like clarification about fit or scope may write to
+              <a class="text-link" href="mailto:hello@theivysanctum.com">hello@theivysanctum.com</a>.
+            </p>
+          </div>
+        `
+      }
+    };
+
+    function openEngagement(key) {
+      const item = engagements[key];
+      if (!item) return;
+
+      document.getElementById("modalKicker").textContent = item.family;
+      document.getElementById("modalTitle").textContent = item.title;
+      document.getElementById("modalTagline").textContent = item.tagline;
+      document.getElementById("modalFee").textContent = item.fee;
+      document.getElementById("modalBody").innerHTML = item.body;
+
+      const orderLink = checkoutLinks[key];
+      document.getElementById("modalCommissionTop").href = orderLink;
+      document.getElementById("modalCommissionBottom").href = orderLink;
+
+      document.getElementById("modalCommissionTop").onclick = () => trackCommission(key, item.fee);
+      document.getElementById("modalCommissionBottom").onclick = () => trackCommission(key, item.fee);
+
+      const modal = document.getElementById("engagementModal");
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+
+      trackEngagementOpen(key, item.fee);
+    }
+
+    function closeEngagement() {
+      const modal = document.getElementById("engagementModal");
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    function openPriority() {
+      const modal = document.getElementById("priorityModal");
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+
       if (typeof gtag === "function") {
-        gtag("event", "advisory_engagement_interest", {
-          advisory_area: "writing_overhaul",
+        gtag("event", "priority_release_open", {
+          source: "writing_overhaul",
+          transport_type: "beacon"
+        });
+      }
+    }
+
+    function closePriority() {
+      const modal = document.getElementById("priorityModal");
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    document.getElementById("engagementModal").addEventListener("click", function(event) {
+      if (event.target === this) closeEngagement();
+    });
+
+    document.getElementById("priorityModal").addEventListener("click", function(event) {
+      if (event.target === this) closePriority();
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        closeEngagement();
+        closePriority();
+      }
+    });
+
+    function trackEngagementOpen(engagement, value) {
+      if (typeof gtag === "function") {
+        gtag("event", "writing_engagement_open", {
           engagement: engagement,
-          value: value,
+          value: Number(String(value).replace(",", "")),
           currency: "USD",
           transport_type: "beacon"
         });
       }
     }
 
-    function trackMethodOpen() {
+    function trackCommission(engagement, value) {
       if (typeof gtag === "function") {
-        gtag("event", "approach_enter", {
-          source: "writing_overhaul",
+        gtag("event", "writing_engagement_commission", {
+          engagement: engagement,
+          value: Number(String(value).replace(",", "")),
+          currency: "USD",
           transport_type: "beacon"
         });
       }
@@ -1018,8 +1913,21 @@
         });
       }
     }
-
   </script>
-
 </body>
 </html>
+'''
+
+out = Path("/mnt/data/writing-overhaul.html")
+out.write_text(html, encoding="utf-8")
+
+# Basic validation checks
+soup = BeautifulSoup(html, "html.parser")
+assert soup.title.string == "Writing Overhaul | The Ivy Sanctum"
+assert len(soup.select(".engagement-option")) == 9
+assert "The Origin" not in html
+assert "The Method" not in html
+assert "$" not in html
+assert html.count("Commission the Engagement") >= 2
+
+print(f"Created {out.name} — {out.stat().st_size:,} bytes; 9 engagement popups + Priority Release popup.")
